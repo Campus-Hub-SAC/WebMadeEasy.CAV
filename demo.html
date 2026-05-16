@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Public School — Best CBSE School in Bangalore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --primary: #0a2a5e; --primary-light: #1f4287;
+            --accent: #f59e0b; --accent-light: #fbbf24;
+            --bg: #f8fafc; --white: #ffffff;
+            --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+            --gray-300: #d1d5db; --gray-500: #6b7280; --gray-600: #4b5563;
+            --gray-700: #374151; --gray-800: #1f2937; --gray-900: #111827;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+            --radius: 12px; --radius-lg: 16px; --radius-xl: 24px;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg); color: var(--gray-800); line-height:1.6;
+            overflow-x: hidden; font-weight: 500;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--gray-900); }
+        .btn {
+            display:inline-flex; align-items:center; gap:8px;
+            padding:10px 24px; border-radius: 50px; font-weight:700;
+            font-size:0.9rem; cursor:pointer; border:none; text-decoration:none;
+            transition: all 0.3s; font-family: 'Inter', sans-serif;
+        }
+        .btn-primary {
+            background: var(--accent); color: var(--primary);
+            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+        }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245,158,11,0.4); }
+        .btn-outline { background: transparent; border: 2px solid white; color: white; }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+        .section-head {
+            text-align:center; margin: 64px 0 40px;
+        }
+        .section-head h2 { font-size:2.2rem; color: var(--primary); margin-bottom:8px; }
+        .section-head .line { width:60px; height:4px; background: var(--accent); margin:0 auto 12px; border-radius:2px; }
+        .section-head p { color: var(--gray-600); max-width:600px; margin:0 auto; font-weight:500; }
+
+        /* Nav */
+        .header {
+            position:fixed; top:0; width:100%; z-index:1000;
+            background: rgba(10,42,94,0.95); backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .header-inner {
+            max-width:1200px; margin:0 auto; display:flex; align-items:center;
+            justify-content:space-between; padding:0 24px; height:70px;
+        }
+        .logo { font-family: 'Poppins', sans-serif; font-size:1.4rem; font-weight:800; color:white; cursor:pointer; display:flex; align-items:center; gap:10px; }
+        .logo span { color: var(--accent); }
+        .nav-links { display:flex; gap:6px; list-style:none; }
+        .nav-links a {
+            color:rgba(255,255,255,0.85); padding:8px 16px; border-radius:6px;
+            font-weight:600; font-size:0.9rem; cursor:pointer; text-decoration:none; transition:0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { background: var(--accent); color: var(--primary); }
+        .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+        .hamburger span { width:26px; height:3px; background:white; border-radius:2px; transition:0.3s; }
+        .hamburger.open span:nth-child(1) { transform:translateY(8px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity:0; }
+        .hamburger.open span:nth-child(3) { transform:translateY(-8px) rotate(-45deg); }
+        .mobile-menu { display:none; flex-direction:column; position:fixed; top:70px; left:0; right:0; background: var(--primary); padding:16px; z-index:999; }
+        .mobile-menu a { color:white; padding:12px; border-radius:6px; font-weight:600; display:block; text-decoration:none; }
+        .mobile-menu a:hover, .mobile-menu a.active { background: var(--accent); color: var(--primary); }
+
+        .main { margin-top:70px; }
+        .page { display:none; animation: fadeIn 0.5s; }
+        .page.active { display:block; }
+        @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(10,42,94,0.85), rgba(31,66,135,0.9)), url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
+            min-height:85vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white;
+            position: relative; overflow:hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(245,158,11,0.3), transparent);
+            top: -100px; right: -100px; border-radius:50%; filter:blur(60px);
+        }
+        .hero-content { max-width:800px; padding:20px; position:relative; z-index:2; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight:900; margin-bottom:16px; color:white; }
+        .hero p { font-size:1.2rem; margin-bottom:28px; opacity:0.95; font-weight:500; }
+        .stats-bar {
+            display:flex; justify-content:center; gap:20px; flex-wrap:wrap;
+            background:white; border-radius:var(--radius-xl); padding:28px;
+            box-shadow:var(--shadow-lg); margin-top:-50px; position:relative; z-index:3;
+        }
+        .stat-item { text-align:center; flex:1 1 150px; }
+        .stat-num { font-size:2rem; font-weight:900; color:var(--primary); }
+        .stat-label { font-size:0.85rem; font-weight:600; color:var(--gray-500); text-transform:uppercase; }
+
+        .card {
+            background:white; border-radius:var(--radius-lg); padding:28px;
+            box-shadow:var(--shadow); transition:0.3s; border:1px solid var(--gray-200);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow:var(--shadow-lg); }
+
+        .reveal { opacity:0; transform: translateY(30px); transition: 0.8s; }
+        .reveal.visible { opacity:1; transform: translateY(0); }
+
+        /* Grids */
+        .grid-3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:24px; }
+        .grid-4 { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; }
+        .staff-card {
+            background:white; border-radius:var(--radius-lg); padding:24px; text-align:center;
+            box-shadow:var(--shadow); transition:0.3s;
+        }
+        .staff-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
+        .staff-card img { width:90px; height:90px; border-radius:50%; object-fit:cover; margin-bottom:12px; border:3px solid var(--accent); }
+        .staff-card h4 { color: var(--primary); margin-bottom:4px; }
+        .staff-card .role { color: var(--accent); font-weight:700; margin-bottom:6px; }
+        .staff-card p { font-size:0.9rem; color: var(--gray-600); }
+        .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:16px; }
+        .gallery-item { border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+        .gallery-item img { width:100%; height:200px; object-fit:cover; transition:0.4s; display:block; }
+        .gallery-item:hover img { transform:scale(1.08); }
+
+        .fee-table { width:100%; border-collapse:collapse; background:white; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+        .fee-table th { background: var(--primary); color:white; padding:16px; text-align:left; font-weight:700; }
+        .fee-table td { padding:14px 16px; border-bottom:1px solid var(--gray-100); font-weight:500; }
+        .footer {
+            background: var(--gray-900); color:rgba(255,255,255,0.7);
+            padding:48px 24px 24px; text-align:center;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width:768px) {
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo" onclick="navigate('home')">☀️ Sunrise <span>Public School</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a class="active" data-page="home" onclick="navigate('home')">Home</a></li>
+                <li><a data-page="about" onclick="navigate('about')">About</a></li>
+                <li><a data-page="academics" onclick="navigate('academics')">Academics</a></li>
+                <li><a data-page="staff" onclick="navigate('staff')">Staff</a></li>
+                <li><a data-page="achievements" onclick="navigate('achievements')">Achievements</a></li>
+                <li><a data-page="sports" onclick="navigate('sports')">Sports</a></li>
+                <li><a data-page="extracurricular" onclick="navigate('extracurricular')">Extra‑Curricular</a></li>
+                <li><a data-page="gallery" onclick="navigate('gallery')">Gallery</a></li>
+                <li><a data-page="fees" onclick="navigate('fees')">Fees</a></li>
+                <li><a data-page="contact" onclick="navigate('contact')">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" onclick="toggleMobile()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+        <a data-page="home" class="active" onclick="navigate('home')">Home</a>
+        <a data-page="about" onclick="navigate('about')">About</a>
+        <a data-page="academics" onclick="navigate('academics')">Academics</a>
+        <a data-page="staff" onclick="navigate('staff')">Staff</a>
+        <a data-page="achievements" onclick="navigate('achievements')">Achievements</a>
+        <a data-page="sports" onclick="navigate('sports')">Sports</a>
+        <a data-page="extracurricular" onclick="navigate('extracurricular')">Extra‑Curricular</a>
+        <a data-page="gallery" onclick="navigate('gallery')">Gallery</a>
+        <a data-page="fees" onclick="navigate('fees')">Fees</a>
+        <a data-page="contact" onclick="navigate('contact')">Contact</a>
+    </div>
+
+    <main class="main">
+        <!-- HOME -->
+        <section class="page active" id="page-home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Nurturing Leaders of Tomorrow</h1>
+                    <p>A premier CBSE school in Bangalore offering holistic education from Pre‑KG to Class X. Academic excellence, values, and all‑round development since 1999.</p>
+                    <button class="btn btn-primary" onclick="navigate('academics')">Explore Programmes</button>
+                    <button class="btn btn-outline" style="margin-left:12px;" onclick="navigate('contact')">Admissions Open 2026</button>
+                </div>
+            </div>
+            <div class="container">
+                <div class="stats-bar">
+                    <div class="stat-item"><div class="stat-num">1200+</div><div class="stat-label">Students</div></div>
+                    <div class="stat-item"><div class="stat-num">85+</div><div class="stat-label">Expert Faculty</div></div>
+                    <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Years Legacy</div></div>
+                    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Board Pass Rate</div></div>
+                </div>
+                <div class="card" style="margin-top:40px; text-align:center;">
+                    <h3>Welcome to Sunrise Public School, Bangalore</h3>
+                    <p style="max-width:700px; margin:12px auto 0;">Located in India’s Silicon Valley, we blend traditional values with modern pedagogy to ignite curiosity, creativity, and character in every child. Explore our vibrant campus and discover why we are one of the top CBSE schools in the region.</p>
+                    <button class="btn btn-primary" style="margin-top:20px;" onclick="navigate('about')">Learn More About Us</button>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="page" id="page-about">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>About Our School</h2><p>Discover the vision, infrastructure, and values behind Sunrise Public School.</p></div>
+                <div class="grid-3 reveal">
+                    <div class="card"><h3>🏫 Our Campus</h3><p>8‑acre green campus with smart classrooms, advanced labs, a library with 20,000+ books, and a 600‑seat auditorium.</p></div>
+                    <div class="card"><h3>🎯 Vision & Mission</h3><p>To nurture compassionate, curious leaders who excel academically while staying rooted in Indian values.</p></div>
+                    <div class="card"><h3>📚 CBSE Curriculum</h3><p>We follow the CBSE syllabus with a focus on conceptual learning, practicals, and holistic assessment.</p></div>
+                </div>
+                <div class="card reveal" style="margin-top:32px;">
+                    <h3>Our Faculty Excellence</h3>
+                    <p>Our 85+ highly qualified teachers are the backbone of Sunrise. With a student‑teacher ratio of 14:1, every child receives personalised attention. All educators undergo regular NEP‑aligned training.</p>
+                    <button class="btn btn-primary" style="margin-top:16px;" onclick="navigate('staff')">Meet Our Staff</button>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- ACADEMICS -->
+        <section class="page" id="page-academics">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Academic Structure</h2><p>Age‑appropriate programmes designed for cognitive, emotional, and social growth.</p></div>
+                <div class="grid-3 reveal">
+                    <div class="card"><h3>🌱 Pre‑Primary (Pre‑KG – UKG)</h3><p>Play‑based learning for ages 2.5–5.5 years. Focus on sensory, motor, and social skills.</p><p><strong>180 Students | 12 Teachers</strong></p></div>
+                    <div class="card"><h3>📖 Primary (I – V)</h3><p>Strong foundation in English, Hindi, Maths, EVS. Project‑based learning and co‑curriculars.</p><p><strong>480 Students | 28 Teachers</strong></p></div>
+                    <div class="card"><h3>🔬 Middle School (VI – VIII)</h3><p>Subject‑specialist teaching, lab sessions, and introduction to advanced concepts.</p><p><strong>320 Students | 22 Teachers</strong></p></div>
+                    <div class="card"><h3>🎓 Secondary (IX – X)</h3><p>Rigorous CBSE prep, practicals, career guidance, and board exam excellence.</p><p><strong>220 Students | 23 Teachers</strong></p></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- STAFF -->
+        <section class="page" id="page-staff">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Our Dedicated Staff</h2><p>Experienced educators committed to shaping young minds.</p></div>
+                <div class="grid-4 reveal">
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=11" alt="Principal"><h4>Mrs. Anjali Sharma</h4><div class="role">Principal</div><p>M.A. B.Ed, 20 yrs</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=12" alt="Vice Principal"><h4>Mr. Rajesh Kumar</h4><div class="role">Vice Principal</div><p>M.Sc. M.Ed, 18 yrs</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=13" alt="Science HOD"><h4>Ms. Priya Menon</h4><div class="role">Head of Science</div><p>Ph.D. (Chemistry)</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=14" alt="Maths"><h4>Mr. Amit Verma</h4><div class="role">Maths Teacher</div><p>B.Tech, B.Ed</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=15" alt="English"><h4>Mrs. Sneha Iyer</h4><div class="role">English Teacher</div><p>M.A. (English), B.Ed</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=16" alt="Sports"><h4>Mr. Vikram Singh</h4><div class="role">Sports Director</div><p>NIS Certified</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=17" alt="Computer"><h4>Ms. Neha Gupta</h4><div class="role">Computer Science</div><p>M.Tech, B.Ed</p></div>
+                    <div class="staff-card"><img src="https://i.pravatar.cc/100?img=18" alt="Art"><h4>Mr. Kunal Joshi</h4><div class="role">Art & Craft</div><p>BFA, 10 yrs</p></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="page" id="page-achievements">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Our Achievements</h2><p>Celebrating academic brilliance, sporting glory, and co‑curricular triumphs.</p></div>
+                <div class="grid-3 reveal">
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">🏆</div><h3>100% Board Pass Rate 2025</h3><p>All Class X students passed with flying colours; 42% scored above 90%.</p></div>
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">🥇</div><h3>District Toppers</h3><p>Arun Kumar (98.6%) and Sneha Reddy (97.8%) ranked among Bangalore's top 10.</p></div>
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">🔬</div><h3>National Science Exhibition Winner</h3><p>First prize for renewable energy model at CBSE National Science Fair 2025.</p></div>
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">⚽</div><h3>U‑16 Football League Runners‑Up</h3><p>Our football team secured second place among 32 Karnataka schools.</p></div>
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">🧘</div><h3>State Yoga Gold Medals</h3><p>5 gold medals at Karnataka State Yoga Championship 2024.</p></div>
+                    <div class="card"><div style="font-size:1.8rem; color:var(--accent);">🌐</div><h3>International Olympiad Medals</h3><p>12 students won medals in Maths, Science & English Olympiads 2024.</p></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- SPORTS -->
+        <section class="page" id="page-sports">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Sports & Physical Education</h2><p>A healthy body fuels a sharp mind. Our sports curriculum is second to none.</p></div>
+                <div class="grid-3 reveal">
+                    <div class="card"><img src="https://picsum.photos/400/200?random=10" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px;"><h3>Football</h3><p>FIFA‑sized turf, professional coach, inter‑school tournaments.</p></div>
+                    <div class="card"><img src="https://picsum.photos/400/200?random=11" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px;"><h3>Basketball</h3><p>Indoor wooden court, junior & senior team coaching.</p></div>
+                    <div class="card"><img src="https://picsum.photos/400/200?random=12" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px;"><h3>Cricket</h3><p>Full pitch, practice nets, active in school leagues.</p></div>
+                    <div class="card"><img src="https://picsum.photos/400/200?random=13" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px;"><h3>Swimming</h3><p>Semi‑Olympic pool, certified lifeguards, swim coach.</p></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- EXTRA CURRICULAR -->
+        <section class="page" id="page-extracurricular">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Extra‑Curricular Activities</h2><p>Beyond books – where passion meets performance.</p></div>
+                <div class="grid-3 reveal">
+                    <div class="card"><h3>🎭 Annual Day & Functions</h3><p>Grand cultural fest with dance, drama, music. A showcase of student talent.</p></div>
+                    <div class="card"><h3>🎨 Art & Craft Club</h3><p>Weekly workshops, exhibitions, and inter‑school competitions.</p></div>
+                    <div class="card"><h3>🎤 Debate & Public Speaking</h3><p>Bangalore Sahodaya Debate Champions. Regular MUNs and elocution.</p></div>
+                    <div class="card"><h3>🔬 Robotics & Science Club</h3><p>Hands‑on projects, participation in national tech fests.</p></div>
+                    <div class="card"><h3>🌿 Eco & Gardening Club</h3><p>Organic farming, waste management drives, green campus initiatives.</p></div>
+                    <div class="card"><h3>🎵 Music & Dance Academy</h3><p>Classical, contemporary, instrumental training with professional gurus.</p></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="page" id="page-gallery">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Our Gallery</h2><p>Glimpses of life at Sunrise Public School.</p></div>
+                <div class="gallery-grid reveal">
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=20" alt="Campus"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=21" alt="Classroom"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=22" alt="Lab"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=23" alt="Playground"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=24" alt="Annual Day"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=25" alt="Library"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=26" alt="Sports"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=27" alt="Assembly"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=28" alt="Art Room"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=29" alt="Yoga"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=30" alt="Canteen"></div>
+                    <div class="gallery-item"><img src="https://picsum.photos/400/300?random=31" alt="Transport"></div>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- FEES -->
+        <section class="page" id="page-fees">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Fee Structure 2025‑26</h2><p>Transparent and affordable fee plans for all classes.</p></div>
+                <div class="reveal">
+                    <table class="fee-table">
+                        <thead><tr><th>Class</th><th>Tuition Fee (Annual)</th><th>Admission Fee</th><th>Transport (Optional)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Pre‑KG – UKG</td><td>₹ 45,000</td><td>₹ 5,000</td><td>₹ 12,000</td></tr>
+                            <tr><td>I – V</td><td>₹ 52,000</td><td>₹ 8,000</td><td>₹ 12,000</td></tr>
+                            <tr><td>VI – VIII</td><td>₹ 58,000</td><td>₹ 10,000</td><td>₹ 12,000</td></tr>
+                            <tr><td>IX – X</td><td>₹ 65,000</td><td>₹ 12,000</td><td>₹ 12,000</td></tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top:20px; text-align:center; font-weight:500;">*Sibling discount & scholarship available. Contact office for details.</p>
+                </div>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="page" id="page-contact">
+            <div class="container">
+                <div class="section-head"><div class="line"></div><h2>Contact Us</h2><p>We’d love to hear from you. Visit our campus or get in touch online.</p></div>
+                <div class="grid-3 reveal" style="align-items:start;">
+                    <div class="card"><h3>📍 Address</h3><p>45, Sunrise Avenue, Hebbal, Bangalore – 560024</p></div>
+                    <div class="card"><h3>📞 Phone</h3><p>+91 80 2345 6789</p></div>
+                    <div class="card"><h3>✉️ Email</h3><p>info@sunrisepublicschool.edu</p></div>
+                </div>
+                <form class="card reveal" style="margin-top:32px;" onsubmit="handleSubmit(event)">
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <input type="text" placeholder="Full Name" required style="padding:12px; border:1px solid var(--gray-200); border-radius:8px;">
+                        <input type="email" placeholder="Email" required style="padding:12px; border:1px solid var(--gray-200); border-radius:8px;">
+                    </div>
+                    <textarea placeholder="Your Message" rows="4" required style="width:100%; margin-top:16px; padding:12px; border:1px solid var(--gray-200); border-radius:8px;"></textarea>
+                    <button type="submit" class="btn btn-primary" style="margin-top:16px;">Send Message</button>
+                    <p style="color:green; display:none; margin-top:8px;" id="successMsg">✅ Message sent successfully (demo)</p>
+                </form>
+                <div style="height:60px;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:32px; text-align:left;">
+            <div><h4 style="color:white;">Sunrise Public School</h4><p>A CBSE Affiliated School since 1999.</p></div>
+            <div><h4 style="color:white;">Quick Links</h4><ul style="list-style:none;"><li><a onclick="navigate('about')">About</a></li><li><a onclick="navigate('academics')">Academics</a></li><li><a onclick="navigate('staff')">Staff</a></li></ul></div>
+            <div><h4 style="color:white;">Admissions</h4><ul style="list-style:none;"><li><a onclick="navigate('fees')">Fee Structure</a></li><li><a href="#">Process</a></li></ul></div>
+            <div><h4 style="color:white;">Connect</h4><ul style="list-style:none;"><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.2); padding-top:16px; margin-top:24px;">
+            © 2025 Sunrise Public School. All rights reserved. | <span style="color:var(--accent);">Designed by <a href="https://yourportfolio.com" target="_blank">WebMadeEasy.CAV</a></span>
+        </div>
+    </footer>
+
+    <script>
+        function navigate(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + page);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+                a.classList.remove('active');
+                if (a.dataset.page === page) a.classList.add('active');
+            });
+            closeMobile();
+            window.scrollTo({ top:0, behavior:'smooth' });
+            setTimeout(handleScrollReveal, 100);
+        }
+        function toggleMobile() {
+            const btn = document.getElementById('hamburgerBtn');
+            const menu = document.getElementById('mobileMenu');
+            btn.classList.toggle('open');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+        function closeMobile() {
+            document.getElementById('hamburgerBtn').classList.remove('open');
+            document.getElementById('mobileMenu').style.display = 'none';
+        }
+        window.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburgerBtn');
+            if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobile();
+        });
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('successMsg');
+            msg.style.display = 'block';
+            e.target.reset();
+            setTimeout(() => msg.style.display = 'none', 3000);
+        }
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            reveals.forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < windowHeight - 100) el.classList.add('visible');
+            });
+        }
+        window.addEventListener('scroll', handleScrollReveal);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('mobileMenu').style.display = 'none';
+            handleScrollReveal();
+        });
+    </script>
+<a href="index.html" style="position:fixed; bottom:20px; right:20px; background:#f59e0b; color:#0a2a5e; padding:10px 18px; border-radius:50px; font-weight:700; box-shadow:0 4px 15px rgba(0,0,0,0.2); z-index:9999; text-decoration:none; font-family: 'Poppins', sans-serif;">
+    ← Back to WebMadeEasy
+</a>
+</body>
+</html>
