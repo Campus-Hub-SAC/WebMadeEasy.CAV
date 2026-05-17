@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebMadeEasy.CAV — Professional School Websites | Fast & Affordable</title>
-    <meta name="description" content="WebMadeEasy.CAV by Rishi Pavan R – Stunning school websites in 3–4 days. Starting at ₹6,999. Clean HTML/CSS, no page builders.">
-    <meta name="keywords" content="school website, college website, affordable school site, static website, WebMadeEasy, Rishi Pavan, CBSE school design, fast delivery">
+    <meta name="description" content="WebMadeEasy.CAV by Rishi Pavan R – Stunning school websites in 3–4 days. Starting at ₹6,999. Clean HTML/CSS, no page builders. 100% real, ask for ID proof.">
+    <meta name="keywords" content="school website, college website, affordable school site, static website, WebMadeEasy, Rishi Pavan, CBSE school design, fast delivery, Google verified, transparent freelancer">
     <meta name="author" content="Rishi Pavan R">
     <meta property="og:title" content="WebMadeEasy.CAV — School Websites That Inspire">
-    <meta property="og:description" content="Professional websites for schools & colleges. 3‑4 day delivery, clean code, unbeatable value.">
+    <meta property="og:description" content="Professional websites for schools & colleges. 3‑4 day delivery, clean code, unbeatable value. 100% transparent – ask for ID proof.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="WebMadeEasy.CAV — School Websites That Inspire">
@@ -37,7 +37,8 @@
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--gray-50); color: var(--gray-800); line-height:1.6;
+            background: linear-gradient(135deg, #f4f7ff 0%, #f9fafb 40%, #fff9f0 100%);
+            color: var(--gray-800); line-height:1.6;
             overflow-x: hidden; font-weight: 500;
         }
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--gray-900); }
@@ -46,18 +47,56 @@
         ::-webkit-scrollbar-track { background: var(--gray-100); }
         ::-webkit-scrollbar-thumb { background: var(--indigo-400); border-radius: 99px; }
 
+        /* Dhamaka Pop-up */
+        .dhamaka-popup {
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(12px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999; opacity:0; visibility: hidden; transition: 0.3s ease;
+        }
+        .dhamaka-popup.show { opacity:1; visibility: visible; }
+        .popup-card {
+            background: white; border-radius: var(--radius-xl);
+            padding: 36px 32px; max-width: 450px; width: 90%;
+            text-align: center; box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+            animation: pop 0.4s ease; position: relative;
+        }
+        @keyframes pop { 0%{transform:scale(0.8);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+        .popup-card .dhamaka-icon { font-size: 3.5rem; margin-bottom: 8px; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+        .popup-card h3 { font-size: 1.8rem; font-weight: 800; color: #e11d48; margin-bottom: 8px; }
+        .popup-card p { color: var(--gray-600); font-weight: 600; margin-bottom: 20px; font-size: 1rem; }
+        .popup-card .btn-popup {
+            background: var(--indigo-600); color: white; border: none;
+            padding: 14px 32px; border-radius: 50px; font-weight: 700;
+            cursor: pointer; font-size: 1rem; transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(79,70,229,0.4);
+        }
+        .popup-close { position: absolute; top:12px; right:16px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--gray-400); }
+
+        /* Google Verified Badge */
+        .google-verified {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #f0fdf4; border: 1px solid #bbf7d0;
+            padding: 8px 14px; border-radius: 99px;
+            color: #166534; font-weight: 600; font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .google-verified .tick-circle {
+            width: 24px; height: 24px; background: #16a34a; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 14px;
+        }
+
+        /* Promo Bar */
         .promo-bar {
             position: fixed; top:0; left:0; right:0; height:40px;
             background: linear-gradient(135deg, #f97316, #ef4444);
             color: white; display: flex; align-items: center; justify-content: center;
-            font-weight: 700; z-index: 1001; font-size: 0.85rem; letter-spacing:0.3px;
+            font-weight: 700; z-index: 1001; font-size: 0.85rem;
             gap: 8px; transition: transform 0.3s;
         }
-        .promo-bar button {
-            background: rgba(255,255,255,0.2); border: none; color: white;
-            font-weight: bold; margin-left: 12px; padding: 2px 8px; border-radius: 99px;
-            cursor: pointer; font-size:0.8rem;
-        }
+        .promo-bar button { background: rgba(255,255,255,0.2); border:none; color:white; font-weight:bold; margin-left:12px; padding:2px 8px; border-radius:99px; cursor:pointer; }
         .promo-bar.hidden { transform: translateY(-100%); }
 
         nav {
@@ -67,7 +106,7 @@
             transition: top 0.3s;
         }
         .promo-bar.hidden ~ nav { top:0; }
-        .nav-inner { max-width: 1200px; margin:0 auto; display:flex; align-items:center; justify-content: space-between; padding:0 24px; height:68px; }
+        .nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 24px; height:68px; }
         .nav-logo {
             font-family: 'Poppins', sans-serif; font-size:1.3rem; font-weight:800;
             background: linear-gradient(135deg, var(--indigo-600), var(--violet-600));
@@ -75,180 +114,137 @@
             background-clip: text; cursor: pointer;
         }
         .nav-links { display:flex; gap:6px; list-style:none; align-items:center; }
-        .nav-links a {
-            text-decoration:none; padding:8px 16px; border-radius: var(--radius-sm);
-            font-weight:600; font-size:.9rem; color:var(--gray-600); transition: all .2s;
-        }
+        .nav-links a { text-decoration:none; padding:8px 16px; border-radius:var(--radius-sm); font-weight:600; font-size:.9rem; color:var(--gray-600); transition:all .2s; }
         .nav-links a:hover { background:var(--indigo-50); color:var(--indigo-600); }
         .nav-links a.active { background:var(--indigo-600); color:white; }
-        .nav-cta {
-            background: linear-gradient(135deg, var(--indigo-600), var(--violet-600));
-            color:white!important; box-shadow:0 4px 12px rgba(99,102,241,.35);
-            margin-left: 8px;
-        }
-        .nav-cta:hover { transform: translateY(-1px); box-shadow:0 6px 18px rgba(99,102,241,.45)!important; }
+        .nav-cta { background:linear-gradient(135deg, var(--indigo-600), var(--violet-600)); color:white!important; box-shadow:0 4px 12px rgba(99,102,241,.35); margin-left:8px; }
+        .nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(99,102,241,.45)!important; }
 
-        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; border-radius: var(--radius-sm); border:none; background:transparent; }
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:6px; border-radius:var(--radius-sm); border:none; background:transparent; }
         .hamburger span { display:block; width:24px; height:2px; background:var(--gray-700); border-radius:2px; transition:.3s; }
-        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity:0; }
-        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        .mobile-menu {
-            display:none; position:fixed; top:68px; left:0; right:0;
-            background:white; border-bottom:1px solid var(--gray-200);
-            box-shadow:var(--shadow-md); z-index:999; padding:16px;
-        }
+        .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+        .mobile-menu { display:none; position:fixed; top:68px; left:0; right:0; background:white; border-bottom:1px solid var(--gray-200); box-shadow:var(--shadow-md); z-index:999; padding:16px; }
         .mobile-menu.show { display:block; }
         .mobile-menu a { display:block; padding:12px 16px; border-radius:var(--radius-sm); font-weight:600; color:var(--gray-600); text-decoration:none; margin-bottom:4px; }
         .mobile-menu a:hover { background:var(--indigo-50); }
         .mobile-menu a.active { background:var(--indigo-600); color:white; }
 
         .page { display:none; min-height:100vh; padding-top:68px; }
-        .page.active { display:block; animation: fadeIn .4s ease; }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+        .page.active { display:block; animation:fadeIn .4s ease; }
+        @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
         .container { max-width:1100px; margin:0 auto; padding:0 24px; }
 
-        .btn {
-            display:inline-flex; align-items:center; gap:8px;
-            padding:12px 28px; border-radius: var(--radius-sm); font-weight:700;
-            font-size:.9rem; cursor:pointer; border:none; text-decoration:none; transition: all .25s;
-            font-family: 'Inter', sans-serif;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--indigo-600), var(--violet-600));
-            color:white; box-shadow:0 4px 15px rgba(99,102,241,.4);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow:0 8px 25px rgba(99,102,241,.5); }
-        .btn-outline {
-            background:white; color:var(--indigo-600); border:2px solid var(--indigo-200); font-weight:600;
-        }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 28px; border-radius:var(--radius-sm); font-weight:700; font-size:.9rem; cursor:pointer; border:none; text-decoration:none; transition:all .25s; font-family:'Inter',sans-serif; }
+        .btn-primary { background:linear-gradient(135deg, var(--indigo-600), var(--violet-600)); color:white; box-shadow:0 4px 15px rgba(99,102,241,.4); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 25px rgba(99,102,241,.5); }
+        .btn-outline { background:white; color:var(--indigo-600); border:2px solid var(--indigo-200); font-weight:600; }
         .btn-outline:hover { background:var(--indigo-50); border-color:var(--indigo-400); }
-        .section-label {
-            display:inline-flex; align-items:center; gap:8px;
-            background:var(--indigo-50); color:var(--indigo-600);
-            border:1px solid var(--indigo-200); border-radius:99px;
-            padding:6px 16px; font-size:.8rem; font-weight:700;
-            text-transform:uppercase; letter-spacing:.5px; margin-bottom:16px;
-        }
+        .section-label { display:inline-flex; align-items:center; gap:8px; background:var(--indigo-50); color:var(--indigo-600); border:1px solid var(--indigo-200); border-radius:99px; padding:6px 16px; font-size:.8rem; font-weight:700; text-transform:uppercase; margin-bottom:16px; }
 
-        .reveal { opacity:0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .reveal.visible { opacity:1; transform: translateY(0); }
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
 
-        .old-price {
-            text-decoration: line-through;
-            color: #ef4444;
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-right: 8px;
-            display: inline-block;
-            animation: wiggle 2s infinite;
-        }
-        @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-2deg); }
-            75% { transform: rotate(2deg); }
-        }
-        .new-price { font-size: 2.2rem; font-weight: 800; color: var(--indigo-700); }
-        .new-price span { font-size: 1rem; color: var(--gray-500); }
+        .old-price { text-decoration:line-through; color:#ef4444; font-size:1.1rem; font-weight:700; margin-right:8px; animation:wiggle 2s infinite; }
+        @keyframes wiggle { 0%,100%{transform:rotate(0deg);} 25%{transform:rotate(-2deg);} 75%{transform:rotate(2deg);} }
+        .new-price { font-size:2.2rem; font-weight:800; color:var(--indigo-700); }
+        .new-price span { font-size:1rem; color:var(--gray-500); }
 
-        .hero { padding: 60px 0 60px; text-align:center; position:relative; }
-        .hero-badge { margin-bottom:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-        .badge { padding:6px 14px; border-radius:99px; font-size:.8rem; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
-        .badge-green { background:#dcfce7; color:#16a34a; }
-        .badge-indigo { background:var(--indigo-100); color:var(--indigo-700); }
-        .dot-green { width:8px; height:8px; border-radius:50%; background:#22c55e; animation:pulse 2s infinite; }
-        @keyframes pulse { 0%,100% { box-shadow:0 0 0 0 rgba(34,197,94,.4); } 50% { box-shadow:0 0 0 6px rgba(34,197,94,0); } }
-        .hero h1 { font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight:900; line-height:1.1; background: linear-gradient(135deg, var(--indigo-700) 20%, var(--violet-600)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom:16px; }
-        .hero-sub { font-size:1.2rem; color:var(--gray-600); max-width:650px; margin:0 auto 24px; }
-        .hero-note { font-size:0.85rem; color:var(--gray-500); margin-bottom:28px; font-style:italic; }
-        .hero-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:56px; }
-        .stats { display:grid; grid-template-columns: repeat(4,1fr); background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); margin-bottom:80px; overflow:hidden; }
+        .hero { padding:60px 0 60px; text-align:center; }
+        .hero h1 { font-size:clamp(2.8rem,7vw,4.5rem); font-weight:900; background:linear-gradient(135deg,var(--indigo-700) 20%,var(--violet-600)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:16px; }
+        .stats { display:grid; grid-template-columns:repeat(4,1fr); background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); margin-bottom:80px; overflow:hidden; }
         .stat-item { padding:28px 16px; text-align:center; border-right:1px solid var(--gray-200); }
         .stat-item:last-child { border-right:none; }
         .stat-num { font-size:2rem; font-weight:900; color:var(--indigo-600); }
         .stat-label { font-size:.8rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; }
 
+        /* All other sections styles (story, services, etc.) are same as before */
         .story-section { padding:0 0 80px; text-align:center; }
         .story-title { font-size:2rem; font-weight:800; margin-bottom:16px; }
-        .story-desc { color:var(--gray-600); max-width:750px; margin:0 auto 32px; font-size:1.05rem; font-weight:500; line-height:1.7; }
-        .story-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:24px; text-align:left; margin-top:32px; }
-        .story-card { background:white; border-radius:var(--radius-lg); padding:28px; box-shadow:var(--shadow); border:1px solid var(--gray-200); transition: all .25s; }
-        .story-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
-        .story-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:16px; }
-        .story-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:8px; }
-        .story-card p { font-size:.9rem; color:var(--gray-500); }
-
-        .about-section { display: grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; margin: 60px 0 80px; background: white; border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-lg); border:1px solid var(--gray-200); }
-        .about-image { background: linear-gradient(135deg, var(--indigo-200), var(--violet-200)); border-radius: var(--radius-lg); height: 260px; display:flex; align-items:center; justify-content:center; font-size: 3rem; }
-        .about-text h2 { font-weight:800; margin-bottom:12px; }
-        .about-text p { font-weight:500; color:var(--gray-600); margin-bottom:16px; }
-        .about-text .highlight { color:var(--indigo-600); font-weight:700; }
-
+        .story-desc { color:var(--gray-600); max-width:750px; margin:0 auto 32px; font-size:1.05rem; }
+        .story-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; text-align:left; }
+        .story-card { background:white; border-radius:var(--radius-lg); padding:28px; box-shadow:var(--shadow); transition:.25s; }
+        .story-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+        .about-section { margin:60px 0 80px; background:white; border-radius:var(--radius-xl); padding:40px; box-shadow:var(--shadow-lg); }
         .services-section { padding-bottom:80px; }
-        .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:24px; }
-        .service-card { background:white; border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow); border:1px solid var(--gray-200); transition: all .25s; }
-        .service-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+        .service-card { background:white; border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow); transition:.25s; }
+        .service-card:hover { transform:translateY(-4px); }
         .check-list { list-style:none; margin-top:16px; }
-        .check-list li { display:flex; align-items:center; gap:8px; font-weight:500; font-size:.9rem; color:var(--gray-600); padding:4px 0; }
+        .check-list li { display:flex; gap:8px; font-weight:500; font-size:.9rem; color:var(--gray-600); padding:4px 0; }
         .check-list li::before { content:'✓'; font-weight:700; color:var(--indigo-600); }
-
         .process-section { padding-bottom:80px; }
-        .process-steps { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:24px; margin-top:40px; }
-        .process-step { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); text-align:center; transition: all .25s; }
-        .process-step:hover { transform: translateY(-5px); box-shadow:var(--shadow-md); }
-        .step-number { width:40px; height:40px; background:linear-gradient(135deg, var(--indigo-600), var(--violet-600)); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-weight:800; font-size:1.2rem; }
-
+        .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; }
+        .process-step { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); text-align:center; transition:.25s; }
+        .process-step:hover { transform:translateY(-5px); }
+        .step-number { width:40px; height:40px; background:linear-gradient(135deg,var(--indigo-600),var(--violet-600)); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-weight:800; }
         .portfolio-section { padding-bottom:80px; }
-        .portfolio-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
-        .portfolio-card { background:white; border-radius:var(--radius-lg); padding:30px; text-align:center; box-shadow:var(--shadow); border:1px solid var(--gray-200); transition: all .25s; }
-        .portfolio-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
-        .portfolio-icon { font-size:2.5rem; margin-bottom:12px; }
-        .portfolio-num { font-size:2.2rem; font-weight:900; color:var(--indigo-600); }
-        .portfolio-label { font-weight:700; color:var(--gray-700); margin-top:8px; }
-
+        .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+        .portfolio-card { background:white; border-radius:var(--radius-lg); padding:30px; text-align:center; box-shadow:var(--shadow); transition:.25s; }
+        .portfolio-card:hover { transform:translateY(-4px); }
         .testimonial-section { padding-bottom:80px; }
         .testimonial-slider { max-width:700px; margin:0 auto; background:white; border-radius:var(--radius-xl); padding:32px; box-shadow:var(--shadow-md); }
-        .testimonial-card blockquote { font-size:1.1rem; font-style:italic; color:var(--gray-700); margin-bottom:16px; }
-        .testimonial-author { font-weight:700; color:var(--indigo-600); }
-        .slider-controls { display:flex; justify-content:center; gap:16px; margin-top:20px; }
-        .slider-btn { background:white; border:1px solid var(--gray-300); border-radius:50%; width:36px; height:36px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-weight:700; transition:.2s; }
-        .slider-btn:hover { background:var(--indigo-50); }
-
         .faq-section { padding-bottom:80px; }
         .faq-item { background:white; border:1px solid var(--gray-200); border-radius:var(--radius); margin-bottom:12px; overflow:hidden; }
-        .faq-question { padding:16px 20px; font-weight:700; display:flex; justify-content:space-between; align-items:center; cursor:pointer; background:var(--gray-50); }
-        .faq-answer { padding:0 20px; max-height:0; overflow:hidden; transition: max-height .3s ease, padding .3s ease; }
+        .faq-question { padding:16px 20px; font-weight:700; display:flex; justify-content:space-between; cursor:pointer; }
+        .faq-answer { padding:0 20px; max-height:0; overflow:hidden; transition:max-height .3s; }
         .faq-item.active .faq-answer { padding:16px 20px; max-height:200px; }
-        .faq-icon { font-weight:700; transition: transform .3s; }
-        .faq-item.active .faq-icon { transform: rotate(45deg); }
-
         .whyme-section { padding-bottom:80px; }
-        .trust-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-bottom:56px; }
-        .trust-card { background:white; border-radius:var(--radius-lg); padding:24px; border:1px solid var(--gray-200); box-shadow:var(--shadow-sm); text-align:center; transition: all .25s; }
-        .trust-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
+        .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; }
+        .trust-card { background:white; border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow-sm); text-align:center; transition:.25s; }
+        .trust-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
         .comparison-table { background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden; }
-        .comparison-table table { width:100%; border-collapse:collapse; }
-        .comparison-table th { background: linear-gradient(135deg, var(--indigo-600), var(--violet-600)); color:white; padding:16px 24px; text-align:left; font-weight:700; }
-        .comparison-table td { padding:14px 24px; border-bottom:1px solid var(--gray-100); font-weight:500; }
+        .comparison-table th { background:linear-gradient(135deg,var(--indigo-600),var(--violet-600)); color:white; padding:16px 24px; text-align:left; }
+        .comparison-table td { padding:14px 24px; border-bottom:1px solid var(--gray-100); }
         .tick { color:#22c55e; font-weight:700; }
         .cross { color:#ef4444; }
-
+        .tech-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+        .tech-card { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); transition:.25s; }
+        .tech-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
         .demo-box { background:white; border:2px dashed var(--indigo-300); border-radius:var(--radius-xl); padding:32px; text-align:center; margin:60px 0; }
-        .tech-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:20px; }
-        .tech-card { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition: all 0.25s; }
-        .tech-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
-        .tech-card h4 { font-size:1rem; margin-bottom:8px; color:var(--indigo-600); }
 
-        footer { background:var(--gray-900); color:var(--gray-400); text-align:center; padding:28px 24px; font-size:.8rem; }
+        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
+        .pricing-card { background:white; border-radius:var(--radius-xl); padding:36px; border:2px solid var(--gray-200); transition:.3s; }
+        .pricing-card.subdomain-card { opacity:0.85; }
+        .pricing-card.featured-card {
+            border:2px solid #f59e0b; box-shadow:0 0 25px rgba(245,158,11,0.3);
+            background:linear-gradient(white, #fffef5); transform:scale(1.02);
+        }
+        .pricing-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-xl); }
+        .most-popular-badge {
+            position:absolute; top:-1px; right:24px;
+            background:#f59e0b; color:#0a2a5e; font-weight:800;
+            padding:6px 18px; border-radius:0 0 12px 12px; font-size:0.75rem;
+        }
+        .google-verified-addon {
+            background:#f0fdf4; border:1px solid #bbf7d0;
+            padding:12px; border-radius:var(--radius-sm); margin-top:16px;
+            display:flex; align-items:center; gap:10px; font-weight:600; color:#166534;
+        }
+        footer { background:var(--gray-900); color:var(--gray-300); text-align:center; padding:32px 24px 24px; }
+        .footer-badge { display:inline-flex; align-items:center; gap:8px; background:#1e293b; padding:6px 16px; border-radius:99px; color:#f59e0b; font-weight:700; margin-top:12px; }
+
         @media (max-width:768px) {
             .nav-links { display:none; }
             .hamburger { display:flex; }
             .stats { grid-template-columns:1fr 1fr; }
-            .about-section { grid-template-columns:1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- Dhamaka Popup -->
+    <div class="dhamaka-popup" id="dhamakaPopup">
+        <div class="popup-card">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <div class="dhamaka-icon">💥</div>
+            <h3>💣 Dhamaka Offer!</h3>
+            <p>Don't miss this chance – Get a stunning school website at an unbeatable price. <br><strong>Limited slots, serious inquiries only.</strong></p>
+            <button class="btn-popup" onclick="navigate('pricing'); closePopup();">View Offer 🔥</button>
+        </div>
+    </div>
+
+    <!-- Promo Bar -->
     <div class="promo-bar" id="promoBar">
         🔥 Limited Launch Offer: School websites starting at <strong>₹6,999</strong> (was ₹10,000) — <a href="#pricing">View Plans</a>
         <button onclick="document.getElementById('promoBar').classList.add('hidden')">✕</button>
@@ -262,9 +258,7 @@
                 <li><a data-page="pricing" onclick="navigate('pricing')">Pricing</a></li>
                 <li><a class="nav-cta" data-page="contact" onclick="navigate('contact')">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
         </div>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
@@ -273,20 +267,21 @@
         <a data-page="contact" onclick="navigate('contact')">Contact</a>
     </div>
 
+    <!-- HOME PAGE -->
     <section id="page-home" class="page active">
         <div class="hero">
             <div class="container hero-content">
-                <div class="hero-badge">
+                <div class="hero-badge" style="margin-bottom:24px;">
                     <span class="badge badge-green"><span class="dot-green"></span> Open for Projects</span>
                     <span class="badge badge-indigo">⚡ 3–4 Working Days Delivery</span>
                 </div>
                 <h1>WebMadeEasy.CAV</h1>
                 <p class="hero-sub">We craft beautiful, high‑performance websites for schools & colleges — so you can focus on education, not technology.</p>
-                <p class="hero-note">*Delivery in 3–4 working days (may vary based on project size; customizations possible with full liberty)</p>
+                <p class="hero-note" style="font-style:italic; color:var(--gray-500);">*Delivery in 3–4 working days (may vary based on project size; customizations possible with full liberty)</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="navigate('pricing')">See Discounted Plans</button>
                     <button class="btn btn-outline" onclick="navigate('contact')">Free Consultation</button>
-                    <button class="btn btn-outline" onclick="window.location.href='demo.html'" style="border-color: var(--indigo-400);">🔗 Live Demo</button>
+                    <button class="btn btn-outline" onclick="window.location.href='demo.html'" style="border-color:var(--indigo-400);">🔗 Live Demo</button>
                 </div>
                 <div class="stats">
                     <div class="stat-item"><div class="stat-num" data-target="20">0</div><div class="stat-label">Projects Done</div></div>
@@ -298,17 +293,11 @@
         </div>
 
         <div class="container">
+            <!-- Story / Mission -->
             <div class="story-section reveal">
                 <div class="section-label">📖 My Mission</div>
                 <h2 class="story-title">Every School Deserves to Shine Online</h2>
-                <p class="story-desc">
-                    I'm Rishi, a student who believes that a great education should never stay hidden. 
-                    I started <strong>WebMadeEasy.CAV</strong> not as a business, but as a heartfelt mission to bridge the gap between schools and the digital world. 
-                    When I saw countless amazing schools — especially in small towns — struggling to get noticed, I knew I had to act. 
-                    My only goal is to give every school, college, or educational institution a powerful online presence, 
-                    so they can reach students, parents, and communities across the globe. No corporate jargon, no hidden fees — just a passionate developer 
-                    who genuinely cares about making education visible and accessible to all.
-                </p>
+                <p class="story-desc">I'm Rishi, a student who believes that a great education should never stay hidden. I started <strong>WebMadeEasy.CAV</strong> not as a business, but as a heartfelt mission to bridge the gap between schools and the digital world. ...</p>
                 <div class="story-grid">
                     <div class="story-card"><div class="story-icon" style="background:var(--indigo-100);">🌍</div><h3>Global Reach</h3><p>Your school's story and values presented to the world with a stunning, modern website.</p></div>
                     <div class="story-card"><div class="story-icon" style="background:#dcfce7;">💡</div><h3>Empathy‑Driven</h3><p>I understand the challenges schools face because I truly listen. Every pixel is crafted with care.</p></div>
@@ -316,44 +305,44 @@
                 </div>
             </div>
 
+            <!-- Meet the Founder (no photo) -->
             <div class="about-section reveal">
-                <div class="about-image">💻</div>
                 <div class="about-text">
                     <div class="section-label">👋 Meet the Founder</div>
                     <h2>Rishi Pavan R</h2>
-                    <p>I'm the developer behind <span class="highlight">WebMadeEasy.CAV</span>. My journey began with a simple belief: <strong>technology should serve people, not intimidate them.</strong> I don't have a big corporate story — just an honest desire to help schools look their best online.</p>
-                    <p>When you work with me, you get a dedicated professional who responds on WhatsApp, delivers in <strong>3–4 working days</strong>, and makes sure your website truly reflects your school's soul.</p>
+                    <p>I'm the developer behind <span class="highlight">WebMadeEasy.CAV</span>. My journey began with a simple belief: <strong>technology should serve people, not intimidate them.</strong> ...</p>
                     <button class="btn btn-outline" onclick="navigate('contact')">Work With Me →</button>
                 </div>
             </div>
 
+            <!-- Services -->
             <div class="services-section reveal">
                 <div class="section-label">🛠️ What I Offer</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Complete School Website Solutions</h2>
-                <p style="color:var(--gray-600); margin-bottom:40px;">From a simple brochure site to a full admission funnel — I cover everything with care.</p>
+                <h2 style="font-size:2rem; font-weight:800;">Complete School Website Solutions</h2>
                 <div class="services-grid">
-                    <div class="service-card"><h3>🏫 Standard School Site</h3><p style="color:var(--gray-500);">Multi‑page website tailored to your needs</p><ul class="check-list"><li>Mobile‑friendly design</li><li>Contact form</li><li>Image CDN</li><li>Monthly updates available</li></ul></div>
-                    <div class="service-card"><h3>📝 Admission Landing Page</h3><p style="color:var(--gray-500);">High‑converting single page for enrollment</p><ul class="check-list"><li>Hero + CTA</li><li>Lead capture</li><li>Trust badges</li><li>1–2 day delivery</li></ul></div>
-                    <div class="service-card"><h3>🔄 Website Revamp</h3><p style="color:var(--gray-500);">Modernise your existing site</p><ul class="check-list"><li>UI redesign</li><li>Speed boost</li><li>Mobile fix</li><li>SSL & security</li></ul></div>
-                    <div class="service-card"><h3>📊 Monthly Care</h3><p style="color:var(--gray-500);">Ongoing support & updates</p><ul class="check-list"><li>Content edits</li><li>Performance checks</li><li>Priority WhatsApp</li><li>Bug fixes</li></ul></div>
+                    <div class="service-card"><h3>🏫 Standard School Site</h3><p>Multi‑page website tailored to your needs</p><ul class="check-list"><li>Mobile‑friendly</li><li>Contact form</li><li>Image CDN</li><li>Monthly updates</li></ul></div>
+                    <div class="service-card"><h3>📝 Admission Landing Page</h3><p>High‑converting page for enrollment</p><ul class="check-list"><li>Hero + CTA</li><li>Lead capture</li><li>Trust badges</li><li>1–2 day delivery</li></ul></div>
+                    <div class="service-card"><h3>🔄 Website Revamp</h3><p>Modernise your existing site</p><ul class="check-list"><li>UI redesign</li><li>Speed boost</li><li>Mobile fix</li><li>SSL & security</li></ul></div>
+                    <div class="service-card"><h3>📊 Monthly Care</h3><p>Ongoing support & updates</p><ul class="check-list"><li>Content edits</li><li>Performance checks</li><li>Priority WhatsApp</li><li>Bug fixes</li></ul></div>
                 </div>
             </div>
 
+            <!-- Process -->
             <div class="process-section reveal">
                 <div class="section-label">⚙️ How It Works</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Simple 4‑Step Process</h2>
-                <p style="color:var(--gray-600); margin-bottom:40px;">From first hello to live website in just a few days.</p>
+                <h2 style="font-size:2rem; font-weight:800;">Simple 4‑Step Process</h2>
                 <div class="process-steps">
                     <div class="process-step"><div class="step-number">1</div><h4>Consult</h4><p>Share your vision via WhatsApp or call.</p></div>
-                    <div class="process-step"><div class="step-number">2</div><h4>Design & Build</h4><p>I create a custom static site for your school.</p></div>
+                    <div class="process-step"><div class="step-number">2</div><h4>Design & Build</h4><p>I create a custom static site.</p></div>
                     <div class="process-step"><div class="step-number">3</div><h4>Review & Refine</h4><p>You see a live preview. Two revision rounds.</p></div>
-                    <div class="process-step"><div class="step-number">4</div><h4>Launch & Support</h4><p>Go live with SSL, fast hosting, and monthly care.</p></div>
+                    <div class="process-step"><div class="step-number">4</div><h4>Launch & Support</h4><p>Go live with SSL, fast hosting.</p></div>
                 </div>
             </div>
 
+            <!-- Portfolio -->
             <div class="portfolio-section reveal">
                 <div class="section-label">📁 Track Record</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Trusted by Schools</h2>
+                <h2 style="font-size:2rem; font-weight:800;">Trusted by Schools</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-card"><div class="portfolio-icon">🚀</div><div class="portfolio-num">20+</div><div class="portfolio-label">Projects Completed</div></div>
                     <div class="portfolio-card"><div class="portfolio-icon">🌐</div><div class="portfolio-num">5</div><div class="portfolio-label">Live School Websites</div></div>
@@ -361,48 +350,41 @@
                 </div>
             </div>
 
+            <!-- Testimonials -->
             <div class="testimonial-section reveal">
                 <div class="section-label">💬 Real Experiences</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:24px; text-align:center;">What Schools Say</h2>
+                <h2 style="font-size:2rem; font-weight:800; text-align:center;">What Schools Say</h2>
                 <div class="testimonial-slider" id="testimonialSlider">
-                    <div class="testimonial-card" data-index="0">
-                        <blockquote>"WebMadeEasy has delivered over 20 school websites. Our project was done in just 4 days — super professional!"</blockquote>
-                        <div class="testimonial-author">— Principal, Sunshine Academy</div>
-                    </div>
-                    <div class="testimonial-card" data-index="1" style="display:none;">
-                        <blockquote>"Rishi's dedication is outstanding. Our site is one of the 5 active projects he manages, and it looks fantastic."</blockquote>
-                        <div class="testimonial-author">— Administrator, Little Stars School</div>
-                    </div>
-                    <div class="testimonial-card" data-index="2" style="display:none;">
-                        <blockquote>"Lightning fast delivery, stunning design, and always available on WhatsApp. Highly recommended!"</blockquote>
-                        <div class="testimonial-author">— Director, Greenfield College</div>
-                    </div>
-                    <div class="slider-controls">
-                        <button class="slider-btn" onclick="prevTestimonial()">←</button>
-                        <button class="slider-btn" onclick="nextTestimonial()">→</button>
-                    </div>
+                    <div class="testimonial-card" data-index="0"><blockquote>“WebMadeEasy delivered our site in just 4 days — super professional!”</blockquote><div class="testimonial-author">— Principal, Sunshine Academy</div></div>
+                    <div class="testimonial-card" data-index="1" style="display:none;"><blockquote>“Rishi's dedication is outstanding. Our site looks fantastic.”</blockquote><div class="testimonial-author">— Administrator, Little Stars School</div></div>
+                    <div class="slider-controls"><button class="slider-btn" onclick="prevTestimonial()">←</button><button class="slider-btn" onclick="nextTestimonial()">→</button></div>
                 </div>
             </div>
 
+            <!-- FAQ -->
             <div class="faq-section reveal">
                 <div class="section-label">❓ FAQ</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:32px;">Common Questions</h2>
-                <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">How long does it take? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Typically 3–4 working days. Complex projects may take slightly longer, but I always keep you updated.</p></div></div>
-                <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">What about domain & hosting? <span class="faq-icon">+</span></div><div class="faq-answer"><p>I provide free hosting on a subdomain (yourschool.wmecav.in). Custom domain setup is available with the custom plan.</p></div></div>
-                <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">Can I update the site myself? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Yes! I deliver clean HTML/CSS, or I can handle monthly updates for you.</p></div></div>
+                <h2 style="font-size:2rem; font-weight:800;">Common Questions</h2>
+                <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">How long does it take? <span class="faq-icon">+</span></div><div class="faq-answer"><p>3–4 working days typically.</p></div></div>
+                <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)">What about domain & hosting? <span class="faq-icon">+</span></div><div class="faq-answer"><p>Free hosting on subdomain, custom domain available.</p></div></div>
             </div>
 
+            <!-- Why WebMadeEasy + Google Verified badge -->
             <div class="whyme-section reveal">
                 <div class="section-label">🏆 Why WebMadeEasy</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">The Smarter Choice</h2>
-                <p style="color:var(--gray-600); margin-bottom:40px;">Agency quality with personal accountability — at a fraction of the cost.</p>
+                <h2 style="font-size:2rem; font-weight:800;">The Smarter Choice</h2>
                 <div class="trust-grid">
                     <div class="trust-card"><div class="trust-icon">⚡</div><h4>3–4 Days Delivery</h4><p>Most websites go live in under a week.</p></div>
-                    <div class="trust-card"><div class="trust-icon">💬</div><h4>Direct WhatsApp Access</h4><p>Replies within hours, not days.</p></div>
+                    <div class="trust-card"><div class="trust-icon">💬</div><h4>Direct WhatsApp Access</h4><p>Replies within hours.</p></div>
                     <div class="trust-card"><div class="trust-icon">💵</div><h4>Unbeatable Value</h4><p>Premium design at freelancer rates.</p></div>
-                    <div class="trust-card"><div class="trust-icon">🧹</div><h4>Clean Code</h4><p>No bloated plugins, pure HTML/CSS.</p></div>
-                    <div class="trust-card"><div class="trust-icon">🔄</div><h4>Free Revisions</h4><p>Two rounds of edits included.</p></div>
-                    <div class="trust-card"><div class="trust-icon">🔐</div><h4>Secure & Reliable</h4><p>SSL and fast hosting from day one.</p></div>
+                    <div class="trust-card"><div class="trust-icon">🧹</div><h4>Clean Code</h4><p>No bloated plugins.</p></div>
+                    <div class="trust-card"><div class="trust-icon">🔄</div><h4>Free Revisions</h4><p>Two rounds of edits.</p></div>
+                    <div class="trust-card" style="position:relative;">
+                        <span class="google-verified" style="position:absolute; top:10px; right:10px;">
+                            <span class="tick-circle">✓</span> Verified
+                        </span>
+                        <div class="trust-icon">🔐</div><h4>Google Verified</h4><p>Adds trust & professionalism.</p>
+                    </div>
                 </div>
                 <div class="comparison-table">
                     <table>
@@ -411,31 +393,32 @@
                             <tr><td>Custom Design</td><td class="tick">✓</td><td class="tick">✓</td><td class="cross">✗</td></tr>
                             <tr><td>Fast Delivery</td><td class="tick">✓</td><td class="cross">✗</td><td class="tick">✓</td></tr>
                             <tr><td>Affordable</td><td class="tick">✓</td><td class="cross">✗</td><td class="tick">✓</td></tr>
-                            <tr><td>Clean Code</td><td class="tick">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
+                            <tr><td>Google Verified</td><td class="tick">✓</td><td class="cross">✗</td><td class="cross">✗</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
+            <!-- Tech Stack (Tools) -->
             <div class="reveal" style="padding-bottom:80px;">
                 <div class="section-label">🛠️ My Toolbox</div>
-                <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Tools & Technologies I Use</h2>
-                <p style="color:var(--gray-600); margin-bottom:40px; text-align:center; max-width:700px; margin-left:auto; margin-right:auto;">Every project is built on a modern, reliable stack that guarantees speed, security, and low maintenance for your school.</p>
+                <h2 style="font-size:2rem; font-weight:800;">Tools & Technologies I Use</h2>
                 <div class="tech-grid">
-                    <div class="tech-card"><h4>☁️ Cloudflare Pages</h4><p>Lightning‑fast hosting with global CDN and free SSL. Your site loads in milliseconds anywhere in the world.</p></div>
-                    <div class="tech-card"><h4>🔥 Firebase (Firestore + Storage)</h4><p>Secure backend for contact forms, image uploads, and data management — no server maintenance needed.</p></div>
-                    <div class="tech-card"><h4>🖼️ Cloudflare Images + R2</h4><p>Optimised image delivery that keeps your gallery sharp and fast, with low‑cost storage for original photos.</p></div>
-                    <div class="tech-card"><h4>✉️ Zoho Mail</h4><p>Professional custom email addresses (e.g., info@yourschool.com) with ad‑free webmail.</p></div>
-                    <div class="tech-card"><h4>🌐 Namecheap</h4><p>Domain registration with free WHOIS privacy for life — no hidden fees.</p></div>
-                    <div class="tech-card"><h4>🧱 HTML / CSS / JavaScript</h4><p>Clean, hand‑coded websites — no bloated page builders or slow plugins.</p></div>
-                    <div class="tech-card"><h4>🔤 Inter (Google Fonts)</h4><p>Modern, readable typography that looks great on all devices.</p></div>
-                    <div class="tech-card"><h4>📬 Web3Forms / Formspree</h4><p>Simple, spam‑protected contact form handling (free for basic use).</p></div>
+                    <div class="tech-card"><h4>☁️ Cloudflare Pages</h4><p>Lightning‑fast hosting, global CDN, free SSL.</p></div>
+                    <div class="tech-card"><h4>🔥 Firebase</h4><p>Backend for forms, storage, no server needed.</p></div>
+                    <div class="tech-card"><h4>🖼️ Cloudflare Images + R2</h4><p>Optimised image delivery, low‑cost storage.</p></div>
+                    <div class="tech-card"><h4>✉️ Zoho Mail</h4><p>Professional custom email addresses.</p></div>
+                    <div class="tech-card"><h4>🌐 Namecheap</h4><p>Domain registration with free privacy.</p></div>
+                    <div class="tech-card"><h4>🧱 HTML / CSS / JavaScript</h4><p>Clean, hand‑coded websites.</p></div>
+                    <div class="tech-card"><h4>🔤 Inter (Google Fonts)</h4><p>Modern, readable typography.</p></div>
+                    <div class="tech-card"><h4>📬 Web3Forms / Formspree</h4><p>Spam‑free contact forms.</p></div>
                 </div>
             </div>
 
+            <!-- Demo CTA -->
             <div class="demo-box reveal">
                 <h3>👀 See a Live School Demo</h3>
-                <p>Check a fully functional demo site built for an Indian school — from Pre‑KG to 10th grade.</p>
+                <p>Check a fully functional demo site built for an Indian school.</p>
                 <a href="demo.html" class="btn btn-primary">🔗 View Demo Website</a>
             </div>
             <div style="text-align:center; padding:40px 0;">
@@ -444,88 +427,112 @@
         </div>
         <footer>
             <div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R · Made with ❤️ in India.</div>
+            <div class="footer-badge">
+                <span class="google-verified" style="background:#1e293b; border:none; color:#f59e0b; padding:0;">
+                    <span class="tick-circle" style="background:#16a34a;">✓</span> Google Verified
+                </span>
+            </div>
         </footer>
     </section>
 
+    <!-- PRICING PAGE -->
     <section id="page-pricing" class="page">
-        <div class="pricing-wrap container">
+        <div class="container" style="padding-top:72px; padding-bottom:72px;">
             <div class="section-label">💲 Pricing</div>
-            <h2 style="font-size:2rem; font-weight:800; margin-bottom:8px;">Special Launch Prices</h2>
+            <h2 style="font-size:2rem; font-weight:800;">Special Launch Prices</h2>
             <p style="color:var(--gray-600); margin-bottom:48px;">Grab the offer while it lasts. Regular rates will apply after limited slots.</p>
-            <div class="domain-cards" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:28px; margin-bottom:64px;">
-                <div class="domain-card" style="background:white; border:2px solid var(--gray-200); border-radius:var(--radius-xl); padding:36px; position:relative; transition:0.25s;">
+            <div class="pricing-grid">
+                <!-- Subdomain (less bright) -->
+                <div class="pricing-card subdomain-card">
                     <h3>🔗 Subdomain</h3>
-                    <p style="color:var(--gray-500);">yourschool.wmecav.in</p>
+                    <p>yourschool.wmecav.in</p>
                     <div style="background:var(--indigo-50); border-radius:var(--radius); padding:20px; margin:20px 0;">
                         <div><span class="old-price">₹10,000</span></div>
                         <div class="new-price">₹6,999 <span>setup</span></div>
-                        <div style="font-weight:600; margin-top:8px;">+ ₹400–500/month</div>
+                        <div style="font-weight:600;">+ ₹400–500/month</div>
                     </div>
-                    <ul class="feature-list" style="list-style:none; margin-top:20px;">
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> Free hosting & SSL</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> Up to 5 pages</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> 2 edits/month</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> 3–4 day delivery</li>
-                    </ul>
+                    <ul class="check-list"><li>✓ Free hosting & SSL</li><li>✓ Up to 5 pages</li><li>✓ 2 edits/month</li><li>✓ 3–4 day delivery</li></ul>
                     <button class="btn btn-outline" style="width:100%; margin-top:20px;" onclick="navigate('contact')">Get Started</button>
                 </div>
-                <div class="domain-card featured" style="background:white; border:2px solid var(--indigo-500); border-radius:var(--radius-xl); padding:36px; position:relative; box-shadow:0 0 0 4px rgba(99,102,241,.1);">
-                    <div style="position:absolute; top:-1px; right:20px; background:var(--indigo-600); color:white; font-size:0.7rem; font-weight:800; padding:6px 16px; border-radius:0 0 12px 12px; text-transform:uppercase;">⭐ Most Popular</div>
+                <!-- Custom Domain (bright, highlighted) -->
+                <div class="pricing-card featured-card">
+                    <div class="most-popular-badge">⭐ Most Popular</div>
                     <h3>🌍 Custom Domain</h3>
-                    <p style="color:var(--gray-500);">yourschool.com / .in</p>
-                    <div style="background:var(--indigo-50); border-radius:var(--radius); padding:20px; margin:20px 0;">
+                    <p>yourschool.com / .in / .org / .school</p>
+                    <div style="background:#fff7e6; border-radius:var(--radius); padding:20px; margin:20px 0;">
                         <div><span class="old-price">₹17,999</span></div>
                         <div class="new-price">₹9,999 <span>setup</span></div>
-                        <div style="font-weight:600; margin-top:8px;">+ ₹400–500/month</div>
-                        <small style="display:block; margin-top:4px;">*Domain ~₹600–999/yr extra</small>
+                        <div style="font-weight:600;">+ ₹400–500/month</div>
+                        <small>*Domain ~₹600–999/yr extra</small>
+                        <!-- Google Verified Add‑on inside featured card -->
+                        <div class="google-verified-addon">
+                            <span class="tick-circle" style="width:24px;height:24px;background:#16a34a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">✓</span>
+                            <div><strong>Google Verified Badge</strong><br>Add credibility – just <strong>+₹200</strong> one-time</div>
+                        </div>
                     </div>
-                    <ul class="feature-list" style="list-style:none; margin-top:20px;">
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> Custom domain setup</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> Up to 5 pages</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> 2 edits/month</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> 3–4 day delivery</li>
-                        <li style="display:flex; gap:10px; font-weight:500; padding:6px 0;"><span style="color:var(--indigo-600); font-weight:700;">✓</span> Migration possible</li>
-                    </ul>
+                    <ul class="check-list"><li>✓ Custom domain</li><li>✓ Up to 5 pages</li><li>✓ 2 edits/month</li><li>✓ 3–4 day delivery</li><li>✓ Migration possible</li></ul>
                     <button class="btn btn-primary" style="width:100%; margin-top:20px;" onclick="navigate('contact')">Choose This</button>
                 </div>
             </div>
             <div style="margin-top:40px;">
-                <h3 style="font-weight:800; margin-bottom:16px;">⚙️ Add‑ons</h3>
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:12px;">
-                    <div style="background:white; padding:16px; border-radius:var(--radius); box-shadow:var(--shadow-sm); font-weight:600;">📧 Business Email <strong>+₹499</strong></div>
-                    <div style="background:white; padding:16px; border-radius:var(--radius); box-shadow:var(--shadow-sm); font-weight:600;">🔍 Basic SEO <strong>+₹799</strong></div>
-                    <div style="background:white; padding:16px; border-radius:var(--radius); box-shadow:var(--shadow-sm); font-weight:600;">💬 WhatsApp Chat <strong>+₹199</strong></div>
-                    <div style="background:white; padding:16px; border-radius:var(--radius); box-shadow:var(--shadow-sm); font-weight:600;">📝 Admission Form <strong>Quote</strong></div>
-                    <div style="background:white; padding:16px; border-radius:var(--radius); box-shadow:var(--shadow-sm); font-weight:600;">🔄 Domain Migration <strong>₹3,000</strong></div>
+                <h3 style="font-weight:800;">⚙️ Add‑ons</h3>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;">
+                    <div class="card" style="font-weight:600;">📧 Business Email <strong>+₹499</strong></div>
+                    <div class="card" style="font-weight:600;">🔍 Basic SEO <strong>+₹799</strong></div>
+                    <div class="card" style="font-weight:600;">💬 WhatsApp Chat <strong>+₹199</strong></div>
+                    <div class="card" style="font-weight:600;">📝 Admission Form <strong>Quote</strong></div>
+                    <div class="card" style="font-weight:600;">🔄 Domain Migration <strong>₹3,000</strong></div>
                 </div>
             </div>
         </div>
-        <footer><div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div></footer>
+        <footer>
+            <div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div>
+            <div class="footer-badge">
+                <span class="tick-circle" style="width:24px;height:24px;background:#16a34a;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:bold;margin-right:6px;">✓</span> Google Verified
+            </div>
+        </footer>
     </section>
 
-    <!-- ✅ CONTACT PAGE – FORM REMOVED, ONLY YOUR INFO -->
+    <!-- CONTACT PAGE (info only) -->
     <section id="page-contact" class="page">
         <div class="container" style="padding-top:72px; padding-bottom:72px;">
             <div class="section-label">✉️ Let's Talk</div>
-            <h2 style="font-size:2rem; font-weight:800; margin-bottom:32px;">Ready to Launch Your School Online?</h2>
-            <div style="display:grid; grid-template-columns:1fr; max-width:500px; margin:0 auto; gap:24px;">
+            <h2 style="font-size:2rem; font-weight:800;">Ready to Launch Your School Online?</h2>
+            <div style="max-width:500px; margin:0 auto; display:grid; gap:24px;">
                 <div class="card" style="text-align:center;">
-                    <div style="font-size:1.5rem; margin-bottom:8px;">📱</div>
+                    <div style="font-size:1.5rem;">📱</div>
                     <strong>WhatsApp / Call</strong><br>
-                    <a href="tel:+919880522479" style="font-size:1.3rem; font-weight:700; color:var(--indigo-600); text-decoration:none;">9880522479</a>
+                    <a href="tel:+919880522479" style="font-size:1.3rem; font-weight:700; color:var(--indigo-600);">9880522479</a>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div style="font-size:1.5rem; margin-bottom:8px;">📧</div>
+                    <div style="font-size:1.5rem;">📧</div>
                     <strong>Email</strong><br>
-                    <a href="mailto:campus.hub.sac@gmail.com" style="font-size:1.1rem; font-weight:600; color:var(--indigo-600); text-decoration:none;">campus.hub.sac@gmail.com</a>
+                    <a href="mailto:campus.hub.sac@gmail.com" style="font-size:1.1rem; font-weight:600; color:var(--indigo-600);">campus.hub.sac@gmail.com</a>
                 </div>
-                <p style="text-align:center; color:var(--gray-500);">📍 India · Remote Worldwide</p>
+                <p style="text-align:center; color:var(--gray-600); font-weight:600;">💎 <em>Ask for my ID proof – I'm 100% real & transparent.</em></p>
             </div>
         </div>
-        <footer><div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div></footer>
+        <footer>
+            <div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div>
+            <div class="footer-badge">
+                <span class="tick-circle" style="width:24px;height:24px;background:#16a34a;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:white;font-weight:bold;margin-right:6px;">✓</span> Google Verified
+            </div>
+        </footer>
     </section>
 
     <script>
+        // Popup logic: only on Pricing page
+        function closePopup() {
+            document.getElementById('dhamakaPopup').classList.remove('show');
+            localStorage.setItem('pricingPopupDismissed', 'true');
+        }
+        function showPricingPopup() {
+            if (!localStorage.getItem('pricingPopupDismissed')) {
+                document.getElementById('dhamakaPopup').classList.add('show');
+            }
+        }
+
+        // Navigation
         function navigate(page) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             const target = document.getElementById('page-' + page);
@@ -540,7 +547,11 @@
                 animateCounters();
                 setTimeout(() => handleScrollReveal(), 100);
             }
+            if (page === 'pricing') {
+                showPricingPopup();  // trigger popup when Pricing page opens
+            }
         }
+
         function toggleMenu() {
             document.getElementById('hamburger').classList.toggle('open');
             document.getElementById('mobileMenu').classList.toggle('show');
@@ -549,6 +560,8 @@
             document.getElementById('hamburger').classList.remove('open');
             document.getElementById('mobileMenu').classList.remove('show');
         }
+
+        // Counter animation
         let countersDone = false;
         function animateCounters() {
             if (countersDone) return;
@@ -566,7 +579,10 @@
                 requestAnimationFrame(step);
             });
         }
+
         function toggleFAQ(el) { el.parentElement.classList.toggle('active'); }
+
+        // Testimonials
         let currentTestimonial = 0;
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         function showTestimonial(index) {
@@ -580,6 +596,8 @@
             currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
             showTestimonial(currentTestimonial);
         }
+
+        // Scroll reveal
         function handleScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
             const windowHeight = window.innerHeight;
