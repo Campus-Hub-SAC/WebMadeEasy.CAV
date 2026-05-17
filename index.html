@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebMadeEasy.CAV — School Websites That Inspire</title>
+    <title>WebMadeEasy.CAV — Professional School Websites | Fast & Affordable</title>
+    <meta name="description" content="WebMadeEasy.CAV by Rishi Pavan R – Stunning school websites in 3–4 days. Starting at ₹6,999. Clean HTML/CSS, no page builders.">
+    <meta name="keywords" content="school website, college website, affordable school site, static website, WebMadeEasy, Rishi Pavan, CBSE school design, fast delivery">
+    <meta name="author" content="Rishi Pavan R">
+    <meta property="og:title" content="WebMadeEasy.CAV — School Websites That Inspire">
+    <meta property="og:description" content="Professional websites for schools & colleges. 3‑4 day delivery, clean code, unbeatable value.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WebMadeEasy.CAV — School Websites That Inspire">
+    <meta name="twitter:description" content="Professional websites for schools & colleges. 3‑4 day delivery, clean code, unbeatable value.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
@@ -37,7 +46,6 @@
         ::-webkit-scrollbar-track { background: var(--gray-100); }
         ::-webkit-scrollbar-thumb { background: var(--indigo-400); border-radius: 99px; }
 
-        /* Promo Bar */
         .promo-bar {
             position: fixed; top:0; left:0; right:0; height:40px;
             background: linear-gradient(135deg, #f97316, #ef4444);
@@ -126,7 +134,6 @@
         .reveal { opacity:0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .reveal.visible { opacity:1; transform: translateY(0); }
 
-        /* Pricing red strikethrough */
         .old-price {
             text-decoration: line-through;
             color: #ef4444;
@@ -141,15 +148,9 @@
             25% { transform: rotate(-2deg); }
             75% { transform: rotate(2deg); }
         }
-        .new-price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--indigo-700);
-        }
+        .new-price { font-size: 2.2rem; font-weight: 800; color: var(--indigo-700); }
         .new-price span { font-size: 1rem; color: var(--gray-500); }
 
-        /* Rest of the styles remain unchanged (hero, cards, etc.) */
-        /* (I'm including them compactly for brevity; they are identical to previous version) */
         .hero { padding: 60px 0 60px; text-align:center; position:relative; }
         .hero-badge { margin-bottom:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
         .badge { padding:6px 14px; border-radius:99px; font-size:.8rem; font-weight:700; display:inline-flex; align-items:center; gap:6px; }
@@ -233,7 +234,6 @@
         .cross { color:#ef4444; }
 
         .demo-box { background:white; border:2px dashed var(--indigo-300); border-radius:var(--radius-xl); padding:32px; text-align:center; margin:60px 0; }
-
         .tech-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:20px; }
         .tech-card { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition: all 0.25s; }
         .tech-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-lg); }
@@ -260,7 +260,7 @@
             <ul class="nav-links">
                 <li><a class="active" data-page="home" onclick="navigate('home')">Home</a></li>
                 <li><a data-page="pricing" onclick="navigate('pricing')">Pricing</a></li>
-                <li><a class="nav-cta" data-page="contact" onclick="navigate('contact')">Let's Talk →</a></li>
+                <li><a class="nav-cta" data-page="contact" onclick="navigate('contact')">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
@@ -286,7 +286,7 @@
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="navigate('pricing')">See Discounted Plans</button>
                     <button class="btn btn-outline" onclick="navigate('contact')">Free Consultation</button>
-                    <button class="btn btn-outline" onclick="window.open('demo.html','_blank')" style="border-color: var(--indigo-400);">🔗 Live Demo</button>
+                    <button class="btn btn-outline" onclick="window.location.href='demo.html'" style="border-color: var(--indigo-400);">🔗 Live Demo</button>
                 </div>
                 <div class="stats">
                     <div class="stat-item"><div class="stat-num" data-target="20">0</div><div class="stat-label">Projects Done</div></div>
@@ -302,7 +302,7 @@
                 <div class="section-label">📖 My Mission</div>
                 <h2 class="story-title">Every School Deserves to Shine Online</h2>
                 <p class="story-desc">
-                    I’m Rishi, a student who believes that a great education should never stay hidden. 
+                    I'm Rishi, a student who believes that a great education should never stay hidden. 
                     I started <strong>WebMadeEasy.CAV</strong> not as a business, but as a heartfelt mission to bridge the gap between schools and the digital world. 
                     When I saw countless amazing schools — especially in small towns — struggling to get noticed, I knew I had to act. 
                     My only goal is to give every school, college, or educational institution a powerful online presence, 
@@ -310,7 +310,7 @@
                     who genuinely cares about making education visible and accessible to all.
                 </p>
                 <div class="story-grid">
-                    <div class="story-card"><div class="story-icon" style="background:var(--indigo-100);">🌍</div><h3>Global Reach</h3><p>Your school’s story and values presented to the world with a stunning, modern website.</p></div>
+                    <div class="story-card"><div class="story-icon" style="background:var(--indigo-100);">🌍</div><h3>Global Reach</h3><p>Your school's story and values presented to the world with a stunning, modern website.</p></div>
                     <div class="story-card"><div class="story-icon" style="background:#dcfce7;">💡</div><h3>Empathy‑Driven</h3><p>I understand the challenges schools face because I truly listen. Every pixel is crafted with care.</p></div>
                     <div class="story-card"><div class="story-icon" style="background:#ede9fe;">🤝</div><h3>Not Just a Developer</h3><p>I become your digital partner — someone who celebrates your growth and shares your vision.</p></div>
                 </div>
@@ -366,15 +366,15 @@
                 <h2 style="font-size:2rem; font-weight:800; margin-bottom:24px; text-align:center;">What Schools Say</h2>
                 <div class="testimonial-slider" id="testimonialSlider">
                     <div class="testimonial-card" data-index="0">
-                        <blockquote>“WebMadeEasy has delivered over 20 school websites. Our project was done in just 4 days — super professional!”</blockquote>
+                        <blockquote>"WebMadeEasy has delivered over 20 school websites. Our project was done in just 4 days — super professional!"</blockquote>
                         <div class="testimonial-author">— Principal, Sunshine Academy</div>
                     </div>
                     <div class="testimonial-card" data-index="1" style="display:none;">
-                        <blockquote>“Rishi’s dedication is outstanding. Our site is one of the 5 active projects he manages, and it looks fantastic.”</blockquote>
+                        <blockquote>"Rishi's dedication is outstanding. Our site is one of the 5 active projects he manages, and it looks fantastic."</blockquote>
                         <div class="testimonial-author">— Administrator, Little Stars School</div>
                     </div>
                     <div class="testimonial-card" data-index="2" style="display:none;">
-                        <blockquote>“Lightning fast delivery, stunning design, and always available on WhatsApp. Highly recommended!”</blockquote>
+                        <blockquote>"Lightning fast delivery, stunning design, and always available on WhatsApp. Highly recommended!"</blockquote>
                         <div class="testimonial-author">— Director, Greenfield College</div>
                     </div>
                     <div class="slider-controls">
@@ -417,7 +417,6 @@
                 </div>
             </div>
 
-            <!-- NEW: Tech Stack Section -->
             <div class="reveal" style="padding-bottom:80px;">
                 <div class="section-label">🛠️ My Toolbox</div>
                 <h2 style="font-size:2rem; font-weight:800; margin-bottom:12px;">Tools & Technologies I Use</h2>
@@ -437,7 +436,7 @@
             <div class="demo-box reveal">
                 <h3>👀 See a Live School Demo</h3>
                 <p>Check a fully functional demo site built for an Indian school — from Pre‑KG to 10th grade.</p>
-                <a href="demo.html" class="btn btn-primary" target="_blank">🔗 View Demo Website</a>
+                <a href="demo.html" class="btn btn-primary">🔗 View Demo Website</a>
             </div>
             <div style="text-align:center; padding:40px 0;">
                 <button class="btn btn-primary" onclick="navigate('pricing')">Explore Discounted Pricing →</button>
@@ -448,7 +447,6 @@
         </footer>
     </section>
 
-    <!-- Pricing Page with red strikethrough and updated migration fee -->
     <section id="page-pricing" class="page">
         <div class="pricing-wrap container">
             <div class="section-label">💲 Pricing</div>
@@ -505,29 +503,23 @@
         <footer><div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div></footer>
     </section>
 
-    <!-- Contact Page unchanged -->
+    <!-- ✅ CONTACT PAGE – FORM REMOVED, ONLY YOUR INFO -->
     <section id="page-contact" class="page">
-        <div class="contact-wrap container">
+        <div class="container" style="padding-top:72px; padding-bottom:72px;">
             <div class="section-label">✉️ Let's Talk</div>
             <h2 style="font-size:2rem; font-weight:800; margin-bottom:32px;">Ready to Launch Your School Online?</h2>
-            <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1.2fr; gap:40px;">
-                <div>
-                    <div><strong>📱 WhatsApp</strong><br>+91 99999 99999</div>
-                    <div><strong>📧 Email</strong><br>hello@wmecav.com</div>
-                    <div><strong>📍 Location</strong><br>India · Remote Worldwide</div>
+            <div style="display:grid; grid-template-columns:1fr; max-width:500px; margin:0 auto; gap:24px;">
+                <div class="card" style="text-align:center;">
+                    <div style="font-size:1.5rem; margin-bottom:8px;">📱</div>
+                    <strong>WhatsApp / Call</strong><br>
+                    <a href="tel:+919880522479" style="font-size:1.3rem; font-weight:700; color:var(--indigo-600); text-decoration:none;">9880522479</a>
                 </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)" style="background:white; padding:40px; border-radius:var(--radius-xl); box-shadow:var(--shadow-md);">
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-                        <div><label>First Name</label><input type="text" required style="width:100%; padding:12px;"></div>
-                        <div><label>Last Name</label><input type="text" style="width:100%; padding:12px;"></div>
-                    </div>
-                    <div style="margin-top:16px;"><label>Email</label><input type="email" required style="width:100%; padding:12px;"></div>
-                    <div style="margin-top:16px;"><label>Phone</label><input type="tel" style="width:100%; padding:12px;"></div>
-                    <div style="margin-top:16px;"><label>Service</label><select style="width:100%; padding:12px;"><option>School Website</option><option>Landing Page</option></select></div>
-                    <div style="margin-top:16px;"><label>Project Details</label><textarea rows="4" required style="width:100%; padding:12px;"></textarea></div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; margin-top:20px;">Send Message 🚀</button>
-                    <p style="margin-top:12px; color:gray; display:none; font-weight:600;" id="successMsg">✅ Sent! I'll reply within 2 hours.</p>
-                </form>
+                <div class="card" style="text-align:center;">
+                    <div style="font-size:1.5rem; margin-bottom:8px;">📧</div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:campus.hub.sac@gmail.com" style="font-size:1.1rem; font-weight:600; color:var(--indigo-600); text-decoration:none;">campus.hub.sac@gmail.com</a>
+                </div>
+                <p style="text-align:center; color:var(--gray-500);">📍 India · Remote Worldwide</p>
             </div>
         </div>
         <footer><div>© 2025 <strong>WebMadeEasy.CAV</strong> — Founder Rishi Pavan R</div></footer>
@@ -573,12 +565,6 @@
                 }
                 requestAnimationFrame(step);
             });
-        }
-        function handleSubmit(e) {
-            e.preventDefault();
-            document.getElementById('successMsg').style.display = 'block';
-            e.target.reset();
-            setTimeout(() => document.getElementById('successMsg').style.display = 'none', 4000);
         }
         function toggleFAQ(el) { el.parentElement.classList.toggle('active'); }
         let currentTestimonial = 0;
