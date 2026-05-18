@@ -8,180 +8,375 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* ========== GLOBAL RESET & BASE ========== */
+        /* ================================================================
+           GLOBAL RESET & BASE
+        ================================================================ */
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: #f5f7fb; color: #333; line-height: 1.6; overflow-x: hidden; }
-        h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; font-weight: 700; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 500;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #1e293b;
+        }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; display: block; }
 
-        /* ========== SELECTION SCREEN ========== */
+        /* ================================================================
+           SELECTION SCREEN
+        ================================================================ */
         .demo-selector {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: 100vh; padding: 40px 20px; text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             position: relative;
         }
         .demo-selector.hidden { display: none; }
-        .demo-selector h1 { font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 16px; }
-        .demo-selector .subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 50px; }
+        .demo-selector h1 {
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            margin-bottom: 16px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .demo-selector .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
         .back-to-main {
-            position: absolute; top: 20px; left: 20px;
-            background: rgba(255,255,255,0.2); color: white; padding: 12px 24px;
-            border-radius: 50px; font-weight: 600; display: flex; align-items: center; gap: 6px;
-            backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: 0.3s;
         }
-        .back-to-main:hover { background: rgba(255,255,255,0.35); }
-
-        .demo-cards { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .back-to-main:hover {
+            background: rgba(255,255,255,0.35);
+        }
+        .demo-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
         .demo-card {
-            background: white; border-radius: 24px; padding: 40px 30px; width: 280px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25); cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s; color: #1f2937;
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            width: 280px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #1f2937;
         }
-        .demo-card:hover { transform: translateY(-10px); box-shadow: 0 30px 50px rgba(0,0,0,0.35); }
-        .demo-card .icon { font-size: 4rem; margin-bottom: 20px; display: block; }
-        .demo-card h2 { font-size: 1.8rem; margin-bottom: 10px; }
-        .demo-card p { color: #6b7280; font-weight: 500; }
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.35);
+        }
+        .demo-card .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .demo-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .demo-card p {
+            color: #6b7280;
+            font-weight: 500;
+        }
 
-        /* ========== DEMO SITES CONTAINER ========== */
-        .demo-site { display: none; animation: fadeIn 0.5s ease; }
+        /* ================================================================
+           DEMO SITES CONTAINER
+        ================================================================ */
+        .demo-site {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
         .demo-site.active { display: block; }
-        @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .back-btn {
-            position: fixed; top: 20px; left: 20px; background: white; border: none;
-            border-radius: 50px; padding: 10px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            font-weight: 600; cursor: pointer; z-index: 1000; display: flex; align-items: center; gap: 8px;
-            color: #4a5568; transition: 0.3s;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            transition: 0.3s;
         }
         .back-btn:hover { background: #edf2f7; }
 
-        /* ========== SHARED PAGE SYSTEM ========== */
-        .page { display: none; }
-        .page.active { display: block; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        /* Hamburger general */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-        /* ========== SCHOOL DEMO STYLES ========== */
-        .school-demo { font-family: 'Inter', sans-serif; background: #f8fafc; }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            background: inherit;
+            padding: 20px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .mobile-nav.show { display: flex; }
+        .mobile-nav a {
+            padding: 12px 0;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* ================================================================
+           SCHOOL DEMO SPECIFIC STYLES
+        ================================================================ */
+        .school-demo {
+            background: #f8fafc;
+        }
         .school-header {
-            background: #0a2a5e; color: white; padding: 20px 40px;
-            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+            background: #0a2a5e;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
         }
-        .school-logo { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 800; }
+        .school-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
         .school-logo span { color: #f59e0b; }
-        .school-nav { display: flex; gap: 6px; flex-wrap: wrap; }
-        .school-nav a {
-            color: rgba(255,255,255,0.85); padding: 8px 16px; border-radius: 6px;
-            font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: 0.2s;
+        .school-nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
         }
-        .school-nav a:hover, .school-nav a.active { background: #f59e0b; color: #0a2a5e; }
-
+        .school-nav a {
+            color: rgba(255,255,255,0.85);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .school-nav a:hover,
+        .school-nav a.active {
+            background: #f59e0b;
+            color: #0a2a5e;
+        }
         .school-hero {
             background: linear-gradient(rgba(10,42,94,0.7), rgba(10,42,94,0.7)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600') center/cover;
-            color: white; text-align: center; padding: 120px 20px;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
         }
-        .school-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 20px; }
-        .school-hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; }
-        .btn-gold { background: #f59e0b; color: #0a2a5e; padding: 14px 36px; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .school-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .btn-gold {
+            background: #f59e0b;
+            color: #0a2a5e;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
         .btn-gold:hover { background: #fbbf24; }
 
         .school-stats {
-            display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
-            background: white; padding: 40px; margin-top: -50px;
-            border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            position: relative; z-index: 2; max-width: 1000px; margin-left: auto; margin-right: auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            background: white;
+            padding: 40px;
+            margin-top: -50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .stat-box { text-align: center; }
-        .stat-box .num { font-size: 2.5rem; font-weight: 900; color: #0a2a5e; }
-        .stat-box .label { font-weight: 600; color: #4a5568; text-transform: uppercase; font-size: 0.9rem; }
+        .stat-box .num {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #0a2a5e;
+        }
+        .stat-box .label {
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
 
-        .school-page { padding: 80px 0; }
-        .school-page h2 { font-size: 2.4rem; color: #0a2a5e; text-align: center; margin-bottom: 40px; }
-        .school-page .subhead { text-align: center; color: #64748b; max-width: 600px; margin: -20px auto 40px; }
+        .school-page {
+            display: none;
+            padding: 80px 0;
+        }
+        .school-page.active { display: block; }
+        .school-page h2 {
+            font-size: 2.4rem;
+            color: #0a2a5e;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .school-page .subhead {
+            text-align: center;
+            color: #64748b;
+            max-width: 600px;
+            margin: -20px auto 40px;
+        }
 
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
         .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .card h3 { font-size: 1.5rem; margin-bottom: 12px; color: #0a2a5e; }
 
-        .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-        .staff-card { background: white; border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .staff-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
         .staff-card:hover { transform: translateY(-5px); }
-        .staff-card img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; border: 3px solid #f59e0b; }
+        .staff-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #f59e0b;
+        }
 
-        .school-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .school-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; transition: 0.3s; }
+        .school-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .school-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
         .school-gallery img:hover { transform: scale(1.05); }
 
-        .fee-table { width: 100%; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-collapse: collapse; }
-        .fee-table th { background: #0a2a5e; color: white; padding: 16px; text-align: left; }
-        .fee-table td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; }
+        .fee-table {
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-collapse: collapse;
+        }
+        .fee-table th {
+            background: #0a2a5e;
+            color: white;
+            padding: 16px;
+            text-align: left;
+        }
+        .fee-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-        .school-footer { background: #0a2a5e; color: rgba(255,255,255,0.8); text-align: center; padding: 40px 20px; margin-top: 60px; }
+        .school-footer {
+            background: #0a2a5e;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
         .school-footer a { color: #f59e0b; }
 
-        /* ========== EVENTS DEMO STYLES ========== */
-        .events-demo { background: #0f172a; color: #f1f5f9; }
-        .events-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1e293b; flex-wrap: wrap; }
-        .events-logo { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 800; color: #f59e0b; }
-        .events-nav { display: flex; gap: 10px; flex-wrap: wrap; }
-        .events-nav a { color: #cbd5e1; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
-        .events-nav a:hover, .events-nav a.active { background: #f59e0b; color: #0f172a; }
-
-        .events-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600') center/cover;
-            color: white; text-align: center; padding: 140px 20px;
-        }
-        .events-hero h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 900; margin-bottom: 20px; }
-        .btn-rose { background: #e11d48; color: white; padding: 14px 36px; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; }
-        .btn-rose:hover { background: #f43f5e; }
-
-        .events-page { padding: 80px 0; }
-        .events-page h2 { font-size: 2.4rem; color: #f59e0b; text-align: center; margin-bottom: 40px; }
-
-        .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .event-card { background: #1e293b; border-radius: 16px; overflow: hidden; transition: 0.3s; }
-        .event-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .event-card img { width: 100%; height: 200px; object-fit: cover; }
-        .event-card .info { padding: 24px; }
-        .event-card h3 { color: white; margin-bottom: 8px; }
-
-        .events-footer { background: #1e293b; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        .events-footer a { color: #f59e0b; }
-
-        /* ========== PHONE DEMO STYLES ========== */
-        .phone-demo { background: #f9fafb; }
-        .phone-header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .phone-logo { font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 800; color: #4f46e5; }
-        .phone-nav { display: flex; gap: 10px; flex-wrap: wrap; }
-        .phone-nav a { color: #334155; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s; }
-        .phone-nav a:hover, .phone-nav a.active { background: #4f46e5; color: white; }
-
-        .phone-hero { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; text-align: center; padding: 100px 20px; }
-        .phone-hero h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 900; margin-bottom: 20px; }
-        .btn-white { background: white; color: #4f46e5; padding: 14px 36px; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; }
-        .btn-white:hover { background: #f1f5f9; }
-
-        .phone-page { padding: 80px 0; }
-        .phone-page h2 { font-size: 2.4rem; color: #4f46e5; text-align: center; margin-bottom: 40px; }
-
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .product-card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 35px rgba(0,0,0,0.1); }
-        .product-card img { height: 200px; object-fit: contain; margin-bottom: 16px; }
-        .product-card .price { font-size: 1.8rem; font-weight: 800; color: #4f46e5; margin: 10px 0; }
-
-        .phone-footer { background: #4f46e5; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        .phone-footer a { color: #fbbf24; }
-
-        /* ========== RESPONSIVE ========== */
+        /* Responsive for school */
         @media (max-width: 768px) {
-            .demo-selector h1 { font-size: 2rem; }
-            .demo-cards { flex-direction: column; align-items: center; }
-            .school-hero h1, .events-hero h1, .phone-hero h1 { font-size: 2.2rem; }
-            .school-stats { flex-direction: column; gap: 20px; }
-            .school-header, .events-header, .phone-header { flex-direction: column; gap: 15px; }
+            .school-nav { display: none; }
+            .hamburger { display: flex; }
+            .school-header { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -226,10 +421,24 @@
                 <a data-page="fees">Fees</a>
                 <a data-page="contact">Contact</a>
             </nav>
+            <button class="hamburger" id="schoolHamburger" onclick="toggleSchoolMenu()">
+                <span></span><span></span><span></span>
+            </button>
         </header>
+        <div class="mobile-nav" id="schoolMobileNav">
+            <a class="active" data-page="home" onclick="navigateSchool('home')">Home</a>
+            <a data-page="about" onclick="navigateSchool('about')">About</a>
+            <a data-page="academics" onclick="navigateSchool('academics')">Academics</a>
+            <a data-page="staff" onclick="navigateSchool('staff')">Staff</a>
+            <a data-page="achievements" onclick="navigateSchool('achievements')">Achievements</a>
+            <a data-page="sports" onclick="navigateSchool('sports')">Sports</a>
+            <a data-page="gallery" onclick="navigateSchool('gallery')">Gallery</a>
+            <a data-page="fees" onclick="navigateSchool('fees')">Fees</a>
+            <a data-page="contact" onclick="navigateSchool('contact')">Contact</a>
+        </div>
 
         <!-- School Pages -->
-        <div class="page active" id="school-home">
+        <div class="school-page active" id="school-home">
             <div class="school-hero">
                 <h1>Nurturing Leaders of Tomorrow</h1>
                 <p>Premier CBSE school in Bangalore offering holistic education from Pre‑KG to Class X. Academic excellence, values, and all‑round development since 1999.</p>
@@ -254,8 +463,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-about">
-            <div class="container school-page">
+        <div class="school-page" id="school-about">
+            <div class="container">
                 <h2>About Our School</h2>
                 <p class="subhead">Discover the vision, infrastructure, and values behind Sunrise Public School.</p>
                 <div class="card-grid">
@@ -266,8 +475,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-academics">
-            <div class="container school-page">
+        <div class="school-page" id="school-academics">
+            <div class="container">
                 <h2>Academic Structure</h2>
                 <p class="subhead">Age‑appropriate programmes designed for cognitive, emotional, and social growth.</p>
                 <div class="card-grid">
@@ -279,8 +488,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-staff">
-            <div class="container school-page">
+        <div class="school-page" id="school-staff">
+            <div class="container">
                 <h2>Our Dedicated Staff</h2>
                 <p class="subhead">Experienced educators committed to shaping young minds.</p>
                 <div class="staff-grid">
@@ -294,8 +503,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-achievements">
-            <div class="container school-page">
+        <div class="school-page" id="school-achievements">
+            <div class="container">
                 <h2>Achievements</h2>
                 <div class="card-grid">
                     <div class="card"><h3>🏆 100% Board Pass Rate 2025</h3><p>All Class X students passed with flying colours; 42% scored above 90%.</p></div>
@@ -308,8 +517,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-sports">
-            <div class="container school-page">
+        <div class="school-page" id="school-sports">
+            <div class="container">
                 <h2>Sports & Physical Education</h2>
                 <div class="card-grid">
                     <div class="card"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400" style="border-radius:8px; margin-bottom:12px;"><h3>Football</h3><p>FIFA‑sized turf, professional coach.</p></div>
@@ -319,8 +528,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-gallery">
-            <div class="container school-page">
+        <div class="school-page" id="school-gallery">
+            <div class="container">
                 <h2>Gallery</h2>
                 <div class="school-gallery">
                     <img src="https://images.unsplash.com/photo-1523050854058-8df9016d7d26?w=400" alt="School">
@@ -331,8 +540,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-fees">
-            <div class="container school-page">
+        <div class="school-page" id="school-fees">
+            <div class="container">
                 <h2>Fee Structure 2025‑26</h2>
                 <table class="fee-table">
                     <tr><th>Class</th><th>Tuition Fee (Annual)</th><th>Admission Fee</th><th>Transport (Opt.)</th></tr>
@@ -344,8 +553,8 @@
             </div>
         </div>
 
-        <div class="page" id="school-contact">
-            <div class="container school-page">
+        <div class="school-page" id="school-contact">
+            <div class="container">
                 <h2>Contact Us</h2>
                 <p style="text-align:center; font-size:1.2rem;">📍 45, Sunrise Avenue, Hebbal, Bangalore – 560024</p>
                 <p style="text-align:center; font-size:1.1rem;">📞 +91 80 2345 6789 | ✉️ info@sunrisepublicschool.edu</p>
@@ -357,8 +566,183 @@
         </footer>
     </div>
 
+    <script>
+        // Global demo switcher
+        function showDemo(demo) {
+            document.getElementById('selector').classList.add('hidden');
+            document.querySelectorAll('.demo-site').forEach(d => d.classList.remove('active'));
+            const demoMap = { school: 'schoolDemo', events: 'eventsDemo', phone: 'phoneDemo' };
+            document.getElementById(demoMap[demo]).classList.add('active');
+            window.scrollTo(0,0);
+        }
+        function goBack() {
+            document.querySelectorAll('.demo-site').forEach(d => d.classList.remove('active'));
+            document.getElementById('selector').classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+
+        // School internal navigation and hamburger
+        function navigateSchool(page) {
+            document.querySelectorAll('.school-page').forEach(p => p.classList.remove('active'));
+            document.getElementById('school-' + page).classList.add('active');
+            // update nav active
+            document.querySelectorAll('#schoolNav a, #schoolMobileNav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.dataset.page === page) a.classList.add('active');
+            });
+            closeSchoolMobile();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleSchoolMenu() {
+            const btn = document.getElementById('schoolHamburger');
+            const menu = document.getElementById('schoolMobileNav');
+            btn.classList.toggle('open');
+            menu.classList.toggle('show');
+        }
+        function closeSchoolMobile() {
+            document.getElementById('schoolHamburger').classList.remove('open');
+            document.getElementById('schoolMobileNav').classList.remove('show');
+        }
+        // Wire desktop nav links for school
+        document.getElementById('schoolNav').addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+                navigateSchool(e.target.dataset.page);
+            }
+        });
+        // Initialize – school home active by default
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.demo-site').forEach(d => d.classList.remove('active'));
+            document.getElementById('selector').classList.remove('hidden');
+        });
+    </script>
     <!-- ========== EVENTS DEMO ========== -->
     <div id="eventsDemo" class="demo-site events-demo">
+        <style>
+            /* ================================================================
+               EVENTS DEMO SPECIFIC STYLES
+            ================================================================ */
+            .events-demo {
+                background: #0f172a;
+                color: #f1f5f9;
+            }
+            .events-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
+                background: #1e293b;
+                position: relative;
+            }
+            .events-logo {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #f59e0b;
+            }
+            .events-nav {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            .events-nav a {
+                color: #cbd5e1;
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            .events-nav a:hover,
+            .events-nav a.active {
+                background: #f59e0b;
+                color: #0f172a;
+            }
+            .events-hero {
+                background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600') center/cover;
+                color: white;
+                text-align: center;
+                padding: 140px 20px;
+            }
+            .events-hero h1 {
+                font-size: clamp(2.8rem, 6vw, 4.2rem);
+                font-weight: 900;
+                margin-bottom: 20px;
+            }
+            .btn-rose {
+                background: #e11d48;
+                color: white;
+                padding: 14px 36px;
+                border-radius: 50px;
+                font-weight: 700;
+                display: inline-block;
+                transition: 0.3s;
+            }
+            .btn-rose:hover { background: #f43f5e; }
+
+            .events-page {
+                display: none;
+                padding: 80px 0;
+            }
+            .events-page.active { display: block; }
+            .events-page h2 {
+                font-size: 2.4rem;
+                color: #f59e0b;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .events-page .subhead {
+                text-align: center;
+                color: #94a3b8;
+                max-width: 600px;
+                margin: -20px auto 40px;
+            }
+
+            .events-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+            .event-card {
+                background: #1e293b;
+                border-radius: 16px;
+                overflow: hidden;
+                transition: 0.3s;
+            }
+            .event-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            }
+            .event-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .event-card .info {
+                padding: 24px;
+            }
+            .event-card h3 {
+                color: white;
+                margin-bottom: 8px;
+            }
+            .events-footer {
+                background: #1e293b;
+                text-align: center;
+                padding: 40px 20px;
+                margin-top: 60px;
+                color: #94a3b8;
+            }
+            .events-footer a {
+                color: #f59e0b;
+            }
+
+            /* Events mobile */
+            @media (max-width: 768px) {
+                .events-nav { display: none; }
+                .hamburger { display: flex; }
+                .events-header { flex-wrap: wrap; }
+            }
+        </style>
         <button class="back-btn" onclick="goBack()" style="background:#1e293b; color:white;">← Back to Demos</button>
         <header class="events-header">
             <div class="events-logo">✨ Elite Events</div>
@@ -367,66 +751,312 @@
                 <a data-page="services">Services</a>
                 <a data-page="portfolio">Portfolio</a>
                 <a data-page="team">Team</a>
+                <a data-page="testimonials">Testimonials</a>
                 <a data-page="contact">Contact</a>
             </nav>
+            <button class="hamburger" id="eventsHamburger" onclick="toggleEventsMenu()" style="color: white;">
+                <span></span><span></span><span></span>
+            </button>
         </header>
-        <div class="page active" id="events-home">
+        <div class="mobile-nav" id="eventsMobileNav" style="background: #1e293b;">
+            <a class="active" data-page="home" onclick="navigateEvents('home')">Home</a>
+            <a data-page="services" onclick="navigateEvents('services')">Services</a>
+            <a data-page="portfolio" onclick="navigateEvents('portfolio')">Portfolio</a>
+            <a data-page="team" onclick="navigateEvents('team')">Team</a>
+            <a data-page="testimonials" onclick="navigateEvents('testimonials')">Testimonials</a>
+            <a data-page="contact" onclick="navigateEvents('contact')">Contact</a>
+        </div>
+
+        <!-- Events Pages -->
+        <div class="events-page active" id="events-home">
             <div class="events-hero">
                 <h1>Making Every Moment Unforgettable</h1>
                 <p>From dream weddings to corporate galas, we craft experiences that wow.</p>
                 <a href="#" class="btn-rose">Plan Your Event</a>
             </div>
-            <div class="container events-page">
+            <div class="container events-page" style="padding-top: 60px;">
                 <h2>Why Elite Events?</h2>
                 <div class="events-grid">
-                    <div class="event-card"><div class="info"><h3>💍 Weddings</h3><p>Elegant, bespoke wedding planning and décor.</p></div></div>
-                    <div class="event-card"><div class="info"><h3>🏢 Corporate</h3><p>Conferences, product launches, team building.</p></div></div>
-                    <div class="event-card"><div class="info"><h3>🎂 Private Parties</h3><p>Birthdays, anniversaries, and special celebrations.</p></div></div>
+                    <div class="event-card"><div class="info"><h3>💍 Weddings</h3><p>Elegant, bespoke wedding planning and décor. We handle every detail so you can enjoy your big day.</p></div></div>
+                    <div class="event-card"><div class="info"><h3>🏢 Corporate</h3><p>Conferences, product launches, team building retreats – executed with precision and style.</p></div></div>
+                    <div class="event-card"><div class="info"><h3>🎂 Private Parties</h3><p>Birthdays, anniversaries, baby showers, and all special celebrations customised to your taste.</p></div></div>
                 </div>
             </div>
         </div>
-        <div class="page" id="events-services">
-            <div class="container events-page">
+
+        <div class="events-page" id="events-services">
+            <div class="container">
                 <h2>Our Services</h2>
+                <p class="subhead">From conceptualisation to clean‑up, we bring your vision to life.</p>
                 <div class="events-grid">
-                    <div class="event-card"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" alt="Wedding"><div class="info"><h3>Weddings</h3><p>Full‑service planning and coordination.</p></div></div>
-                    <div class="event-card"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400" alt="Corporate"><div class="info"><h3>Corporate Events</h3><p>Seminars, galas, and retreats.</p></div></div>
-                    <div class="event-card"><img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400" alt="Party"><div class="info"><h3>Social Gatherings</h3><p>Parties, reunions, and celebrations.</p></div></div>
+                    <div class="event-card">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" alt="Wedding">
+                        <div class="info"><h3>Full‑Service Weddings</h3><p>Venue selection, décor, catering, entertainment – a stress‑free experience.</p></div>
+                    </div>
+                    <div class="event-card">
+                        <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400" alt="Corporate">
+                        <div class="info"><h3>Corporate Events</h3><p>Seminars, product launches, award ceremonies, and holiday parties.</p></div>
+                    </div>
+                    <div class="event-card">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400" alt="Party">
+                        <div class="info"><h3>Social Gatherings</h3><p>Milestone birthdays, engagement parties, reunions – unforgettable moments.</p></div>
+                    </div>
+                    <div class="event-card">
+                        <div class="info"><h3>🎧 Virtual Events</h3><p>Hybrid and virtual event solutions with live streaming and interactive tools.</p></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page" id="events-portfolio">
-            <div class="container events-page">
-                <h2>Recent Events</h2>
+
+        <div class="events-page" id="events-portfolio">
+            <div class="container">
+                <h2>Our Portfolio</h2>
+                <p class="subhead">A glimpse of our recent events.</p>
                 <div class="events-grid">
-                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" style="border-radius:16px;">
-                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400" style="border-radius:16px;">
-                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400" style="border-radius:16px;">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=400" style="border-radius:16px; width:100%;">
+                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=400" style="border-radius:16px; width:100%;">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400" style="border-radius:16px; width:100%;">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400" style="border-radius:16px; width:100%;">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400" style="border-radius:16px; width:100%;">
+                    <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400" style="border-radius:16px; width:100%;">
                 </div>
             </div>
         </div>
-        <div class="page" id="events-team">
-            <div class="container events-page">
+
+        <div class="events-page" id="events-team">
+            <div class="container">
                 <h2>Meet Our Team</h2>
-                <div class="staff-grid">
-                    <div class="staff-card" style="background:#1e293b;"><img src="https://i.pravatar.cc/100?img=21" alt="Planner"><h3 style="color:white;">Riya Kapoor</h3><p>Lead Planner</p></div>
-                    <div class="staff-card" style="background:#1e293b;"><img src="https://i.pravatar.cc/100?img=22" alt="Designer"><h3 style="color:white;">Arjun Mehta</h3><p>Creative Head</p></div>
+                <div class="staff-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div class="staff-card" style="background:#1e293b; text-align:center;">
+                        <img src="https://i.pravatar.cc/100?img=21" alt="Planner" style="border-radius:50%; width:100px; margin:0 auto 15px;">
+                        <h3 style="color:white;">Riya Kapoor</h3>
+                        <p style="color:#f59e0b; font-weight:600;">Lead Planner</p>
+                        <p style="color:#94a3b8;">8+ years of creating magical experiences.</p>
+                    </div>
+                    <div class="staff-card" style="background:#1e293b; text-align:center;">
+                        <img src="https://i.pravatar.cc/100?img=22" alt="Designer" style="border-radius:50%; width:100px; margin:0 auto 15px;">
+                        <h3 style="color:white;">Arjun Mehta</h3>
+                        <p style="color:#f59e0b; font-weight:600;">Creative Head</p>
+                        <p style="color:#94a3b8;">Transforming venues into works of art.</p>
+                    </div>
+                    <div class="staff-card" style="background:#1e293b; text-align:center;">
+                        <img src="https://i.pravatar.cc/100?img=23" alt="Manager" style="border-radius:50%; width:100px; margin:0 auto 15px;">
+                        <h3 style="color:white;">Neha Singh</h3>
+                        <p style="color:#f59e0b; font-weight:600;">Operations Manager</p>
+                        <p style="color:#94a3b8;">Ensuring flawless execution on the day.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page" id="events-contact">
-            <div class="container events-page">
-                <h2>Get In Touch</h2>
-                <p style="text-align:center;">📞 +91 98765 43210 | ✉️ hello@eliteevents.com</p>
+
+        <div class="events-page" id="events-testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="events-grid">
+                    <div class="event-card" style="padding: 30px; background: #1e293b; border-radius:16px;">
+                        <p style="font-style:italic; margin-bottom:15px;">“Elite Events made our wedding absolutely perfect. Every detail was thought of – we didn't have to worry about a thing!”</p>
+                        <p style="font-weight:700; color:#f59e0b;">— Priya & Rahul</p>
+                    </div>
+                    <div class="event-card" style="padding: 30px; background: #1e293b; border-radius:16px;">
+                        <p style="font-style:italic; margin-bottom:15px;">“Our corporate retreat was a huge success thanks to Elite Events. Professional, creative, and incredibly organised.”</p>
+                        <p style="font-weight:700; color:#f59e0b;">— TechSolutions Inc.</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="events-page" id="events-contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div style="text-align:center; margin-top:40px;">
+                    <p style="font-size:1.2rem;">📞 +91 98765 43210</p>
+                    <p style="font-size:1.1rem;">✉️ hello@eliteevents.com</p>
+                    <p style="font-size:1.1rem;">📍 12, MG Road, Bangalore – 560001</p>
+                </div>
+            </div>
+        </div>
+
         <footer class="events-footer">
             <p>© 2025 Elite Events. All rights reserved. | <strong>Designed by <a href="#">WebMadeEasy.CAV</a></strong></p>
         </footer>
     </div>
 
+    <script>
+        // ========== EVENTS INTERNAL NAVIGATION & HAMBURGER ==========
+        function navigateEvents(page) {
+            document.querySelectorAll('#eventsDemo .events-page').forEach(p => p.classList.remove('active'));
+            document.getElementById('events-' + page).classList.add('active');
+            document.querySelectorAll('#eventsNav a, #eventsMobileNav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.dataset.page === page) a.classList.add('active');
+            });
+            closeEventsMobile();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function toggleEventsMenu() {
+            const btn = document.getElementById('eventsHamburger');
+            const menu = document.getElementById('eventsMobileNav');
+            btn.classList.toggle('open');
+            menu.classList.toggle('show');
+        }
+        function closeEventsMobile() {
+            document.getElementById('eventsHamburger').classList.remove('open');
+            document.getElementById('eventsMobileNav').classList.remove('show');
+        }
+        // Attach desktop nav event listeners for events
+        document.getElementById('eventsNav').addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+                navigateEvents(e.target.dataset.page);
+            }
+        });
+    </script>
     <!-- ========== PHONE DEMO ========== -->
     <div id="phoneDemo" class="demo-site phone-demo">
+        <style>
+            /* ================================================================
+               PHONE DEMO SPECIFIC STYLES
+            ================================================================ */
+            .phone-demo {
+                background: #f9fafb;
+            }
+            .phone-header {
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                padding: 20px 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+            .phone-logo {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #4f46e5;
+            }
+            .phone-nav {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            .phone-nav a {
+                color: #334155;
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            .phone-nav a:hover,
+            .phone-nav a.active {
+                background: #4f46e5;
+                color: white;
+            }
+            .phone-hero {
+                background: linear-gradient(135deg, #4f46e5, #7c3aed);
+                color: white;
+                text-align: center;
+                padding: 100px 20px;
+            }
+            .phone-hero h1 {
+                font-size: clamp(2.5rem, 6vw, 3.8rem);
+                font-weight: 900;
+                margin-bottom: 20px;
+            }
+            .btn-white {
+                background: white;
+                color: #4f46e5;
+                padding: 14px 36px;
+                border-radius: 50px;
+                font-weight: 700;
+                display: inline-block;
+                transition: 0.3s;
+            }
+            .btn-white:hover { background: #f1f5f9; }
+
+            .phone-page {
+                display: none;
+                padding: 80px 0;
+            }
+            .phone-page.active { display: block; }
+            .phone-page h2 {
+                font-size: 2.4rem;
+                color: #4f46e5;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .phone-page .subhead {
+                text-align: center;
+                color: #64748b;
+                max-width: 600px;
+                margin: -20px auto 40px;
+            }
+
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+            }
+            .product-card {
+                background: white;
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+                text-align: center;
+                transition: 0.3s;
+            }
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            }
+            .product-card img {
+                height: 200px;
+                object-fit: contain;
+                margin-bottom: 16px;
+            }
+            .product-card .price {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #4f46e5;
+                margin: 10px 0;
+            }
+
+            .deals-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+            .deal-card {
+                background: white;
+                border-radius: 16px;
+                padding: 32px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+                transition: 0.3s;
+            }
+            .deal-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            }
+
+            .phone-footer {
+                background: #4f46e5;
+                color: white;
+                text-align: center;
+                padding: 40px 20px;
+                margin-top: 60px;
+            }
+            .phone-footer a {
+                color: #fbbf24;
+            }
+
+            /* Phone mobile */
+            @media (max-width: 768px) {
+                .phone-nav { display: none; }
+                .hamburger { display: flex; }
+                .phone-header { flex-wrap: wrap; }
+            }
+        </style>
         <button class="back-btn" onclick="goBack()" style="background:#4f46e5; color:white;">← Back to Demos</button>
         <header class="phone-header">
             <div class="phone-logo">📱 GadgetZone</div>
@@ -437,105 +1067,564 @@
                 <a data-page="about">About</a>
                 <a data-page="contact">Contact</a>
             </nav>
+            <button class="hamburger" id="phoneHamburger" onclick="togglePhoneMenu()" style="color: #4f46e5;">
+                <span></span><span></span><span></span>
+            </button>
         </header>
-        <div class="page active" id="phone-home">
+        <div class="mobile-nav" id="phoneMobileNav" style="background: white;">
+            <a class="active" data-page="home" onclick="navigatePhone('home')">Home</a>
+            <a data-page="shop" onclick="navigatePhone('shop')">Shop</a>
+            <a data-page="deals" onclick="navigatePhone('deals')">Deals</a>
+            <a data-page="about" onclick="navigatePhone('about')">About</a>
+            <a data-page="contact" onclick="navigatePhone('contact')">Contact</a>
+        </div>
+
+        <!-- Phone Pages -->
+        <div class="phone-page active" id="phone-home">
             <div class="phone-hero">
                 <h1>Your Ultimate Mobile Store</h1>
                 <p>Latest smartphones, accessories, and unbeatable deals.</p>
                 <a href="#" class="btn-white">Shop Now</a>
             </div>
-            <div class="container phone-page">
+            <div class="container phone-page" style="padding-top: 60px;">
                 <h2>Featured Products</h2>
                 <div class="product-grid">
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1598327105854-c8674faddf79?w=400" alt="Galaxy S24"><h3>Galaxy S24 Ultra</h3><div class="price">₹1,29,999</div></div>
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400" alt="iPhone 15"><h3>iPhone 15 Pro Max</h3><div class="price">₹1,59,900</div></div>
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="OnePlus"><h3>OnePlus 12</h3><div class="price">₹64,999</div></div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1598327105854-c8674faddf79?w=400" alt="Galaxy S24 Ultra">
+                        <h3>Galaxy S24 Ultra</h3>
+                        <div class="price">₹1,29,999</div>
+                        <p>200MP camera, S Pen, Snapdragon 8 Gen 3</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400" alt="iPhone 15 Pro Max">
+                        <h3>iPhone 15 Pro Max</h3>
+                        <div class="price">₹1,59,900</div>
+                        <p>A17 Pro chip, Titanium design, 5x zoom</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="OnePlus 12">
+                        <h3>OnePlus 12</h3>
+                        <div class="price">₹64,999</div>
+                        <p>Snapdragon 8 Gen 3, 100W charging</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page" id="phone-shop">
-            <div class="container phone-page">
+
+        <div class="phone-page" id="phone-shop">
+            <div class="container">
                 <h2>All Products</h2>
                 <div class="product-grid">
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1598327105854-c8674faddf79?w=400"><h3>Galaxy S24 Ultra</h3><div class="price">₹1,29,999</div></div>
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400"><h3>iPhone 15 Pro Max</h3><div class="price">₹1,59,900</div></div>
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"><h3>OnePlus 12</h3><div class="price">₹64,999</div></div>
-                    <div class="product-card"><img src="https://images.unsplash.com/photo-1533228876829-65c94e7b5025?w=400"><h3>Pixel 8 Pro</h3><div class="price">₹1,06,999</div></div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1598327105854-c8674faddf79?w=400" alt="Galaxy S24 Ultra">
+                        <h3>Galaxy S24 Ultra</h3>
+                        <div class="price">₹1,29,999</div>
+                        <p>200MP camera, S Pen, Snapdragon 8 Gen 3</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400" alt="iPhone 15 Pro Max">
+                        <h3>iPhone 15 Pro Max</h3>
+                        <div class="price">₹1,59,900</div>
+                        <p>A17 Pro chip, Titanium design, 5x zoom</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="OnePlus 12">
+                        <h3>OnePlus 12</h3>
+                        <div class="price">₹64,999</div>
+                        <p>Snapdragon 8 Gen 3, 100W charging</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1533228876829-65c94e7b5025?w=400" alt="Pixel 8 Pro">
+                        <h3>Pixel 8 Pro</h3>
+                        <div class="price">₹1,06,999</div>
+                        <p>Google Tensor G3, 50MP camera</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400" alt="Galaxy Z Fold5">
+                        <h3>Galaxy Z Fold5</h3>
+                        <div class="price">₹1,54,999</div>
+                        <p>Foldable 7.6” display, Snapdragon 8 Gen 2</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400" alt="iPhone 15">
+                        <h3>iPhone 15</h3>
+                        <div class="price">₹79,900</div>
+                        <p>A16 Bionic chip, 48MP camera</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page" id="phone-deals">
-            <div class="container phone-page">
+
+        <div class="phone-page" id="phone-deals">
+            <div class="container">
                 <h2>Today's Hot Deals</h2>
-                <div class="card-grid">
-                    <div class="card"><h3>🔥 Up to 30% off</h3><p>On selected accessories and chargers.</p></div>
-                    <div class="card"><h3>📱 Exchange Bonus</h3><p>Get extra ₹5,000 off on your old device.</p></div>
+                <div class="deals-grid">
+                    <div class="deal-card">
+                        <h3 style="color: #4f46e5;">🔥 Up to 30% off</h3>
+                        <p>On selected chargers, cases, and screen protectors. Premium quality accessories at crazy prices.</p>
+                        <p style="font-weight:700; margin-top:10px;">Limited time only</p>
+                    </div>
+                    <div class="deal-card">
+                        <h3 style="color: #4f46e5;">📱 Exchange Bonus</h3>
+                        <p>Get an extra ₹5,000 off when you exchange your old smartphone. Any brand accepted.</p>
+                        <p style="font-weight:700; margin-top:10px;">Valid for all new purchases</p>
+                    </div>
+                    <div class="deal-card">
+                        <h3 style="color: #4f46e5;">💳 EMI Options</h3>
+                        <p>No‑cost EMI starting at ₹2,999/month. Easy approvals, zero down payment.</p>
+                        <p style="font-weight:700; margin-top:10px;">On all major credit cards</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="page" id="phone-about">
-            <div class="container phone-page">
+
+        <div class="phone-page" id="phone-about">
+            <div class="container">
                 <h2>About GadgetZone</h2>
-                <p style="text-align:center; max-width:700px; margin:0 auto;">We’re Bangalore’s favourite mobile destination, offering genuine products at the best prices with excellent after‑sales support.</p>
+                <p style="max-width:700px; margin:0 auto; text-align:center; font-size:1.1rem; color:#475569;">
+                    Founded in 2018, GadgetZone has become Bangalore's favourite destination for the latest smartphones and accessories.
+                    We believe in offering 100% genuine products, transparent pricing, and exceptional after‑sales support.
+                    Our team of tech experts is always ready to help you find the perfect device. Visit us and experience the future of mobile shopping.
+                </p>
             </div>
         </div>
-        <div class="page" id="phone-contact">
-            <div class="container phone-page">
+
+        <div class="phone-page" id="phone-contact">
+            <div class="container">
                 <h2>Contact Us</h2>
-                <p style="text-align:center;">📍 123, MG Road, Bangalore | 📞 +91 99887 66550</p>
+                <div style="text-align:center; margin-top:40px;">
+                    <p style="font-size:1.2rem;">📍 123, MG Road, Bangalore – 560001</p>
+                    <p style="font-size:1.1rem;">📞 +91 99887 66550</p>
+                    <p style="font-size:1.1rem;">✉️ support@gadgetzone.in</p>
+                    <p style="margin-top:30px; font-weight:600;">Open Monday – Saturday, 10 AM to 9 PM</p>
+                </div>
             </div>
         </div>
+
         <footer class="phone-footer">
             <p>© 2025 GadgetZone. All rights reserved. | <strong>Designed by <a href="#">WebMadeEasy.CAV</a></strong></p>
         </footer>
     </div>
 
     <script>
-        // Demo switcher
-        function showDemo(demo) {
-            document.getElementById('selector').classList.add('hidden');
-            document.getElementById('schoolDemo').classList.remove('active');
-            document.getElementById('eventsDemo').classList.remove('active');
-            document.getElementById('phoneDemo').classList.remove('active');
-            if (demo === 'school') document.getElementById('schoolDemo').classList.add('active');
-            else if (demo === 'events') document.getElementById('eventsDemo').classList.add('active');
-            else if (demo === 'phone') document.getElementById('phoneDemo').classList.add('active');
-            window.scrollTo(0,0);
-        }
-        function goBack() {
-            document.querySelectorAll('.demo-site').forEach(d => d.classList.remove('active'));
-            document.getElementById('selector').classList.remove('hidden');
-            window.scrollTo(0,0);
-        }
-
-        // Internal page navigation
-        function setupNav(demoId, navId, pagePrefix) {
-            const nav = document.getElementById(navId);
-            if (!nav) return;
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const page = this.dataset.page;
-                    const demo = document.getElementById(demoId);
-                    demo.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-                    document.getElementById(pagePrefix + '-' + page).classList.add('active');
-                    nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
-                    this.classList.add('active');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+        // ========== PHONE INTERNAL NAVIGATION & HAMBURGER ==========
+        function navigatePhone(page) {
+            document.querySelectorAll('#phoneDemo .phone-page').forEach(p => p.classList.remove('active'));
+            document.getElementById('phone-' + page).classList.add('active');
+            document.querySelectorAll('#phoneNav a, #phoneMobileNav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.dataset.page === page) a.classList.add('active');
             });
+            closePhoneMobile();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        window.addEventListener('load', function() {
-            document.getElementById('schoolDemo').classList.remove('active');
-            document.getElementById('eventsDemo').classList.remove('active');
-            document.getElementById('phoneDemo').classList.remove('active');
-            document.getElementById('selector').classList.remove('hidden');
-
-            setupNav('schoolDemo', 'schoolNav', 'school');
-            setupNav('eventsDemo', 'eventsNav', 'events');
-            setupNav('phoneDemo', 'phoneNav', 'phone');
+        function togglePhoneMenu() {
+            const btn = document.getElementById('phoneHamburger');
+            const menu = document.getElementById('phoneMobileNav');
+            btn.classList.toggle('open');
+            menu.classList.toggle('show');
+        }
+        function closePhoneMobile() {
+            document.getElementById('phoneHamburger').classList.remove('open');
+            document.getElementById('phoneMobileNav').classList.remove('show');
+        }
+        // Attach desktop nav event listeners for phone
+        document.getElementById('phoneNav').addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
+                navigatePhone(e.target.dataset.page);
+            }
         });
     </script>
+    <!-- ========== ADDITIONAL GLOBAL STYLES & POLISH ========== -->
+    <style>
+        /* ================================================================
+           EXTENDED RESPONSIVE & AESTHETIC ENHANCEMENTS
+        ================================================================ */
+        /* Smooth transition for all interactive elements */
+        a, button, .card, .product-card, .event-card, .staff-card, .deal-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        /* Subtle hover scaling on images */
+        .card img, .product-card img, .event-card img, .staff-card img, .school-gallery img {
+            transition: transform 0.4s ease;
+        }
+        .card:hover img, .product-card:hover img, .event-card:hover img, .staff-card:hover img, .school-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Focus states for accessibility */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #f59e0b;
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: white; }
+            .back-btn, .hamburger, .mobile-nav, .demo-selector { display: none; }
+            .demo-site.active { display: block; }
+            header, footer { position: static; }
+        }
+
+        /* Dark mode support (optional) */
+        @media (prefers-color-scheme: dark) {
+            /* Only for phone demo if needed, but we keep it as is */
+        }
+
+        /* ================================================================
+           ADVANCED ANIMATIONS
+        ================================================================ */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .mobile-nav.show {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+        .btn-gold:hover {
+            animation: pulseGlow 1.5s infinite;
+        }
+
+        /* ================================================================
+           EXTRA UTILITY CLASSES
+        ================================================================ */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mt-40 { margin-top: 40px; }
+        .mb-20 { margin-bottom: 20px; }
+        .mb-40 { margin-bottom: 40px; }
+        .py-60 { padding-top: 60px; padding-bottom: 60px; }
+        .bg-white { background: white; }
+        .rounded-xl { border-radius: 16px; }
+        .shadow-sm { box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .shadow-lg { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        /* ================================================================
+           MICRO INTERACTIONS FOR DEMO CARDS
+        ================================================================ */
+        .demo-card:active {
+            transform: scale(0.95);
+            transition: transform 0.1s;
+        }
+
+        /* ================================================================
+           STICKY HEADER SHADOW ENHANCEMENT
+        ================================================================ */
+        .school-header, .events-header, .phone-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* ================================================================
+           SMOOTH SCROLL BEHAVIOUR FOR INTERNAL LINKS
+        ================================================================ */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ================================================================
+           LOADING SKELETON (optional placeholder)
+        ================================================================ */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* ================================================================
+           IMPROVED MOBILE NAV ITEMS
+        ================================================================ */
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: inherit;
+            transition: background 0.2s;
+        }
+        .mobile-nav a:hover {
+            background: rgba(0,0,0,0.02);
+        }
+
+        /* ================================================================
+           FOOTER CREDIT STYLING
+        ================================================================ */
+        .school-footer a, .events-footer a, .phone-footer a {
+            color: #f59e0b;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ================================================================
+           HIDE ALL DEMOS INITIALLY (just in case)
+        ================================================================ */
+        .demo-site:not(.active) {
+            display: none;
+        }
+
+        /* ================================================================
+           MAKE BACK BUTTON MORE VISIBLE ON MOBILE
+        ================================================================ */
+        @media (max-width: 768px) {
+            .back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ================================================================
+           ENHANCED TYPOGRAPHY
+        ================================================================ */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ================================================================
+           CUSTOM SCROLLBAR (global)
+        ================================================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* ================================================================
+           ADDITIONAL RESPONSIVE GRID TWEAKS
+        ================================================================ */
+        @media (max-width: 480px) {
+            .school-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .btn-gold, .btn-rose, .btn-white {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ================================================================
+           ENSURE IMAGES ARE RESPONSIVE
+        ================================================================ */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ================================================================
+           LIGHTBOX HOVER (optional)
+        ================================================================ */
+        .school-gallery img:hover {
+            filter: brightness(1.05);
+            cursor: pointer;
+        }
+        .events-grid img:hover {
+            filter: brightness(1.05);
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- ================================================================
+        ADVANCED JAVASCRIPT ENHANCEMENTS
+    ================================================================ -->
+    <script>
+        // ==========================================================
+        // GLOBAL EVENT LISTENER FOR MOBILE MENU OUTSIDE CLICKS
+        // ==========================================================
+        document.addEventListener('click', function(event) {
+            // Close school mobile menu if click outside
+            const schoolHeader = document.getElementById('schoolDemo');
+            if (schoolHeader && schoolHeader.classList.contains('active')) {
+                const hamburger = document.getElementById('schoolHamburger');
+                const mobileNav = document.getElementById('schoolMobileNav');
+                if (hamburger && mobileNav && !hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closeSchoolMobile();
+                }
+            }
+            // Close events mobile menu
+            const eventsDemo = document.getElementById('eventsDemo');
+            if (eventsDemo && eventsDemo.classList.contains('active')) {
+                const hamburger = document.getElementById('eventsHamburger');
+                const mobileNav = document.getElementById('eventsMobileNav');
+                if (hamburger && mobileNav && !hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closeEventsMobile();
+                }
+            }
+            // Close phone mobile menu
+            const phoneDemo = document.getElementById('phoneDemo');
+            if (phoneDemo && phoneDemo.classList.contains('active')) {
+                const hamburger = document.getElementById('phoneHamburger');
+                const mobileNav = document.getElementById('phoneMobileNav');
+                if (hamburger && mobileNav && !hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closePhoneMobile();
+                }
+            }
+        });
+
+        // ==========================================================
+        // SMOOTH SCROLL FOR ALL INTERNAL LINKS (if any added later)
+        // ==========================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ==========================================================
+        // ADD TABINDEX TO MOBILE NAV ITEMS FOR ACCESSIBILITY
+        // ==========================================================
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.setAttribute('tabindex', '0');
+            link.setAttribute('role', 'button');
+        });
+
+        // ==========================================================
+        // KEYBOARD SUPPORT FOR HAMBURGER BUTTONS
+        // ==========================================================
+        const hamburgerButtons = document.querySelectorAll('.hamburger');
+        hamburgerButtons.forEach(btn => {
+            btn.setAttribute('tabindex', '0');
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            });
+        });
+
+        // ==========================================================
+        // INITIALISE PAGE ON LOAD – ensure correct state
+        // ==========================================================
+        window.addEventListener('load', function() {
+            // Re-hide all demos and show selector
+            document.querySelectorAll('.demo-site').forEach(site => site.classList.remove('active'));
+            const selector = document.getElementById('selector');
+            if (selector) selector.classList.remove('hidden');
+
+            // Ensure mobile menus are hidden
+            document.querySelectorAll('.mobile-nav').forEach(menu => menu.classList.remove('show'));
+            document.querySelectorAll('.hamburger').forEach(btn => btn.classList.remove('open'));
+
+            // Force school demo internal page to home if it was previously shown
+            if (document.getElementById('school-home')) {
+                document.querySelectorAll('.school-page').forEach(p => p.classList.remove('active'));
+                document.getElementById('school-home').classList.add('active');
+            }
+            if (document.getElementById('events-home')) {
+                document.querySelectorAll('.events-page').forEach(p => p.classList.remove('active'));
+                document.getElementById('events-home').classList.add('active');
+            }
+            if (document.getElementById('phone-home')) {
+                document.querySelectorAll('.phone-page').forEach(p => p.classList.remove('active'));
+                document.getElementById('phone-home').classList.add('active');
+            }
+        });
+
+        // ==========================================================
+        // OPTIONAL: PRELOAD DEMO IMAGES FOR BETTER UX
+        // ==========================================================
+        const imageUrls = [
+            'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600',
+            'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600',
+            'https://images.unsplash.com/photo-1598327105854-c8674faddf79?w=400',
+            'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400',
+            'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
+            'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400',
+            'https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400',
+            'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400',
+            'https://images.unsplash.com/photo-1523050854058-8df9016d7d26?w=400',
+            'https://images.unsplash.com/photo-1564981797816-2e7b5c6a0aec?w=400',
+            'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400',
+            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400',
+            'https://i.pravatar.cc/100?img=11',
+            'https://i.pravatar.cc/100?img=12',
+            'https://i.pravatar.cc/100?img=13',
+            'https://i.pravatar.cc/100?img=14',
+            'https://i.pravatar.cc/100?img=15',
+            'https://i.pravatar.cc/100?img=16',
+            'https://i.pravatar.cc/100?img=21',
+            'https://i.pravatar.cc/100?img=22',
+            'https://i.pravatar.cc/100?img=23'
+        ];
+        function preloadImages(urls) {
+            urls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        }
+        preloadImages(imageUrls);
+
+        // ==========================================================
+        // SERVICE WORKER REGISTRATION (optional for PWA)
+        // ==========================================================
+        // if ('serviceWorker' in navigator) {
+        //   navigator.serviceWorker.register('/sw.js');
+        // }
+
+        // ==========================================================
+        // ANALYTICS PLACEHOLDER
+        // ==========================================================
+        // console.log('Demo loaded. All features active.');
+
+        // ==========================================================
+        // EXTENDED ERROR HANDLING
+        // ==========================================================
+        window.addEventListener('error', function(e) {
+            console.warn('Error caught:', e.message);
+        });
+
+        // ==========================================================
+        // PERFORMANCE MARK
+        // ==========================================================
+        if (window.performance && window.performance.mark) {
+            window.performance.mark('demo-ready');
+        }
+
+        // ==========================================================
+        // ADDITIONAL MOBILE NAV CLOSE ON ESC KEY
+        // ==========================================================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSchoolMobile();
+                closeEventsMobile();
+                closePhoneMobile();
+            }
+        });
+    </script>
+
+    <!-- ================================================================
+        END OF DOCUMENT
+    ================================================================ -->
 </body>
 </html>
