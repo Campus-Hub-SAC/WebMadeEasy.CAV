@@ -111,7 +111,7 @@
             font-family: 'Poppins', sans-serif; font-size:1.3rem; font-weight:800;
             background: linear-gradient(135deg, var(--indigo-600), var(--violet-600));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; cursor: pointer;
+            background-clip: text; cursor: pointer; white-space: nowrap;
         }
         .nav-links { display:flex; gap:6px; list-style:none; align-items:center; }
         .nav-links a { text-decoration:none; padding:8px 16px; border-radius:var(--radius-sm); font-weight:600; font-size:.9rem; color:var(--gray-600); transition:all .2s; }
@@ -125,13 +125,13 @@
         .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity:0; }
         .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-        .mobile-menu { display:none; position:fixed; top:68px; left:0; right:0; background:white; border-bottom:1px solid var(--gray-200); box-shadow:var(--shadow-md); z-index:999; padding:16px; }
+        .mobile-menu { display:none; position:fixed; top:108px; left:0; right:0; background:white; border-bottom:1px solid var(--gray-200); box-shadow:var(--shadow-md); z-index:999; padding:16px; }
         .mobile-menu.show { display:block; }
         .mobile-menu a { display:block; padding:12px 16px; border-radius:var(--radius-sm); font-weight:600; color:var(--gray-600); text-decoration:none; margin-bottom:4px; }
         .mobile-menu a:hover { background:var(--indigo-50); }
         .mobile-menu a.active { background:var(--indigo-600); color:white; }
 
-        .page { display:none; min-height:100vh; padding-top:68px; }
+        .page { display:none; min-height:100vh; padding-top:108px; }
         .page.active { display:block; animation:fadeIn .4s ease; }
         @keyframes fadeIn { from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
         .container { max-width:1100px; margin:0 auto; padding:0 24px; }
@@ -146,51 +146,54 @@
         .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s ease, transform 0.8s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
-        .old-price { text-decoration:line-through; color:#ef4444; font-size:1.1rem; font-weight:700; margin-right:8px; animation:wiggle 2s infinite; }
+        .old-price { text-decoration:line-through; color:#ef4444; font-size:1.1rem; font-weight:700; margin-right:8px; display:inline-block; animation:wiggle 2s infinite; }
         @keyframes wiggle { 0%,100%{transform:rotate(0deg);} 25%{transform:rotate(-2deg);} 75%{transform:rotate(2deg);} }
         .new-price { font-size:2.2rem; font-weight:800; color:var(--indigo-700); }
         .new-price span { font-size:1rem; color:var(--gray-500); }
 
-        .hero { padding:60px 0 60px; text-align:center; }
-        .hero h1 { font-size:clamp(2.8rem,7vw,4.5rem); font-weight:900; background:linear-gradient(135deg,var(--indigo-700) 20%,var(--violet-600)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:16px; }
+        .hero { padding:40px 0 60px; text-align:center; }
+        .hero h1 { font-size:clamp(2.5rem, 8vw, 4.5rem); font-weight:900; background:linear-gradient(135deg,var(--indigo-700) 20%,var(--violet-600)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:16px; }
+        .hero-sub { font-size:1.1rem; max-width:650px; margin:0 auto 24px; color:var(--gray-600); }
+        .hero-note { font-size:0.85rem; color:var(--gray-500); margin-bottom:28px; font-style:italic; }
+        .hero-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:56px; }
         .stats { display:grid; grid-template-columns:repeat(4,1fr); background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); margin-bottom:80px; overflow:hidden; }
         .stat-item { padding:28px 16px; text-align:center; border-right:1px solid var(--gray-200); }
         .stat-item:last-child { border-right:none; }
         .stat-num { font-size:2rem; font-weight:900; color:var(--indigo-600); }
         .stat-label { font-size:.8rem; font-weight:700; color:var(--gray-500); text-transform:uppercase; }
 
-        .story-section { padding:0 0 80px; text-align:center; }
+        .story-section { padding:0 0 60px; text-align:center; }
         .story-title { font-size:2rem; font-weight:800; margin-bottom:16px; }
         .story-desc { color:var(--gray-600); max-width:750px; margin:0 auto 32px; font-size:1.05rem; }
-        .story-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; text-align:left; }
+        .story-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; text-align:left; }
         .story-card { background:white; border-radius:var(--radius-lg); padding:28px; box-shadow:var(--shadow); transition:.25s; }
         .story-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
         .about-section { margin:60px 0 80px; background:white; border-radius:var(--radius-xl); padding:40px; box-shadow:var(--shadow-lg); }
-        .services-section { padding-bottom:80px; }
-        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+        .services-section { padding-bottom:60px; }
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px; }
         .service-card { background:white; border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow); transition:.25s; }
         .service-card:hover { transform:translateY(-4px); }
         .check-list { list-style:none; margin-top:16px; }
         .check-list li { display:flex; gap:8px; font-weight:500; font-size:.9rem; color:var(--gray-600); padding:4px 0; }
         .check-list li::before { content:'✓'; font-weight:700; color:var(--indigo-600); }
-        .process-section { padding-bottom:80px; }
-        .process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; }
+        .process-section { padding-bottom:60px; }
+        .process-steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:24px; }
         .process-step { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); text-align:center; transition:.25s; }
         .process-step:hover { transform:translateY(-5px); }
         .step-number { width:40px; height:40px; background:linear-gradient(135deg,var(--indigo-600),var(--violet-600)); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-weight:800; }
-        .portfolio-section { padding-bottom:80px; }
-        .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+        .portfolio-section { padding-bottom:60px; }
+        .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px; }
         .portfolio-card { background:white; border-radius:var(--radius-lg); padding:30px; text-align:center; box-shadow:var(--shadow); transition:.25s; }
         .portfolio-card:hover { transform:translateY(-4px); }
-        .testimonial-section { padding-bottom:80px; }
+        .testimonial-section { padding-bottom:60px; }
         .testimonial-slider { max-width:700px; margin:0 auto; background:white; border-radius:var(--radius-xl); padding:32px; box-shadow:var(--shadow-md); }
-        .faq-section { padding-bottom:80px; }
+        .faq-section { padding-bottom:60px; }
         .faq-item { background:white; border:1px solid var(--gray-200); border-radius:var(--radius); margin-bottom:12px; overflow:hidden; }
         .faq-question { padding:16px 20px; font-weight:700; display:flex; justify-content:space-between; cursor:pointer; }
         .faq-answer { padding:0 20px; max-height:0; overflow:hidden; transition:max-height .3s; }
         .faq-item.active .faq-answer { padding:16px 20px; max-height:200px; }
-        .whyme-section { padding-bottom:80px; }
-        .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; }
+        .whyme-section { padding-bottom:60px; }
+        .trust-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:24px; }
         .trust-card { background:white; border-radius:var(--radius-lg); padding:24px; box-shadow:var(--shadow-sm); text-align:center; transition:.25s; }
         .trust-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
         .comparison-table { background:white; border-radius:var(--radius-xl); box-shadow:var(--shadow-md); overflow:hidden; }
@@ -198,13 +201,13 @@
         .comparison-table td { padding:14px 24px; border-bottom:1px solid var(--gray-100); }
         .tick { color:#22c55e; font-weight:700; }
         .cross { color:#ef4444; }
-        .tech-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+        .tech-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:20px; }
         .tech-card { background:white; padding:24px; border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); transition:.25s; }
         .tech-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
         .demo-box { background:white; border:2px dashed var(--indigo-300); border-radius:var(--radius-xl); padding:32px; text-align:center; margin:60px 0; }
 
-        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
-        .pricing-card { background:white; border-radius:var(--radius-xl); padding:36px; border:2px solid var(--gray-200); transition:.3s; }
+        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:28px; }
+        .pricing-card { background:white; border-radius:var(--radius-xl); padding:36px; border:2px solid var(--gray-200); transition:.3s; position:relative; }
         .pricing-card.subdomain-card { opacity:0.85; }
         .pricing-card.featured-card {
             border:2px solid #f59e0b; box-shadow:0 0 25px rgba(245,158,11,0.3);
@@ -224,10 +227,35 @@
         footer { background:var(--gray-900); color:var(--gray-300); text-align:center; padding:32px 24px 24px; }
         .footer-badge { display:inline-flex; align-items:center; gap:8px; background:#1e293b; padding:6px 16px; border-radius:99px; color:#f59e0b; font-weight:700; margin-top:12px; }
 
-        @media (max-width:768px) {
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
             .nav-links { display:none; }
             .hamburger { display:flex; }
-            .stats { grid-template-columns:1fr 1fr; }
+            .mobile-menu { display:none; }
+            .mobile-menu.show { display:block; }
+            .hero { padding: 30px 0 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-sub { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .stat-item { padding: 20px 10px; }
+            .story-title { font-size: 1.6rem; }
+            .story-desc { font-size: 0.95rem; }
+            .about-section { padding: 28px; }
+            .services-grid, .story-grid, .process-steps, .portfolio-grid, .trust-grid, .tech-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.featured-card { transform: none; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .popup-card { padding: 28px 20px; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .hero h1 { font-size: 1.8rem; }
+            .stats { grid-template-columns: 1fr 1fr; }
+            .stat-num { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -276,7 +304,7 @@
                 </div>
                 <h1>WebMadeEasy.CAV</h1>
                 <p class="hero-sub">We craft beautiful, high‑performance websites for <strong>schools, colleges & any business</strong> — so you can focus on what you do best, not technology.</p>
-                <p class="hero-note" style="font-style:italic; color:var(--gray-500);">*Delivery in 3–4 working days (may vary based on project size; customizations possible with full liberty)</p>
+                <p class="hero-note">*Delivery in 3–4 working days (may vary based on project size; customizations possible with full liberty)</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="navigate('pricing')">See Discounted Plans</button>
                     <button class="btn btn-outline" onclick="navigate('contact')">Free Consultation</button>
@@ -304,7 +332,7 @@
                 </div>
             </div>
 
-            <!-- Meet the Founder (no photo) -->
+            <!-- Meet the Founder -->
             <div class="about-section reveal">
                 <div class="about-text">
                     <div class="section-label">👋 Meet the Founder</div>
@@ -315,7 +343,7 @@
                 </div>
             </div>
 
-            <!-- Services (broad) -->
+            <!-- Services -->
             <div class="services-section reveal">
                 <div class="section-label">🛠️ What I Offer</div>
                 <h2 style="font-size:2rem; font-weight:800;">Complete Website Solutions</h2>
@@ -356,7 +384,7 @@
                 </div>
             </div>
 
-            <!-- Portfolio (broad) -->
+            <!-- Portfolio -->
             <div class="portfolio-section reveal">
                 <div class="section-label">📁 Track Record</div>
                 <h2 style="font-size:2rem; font-weight:800;">Trusted by Schools, Colleges & Businesses</h2>
@@ -417,8 +445,8 @@
                 </div>
             </div>
 
-            <!-- Tech Stack (Tools) -->
-            <div class="reveal" style="padding-bottom:80px;">
+            <!-- Tech Stack -->
+            <div class="reveal" style="padding-bottom:60px;">
                 <div class="section-label">🛠️ My Toolbox</div>
                 <h2 style="font-size:2rem; font-weight:800;">Tools & Technologies I Use</h2>
                 <div class="tech-grid">
@@ -461,7 +489,6 @@
             <p style="color:var(--gray-600); margin-bottom:12px;">Grab the offer while it lasts. Regular rates will apply after limited slots.</p>
             <p style="color:var(--gray-500); font-style:italic; margin-bottom:48px;">✅ Plans are suitable for <strong>any type of website</strong> — school, college, business, or personal.</p>
             <div class="pricing-grid">
-                <!-- Subdomain (less bright) -->
                 <div class="pricing-card subdomain-card">
                     <h3>🔗 Subdomain</h3>
                     <p>yourschool.wmecav.in <br><small>(or any name you choose)</small></p>
@@ -473,7 +500,6 @@
                     <ul class="check-list"><li>✓ Free hosting & SSL</li><li>✓ Up to 5 pages</li><li>✓ 2 edits/month</li><li>✓ 3–4 day delivery</li></ul>
                     <button class="btn btn-outline" style="width:100%; margin-top:20px;" onclick="navigate('contact')">Get Started</button>
                 </div>
-                <!-- Custom Domain (bright) -->
                 <div class="pricing-card featured-card">
                     <div class="most-popular-badge">⭐ Most Popular</div>
                     <h3>🌍 Custom Domain</h3>
@@ -494,7 +520,7 @@
             </div>
             <div style="margin-top:40px;">
                 <h3 style="font-weight:800;">⚙️ Add‑ons</h3>
-                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;">
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:12px;">
                     <div class="card" style="font-weight:600;">📧 Business Email <strong>+₹499</strong></div>
                     <div class="card" style="font-weight:600;">🔍 Basic SEO <strong>+₹799</strong></div>
                     <div class="card" style="font-weight:600;">💬 WhatsApp Chat <strong>+₹199</strong></div>
@@ -511,7 +537,7 @@
         </footer>
     </section>
 
-    <!-- CONTACT PAGE (info only) -->
+    <!-- CONTACT PAGE -->
     <section id="page-contact" class="page">
         <div class="container" style="padding-top:72px; padding-bottom:72px;">
             <div class="section-label">✉️ Let's Talk</div>
