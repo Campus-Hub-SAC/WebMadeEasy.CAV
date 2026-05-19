@@ -1,276 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WebMadeEasy.CAV – Fast, Beautiful Websites for Schools, Colleges & Businesses</title>
-  <meta name="description" content="WebMadeEasy.CAV by Rishi Pavan R – Professional websites for schools, colleges & businesses. 3–4 day delivery, Google Verified, affordable pricing starting ₹6,999." />
-  <meta name="keywords" content="website design, school website, college website, business website, fast delivery, Google verified, affordable web design, India" />
-  <meta name="author" content="Rishi Pavan R" />
+  <meta name="description" content="WebMadeEasy.CAV by Rishi Pavan R – Professional websites for schools, colleges & businesses delivered in 3–4 working days. Google Verified. Affordable pricing." />
+  <meta name="keywords" content="website design, school website, college website, business website, fast delivery, Google verified, affordable, India" />
   <meta property="og:title" content="WebMadeEasy.CAV – Beautiful Websites in 3–4 Days" />
-  <meta property="og:description" content="We craft high-performance websites for schools, colleges & businesses. Starting at ₹6,999." />
+  <meta property="og:description" content="We craft high-performance websites for schools, colleges & businesses. Fast delivery, honest pricing, Google Verified." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WebMadeEasy.CAV" />
-  <meta name="twitter:description" content="Fast, beautiful websites for any business. 3–4 day delivery. Google Verified." />
+  <meta name="twitter:description" content="Beautiful websites for schools, colleges & businesses in 3–4 days." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --indigo: #4f46e5;
-      --violet: #7c3aed;
-      --grad: linear-gradient(135deg, #4f46e5, #7c3aed);
-      --grad-text: linear-gradient(135deg, #4f46e5, #7c3aed, #a855f7);
-      --bg: linear-gradient(160deg, #f4f7ff 0%, #f9fafb 50%, #fff9f0 100%);
-      --white: #ffffff;
-      --card-shadow: 0 4px 24px rgba(79,70,229,0.08);
-      --card-shadow-hover: 0 12px 40px rgba(79,70,229,0.18);
+      --bg-primary: #f0f4ff;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-nav: rgba(255,255,255,0.85);
+      --text-primary: #0f0c29;
+      --text-secondary: #374151;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 4px 24px rgba(99,102,241,0.10);
+      --shadow-hover: 0 12px 40px rgba(99,102,241,0.22);
+      --grad1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --grad2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --indigo: #6366f1;
+      --violet: #8b5cf6;
+      --gold: #f59e0b;
     }
-
-    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
-
+    [data-theme="dark"] {
+      --bg-primary: #0a0a1a;
+      --bg-secondary: #111128;
+      --bg-card: #16162a;
+      --bg-nav: rgba(10,10,26,0.88);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #2d2d4e;
+      --shadow: 0 4px 24px rgba(99,102,241,0.22);
+      --shadow-hover: 0 12px 40px rgba(139,92,246,0.40);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      min-height: 100vh;
-      color: #1e1b4b;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background 0.4s, color 0.4s;
       overflow-x: hidden;
-      font-size: 17px; /* Increased base size */
-      line-height: 1.65;
+      min-height: 100vh;
+      font-size: 17px;
+      font-weight: 500;
     }
 
-    h1,h2,h3,h4,h5 { font-family: 'Poppins', sans-serif; }
+    /* ── BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(99,102,241,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(139,92,246,0.16) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(249,115,22,0.05) 0%, transparent 70%);
+      background-color: var(--bg-primary);
+      transition: background 0.4s;
+    }
+    [data-theme="dark"] body::before {
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(99,102,241,0.30) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(139,92,246,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 60% 40%, rgba(16,185,129,0.08) 0%, transparent 60%);
+      background-color: var(--bg-primary);
+    }
+    /* floating orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .orb1 { width: 500px; height: 500px; top: -100px; left: -150px; background: rgba(99,102,241,0.12); animation-delay: 0s; }
+    .orb2 { width: 400px; height: 400px; bottom: -100px; right: -100px; background: rgba(139,92,246,0.12); animation-delay: 3s; }
+    .orb3 { width: 300px; height: 300px; top: 40%; left: 60%; background: rgba(245,158,11,0.07); animation-delay: 5s; }
+    [data-theme="dark"] .orb1 { background: rgba(99,102,241,0.22); }
+    [data-theme="dark"] .orb2 { background: rgba(139,92,246,0.20); }
+    [data-theme="dark"] .orb3 { background: rgba(245,158,11,0.10); }
+    @keyframes float {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
 
     /* ── PROMO BAR ── */
     #promo-bar {
-      background: var(--grad);
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
       color: #fff;
       text-align: center;
-      padding: 12px 16px;
-      font-size: 15px;
-      font-weight: 600;
-      position: relative;
-      z-index: 1001;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
       letter-spacing: 0.02em;
-    }
-    #promo-bar button {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.25);
-      border: none;
-      color: #fff;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1001;
+    }
+    #promo-bar button {
+      background: rgba(255,255,255,0.25);
+      border: none;
+      color: #fff;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
       transition: background 0.2s;
     }
-    #promo-bar button:hover { background: rgba(255,255,255,0.4); }
+    #promo-bar button:hover { background: rgba(255,255,255,0.45); }
 
-    /* ── HEADER ── */
-    #main-header {
+    /* ── NAV ── */
+    #main-nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.75);
+      background: var(--bg-nav);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(79,70,229,0.1);
-      transition: top 0.3s;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      transition: background 0.4s, border 0.4s;
     }
-    .header-inner {
+    .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 68px;
     }
     .logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 22px;
-      background: var(--grad-text);
+      font-size: 1.35rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       cursor: pointer;
-      text-decoration: none;
       letter-spacing: -0.02em;
-    }
-    nav.desktop-nav { display: flex; align-items: center; gap: 8px; }
-    nav.desktop-nav a {
-      font-weight: 600;
-      font-size: 16px;
-      color: #374151;
       text-decoration: none;
-      padding: 10px 18px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a, .nav-links button.nav-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+      padding: 8px 16px;
       border-radius: 8px;
       transition: all 0.2s;
-      cursor: pointer;
+      text-decoration: none;
     }
-    nav.desktop-nav a:hover, nav.desktop-nav a.active { color: var(--indigo); background: rgba(79,70,229,0.06); }
+    .nav-links a:hover, .nav-links button.nav-btn:hover { background: rgba(99,102,241,0.10); color: #6366f1; }
+    .nav-links a.active { color: #6366f1; background: rgba(99,102,241,0.08); }
     .btn-cta {
-      background: var(--grad);
+      background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
       color: #fff !important;
-      padding: 11px 22px !important;
-      border-radius: 24px !important;
-      font-weight: 700 !important;
-      box-shadow: 0 4px 16px rgba(79,70,229,0.3);
-      transition: transform 0.2s, box-shadow 0.2s !important;
-      font-size: 16px !important;
+      padding: 10px 22px !important;
+      border-radius: 50px !important;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+      transition: all 0.3s !important;
     }
-    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,70,229,0.4) !important; background: var(--grad) !important; }
+    .btn-cta:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(99,102,241,0.5) !important; background: none !important; background: linear-gradient(135deg, #4f46e5, #7c3aed) !important; }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      width: 44px; height: 26px;
+      border-radius: 13px;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    [data-theme="dark"] .theme-toggle { background: linear-gradient(135deg,#6366f1,#8b5cf6); }
+    [data-theme="dark"] .theme-toggle::after { transform: translateX(18px); }
+    .theme-icon { font-size: 1.1rem; }
+
+    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
-      cursor: pointer;
-      padding: 8px;
       background: none;
       border: none;
+      cursor: pointer;
+      padding: 4px;
     }
     .hamburger span {
       display: block;
-      width: 26px;
-      height: 3px;
-      background: var(--indigo);
-      border-radius: 2px;
+      width: 26px; height: 3px;
+      background: var(--text-primary);
+      border-radius: 3px;
       transition: all 0.3s;
     }
     .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+    /* Mobile menu */
     #mobile-menu {
       display: none;
       flex-direction: column;
-      background: rgba(255,255,255,0.97);
+      background: var(--bg-nav);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(79,70,229,0.1);
-      padding: 12px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px 20px;
+      position: sticky;
+      top: 68px;
+      z-index: 999;
     }
-    #mobile-menu a {
-      display: block;
-      padding: 14px 0;
-      font-weight: 600;
-      font-size: 17px;
-      color: #374151;
-      text-decoration: none;
-      border-bottom: 1px solid #f3f4f6;
+    #mobile-menu.open { display: flex; }
+    #mobile-menu a, #mobile-menu button.nav-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
       cursor: pointer;
-      transition: color 0.2s;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.2s;
+      text-align: left;
+      text-decoration: none;
+      display: block;
+      width: 100%;
     }
-    #mobile-menu a:hover { color: var(--indigo); }
-    #mobile-menu a:last-child { border-bottom: none; }
+    #mobile-menu a:hover, #mobile-menu button.nav-btn:hover { background: rgba(99,102,241,0.10); color: #6366f1; }
 
     /* ── PAGES ── */
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── SECTIONS & LAYOUT ── */
-    .section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
-    .section-sm { padding: 60px 24px; max-width: 1200px; margin: 0 auto; }
-    .center { text-align: center; }
+    /* ── SECTIONS ── */
+    section { padding: 90px 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
     /* ── BADGE ── */
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(79,70,229,0.08);
-      border: 1px solid rgba(79,70,229,0.2);
-      color: var(--indigo);
-      font-size: 14px;
-      font-weight: 700;
-      padding: 7px 18px;
-      border-radius: 100px;
-      margin-bottom: 16px;
-      letter-spacing: 0.03em;
+      background: rgba(99,102,241,0.10);
+      border: 1px solid rgba(99,102,241,0.25);
+      color: #6366f1;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
+    [data-theme="dark"] .badge { background: rgba(99,102,241,0.18); color: #a5b4fc; border-color: rgba(99,102,241,0.35); }
 
-    /* ── GRADIENT TEXT ── */
-    .grad-text {
-      background: var(--grad-text);
+    /* ── HEADINGS ── */
+    .section-heading {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+    .section-heading .grad {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    /* ── BUTTONS ── */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--grad);
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 15px 30px;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(79,70,229,0.3);
+    .section-sub {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.7;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(79,70,229,0.4); }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--indigo);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 14px 30px;
-      border-radius: 100px;
-      border: 2px solid var(--indigo);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { background: var(--indigo); color: #fff; }
-    .btn-green {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg,#16a34a,#15803d);
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 15px 30px;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(22,163,74,0.3);
-    }
-    .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.4); }
 
     /* ── CARDS ── */
     .card {
-      background: #fff;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 20px;
-      box-shadow: var(--card-shadow);
       padding: 28px;
-      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: var(--card-shadow-hover); }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(99,102,241,0.5); background: linear-gradient(135deg, #4f46e5, #7c3aed); }
+    .btn-outline {
+      background: transparent;
+      color: #6366f1;
+      border: 2px solid #6366f1;
+    }
+    .btn-outline:hover { background: #6366f1; color: #fff; transform: translateY(-2px); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.12);
+      color: var(--text-primary);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost:hover { background: rgba(99,102,241,0.10); border-color: #6366f1; color: #6366f1; }
 
     /* ── GOOGLE VERIFIED BADGE ── */
     .gv-badge {
@@ -279,118 +365,109 @@
       gap: 8px;
       background: #f0fdf4;
       border: 1px solid #bbf7d0;
-      border-radius: 100px;
-      padding: 7px 18px 7px 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #15803d;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #16a34a;
     }
+    [data-theme="dark"] .gv-badge { background: rgba(22,163,74,0.12); border-color: rgba(34,197,94,0.3); color: #4ade80; }
     .gv-badge .gv-circle {
-      width: 26px;
-      height: 26px;
-      background: #16a34a;
+      width: 20px; height: 20px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #16a34a;
       color: #fff;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
+    [data-theme="dark"] .gv-badge .gv-circle { background: #4ade80; color: #052e16; }
 
     /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ══════════════════════════════════════
-       HOME PAGE STYLES
-    ══════════════════════════════════════ */
-
-    /* ── HERO ── */
-    .hero {
-      padding: 90px 24px 70px;
-      max-width: 900px;
-      margin: 0 auto;
+    /* ═══════════════════════════════════════════
+       HERO SECTION
+    ═══════════════════════════════════════════ */
+    #hero {
+      padding: 80px 24px 90px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .hero-badges {
       display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 12px;
+      justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
-    .hero-badge-green {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      color: #15803d;
-      font-size: 14px;
-      font-weight: 700;
       padding: 8px 18px;
-      border-radius: 100px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      color: var(--text-primary);
     }
     .pulse-dot {
-      width: 12px; height: 12px;
-      background: #22c55e;
+      width: 10px; height: 10px;
       border-radius: 50%;
-      animation: pulse-anim 1.5s infinite;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.5);
+      animation: pulse 2s infinite;
     }
-    @keyframes pulse-anim {
-      0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6); }
-      50% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
     }
-    .hero-badge-blue {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(79,70,229,0.08);
-      border: 1px solid rgba(79,70,229,0.2);
-      color: var(--indigo);
-      font-size: 14px;
-      font-weight: 700;
-      padding: 8px 18px;
-      border-radius: 100px;
-    }
-    .hero h1 {
-      font-size: clamp(52px, 8vw, 100px);
+    .hero-title {
+      font-size: clamp(3rem, 9vw, 7rem);
       font-weight: 900;
+      letter-spacing: -0.04em;
       line-height: 1.05;
-      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #ec4899 80%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 24px;
     }
-    .hero-subtitle {
-      font-size: clamp(17px, 2.5vw, 21px);
-      color: #6b7280;
-      line-height: 1.7;
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 600;
+      color: var(--text-secondary);
       max-width: 680px;
       margin: 0 auto 14px;
+      line-height: 1.75;
     }
     .hero-note {
-      font-size: 14px;
-      color: #9ca3af;
+      font-size: 0.92rem;
       font-style: italic;
-      margin-bottom: 36px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 40px;
     }
-    .hero-buttons {
+    .hero-btns {
       display: flex;
-      justify-content: center;
       gap: 14px;
+      justify-content: center;
       flex-wrap: wrap;
       margin-bottom: 64px;
     }
+
+    /* Stats bar */
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -399,396 +476,918 @@
       margin: 0 auto;
     }
     .stat-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px 16px;
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      border: 1px solid rgba(79,70,229,0.07);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .stat-card .stat-number {
-      font-family: 'Poppins', sans-serif;
-      font-size: 36px;
+    .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .stat-number {
+      font-size: 2.2rem;
       font-weight: 900;
-      background: var(--grad-text);
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ═══════════════════════════════════════════
+       MISSION
+    ═══════════════════════════════════════════ */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .story-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .story-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .story-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .story-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .story-card p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOUNDER
+    ═══════════════════════════════════════════ */
+    .founder-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .founder-avatar {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 24px rgba(99,102,241,0.35);
+    }
+    .founder-card h3 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .founder-card .role {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #6366f1;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .founder-card p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .service-card .svc-desc {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .check-list li::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ═══════════════════════════════════════════
+       PROCESS
+    ═══════════════════════════════════════════ */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .process-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .process-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .process-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 6px 20px rgba(99,102,241,0.35);
+    }
+    .process-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .process-card p {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════
+       PORTFOLIO
+    ═══════════════════════════════════════════ */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .port-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .port-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .port-num {
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       line-height: 1;
       margin-bottom: 8px;
     }
-    .stat-card .stat-label { font-size: 14px; color: #6b7280; font-weight: 600; }
-
-    /* ── STORY CARDS ── */
-    .story-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .story-card { background:#fff; border-radius:20px; padding:28px; box-shadow:var(--card-shadow); transition:transform 0.25s,box-shadow 0.25s; }
-    .story-card:hover { transform:translateY(-5px); box-shadow:var(--card-shadow-hover); }
-    .story-icon { width:56px;height:56px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px; }
-
-    /* ── FOUNDER CARD ── */
-    .founder-card {
-      max-width: 640px;
-      margin: 40px auto 0;
-      background: #fff;
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: var(--card-shadow-hover);
-      border: 1px solid rgba(79,70,229,0.1);
-      text-align: center;
-    }
-    .founder-emoji-box {
-      width: 84px; height: 84px;
-      background: var(--grad);
-      border-radius: 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 44px;
-      margin: 0 auto 20px;
-      box-shadow: 0 8px 24px rgba(79,70,229,0.3);
+    .port-card p {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    /* ── SERVICES ── */
-    .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 48px; }
-    .service-card { background:#fff;border-radius:20px;padding:28px;box-shadow:var(--card-shadow);transition:transform 0.25s,box-shadow 0.25s;border-top:4px solid var(--indigo); }
-    .service-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
-    .service-icon { font-size:40px;margin-bottom:14px; }
-    .service-card h3 { font-size:18px;font-weight:700;margin-bottom:10px;color:#1e1b4b; }
-    .service-card p { font-size:14px;color:#6b7280;line-height:1.6;margin-bottom:14px; }
-    .service-features { list-style:none; }
-    .service-features li { font-size:14px;color:#374151;padding:4px 0;display:flex;align-items:center;gap:6px; }
-    .service-features li::before { content:"✓";color:#16a34a;font-weight:700;font-size:13px; }
-
-    /* ── PROCESS ── */
-    .process-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px; }
-    .process-card { background:#fff;border-radius:20px;padding:28px;box-shadow:var(--card-shadow);text-align:center;transition:transform 0.25s,box-shadow 0.25s; }
-    .process-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
-    .step-circle { width:56px;height:56px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Poppins',sans-serif;font-size:24px;font-weight:900;margin:0 auto 16px; }
-
-    /* ── TRACK RECORD ── */
-    .track-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px; }
-    .track-card { background:#fff;border-radius:20px;padding:36px 28px;box-shadow:var(--card-shadow);text-align:center;transition:transform 0.25s,box-shadow 0.25s;border:1px solid rgba(79,70,229,0.07); }
-    .track-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
-    .track-number { font-family:'Poppins',sans-serif;font-size:56px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonial-slider { position:relative;overflow:hidden;border-radius:24px;margin-top:48px; }
-    .testimonial-track { display:flex;transition:transform 0.45s cubic-bezier(.16,1,.3,1); }
-    .testimonial-item { min-width:100%;padding:4px; }
-    .testimonial-card { background:#fff;border-radius:20px;padding:40px;box-shadow:var(--card-shadow-hover);text-align:center; }
-    .testimonial-card blockquote { font-size:19px;color:#374151;line-height:1.7;font-style:italic;margin-bottom:24px; }
-    .testimonial-card blockquote::before { content:'"';font-size:60px;color:rgba(79,70,229,0.15);font-family:'Georgia',serif;line-height:0;vertical-align:-28px;margin-right:4px; }
-    .testimonial-author { font-weight:700;color:#1e1b4b;font-size:16px; }
-    .testimonial-role { font-size:14px;color:#9ca3af;margin-top:4px; }
-    .slider-controls { display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px; }
-    .slider-btn { width:48px;height:48px;border-radius:50%;border:2px solid var(--indigo);color:var(--indigo);background:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s; }
-    .slider-btn:hover { background:var(--indigo);color:#fff; }
-    .slider-dots { display:flex;gap:8px; }
-    .slider-dot { width:10px;height:10px;border-radius:50%;background:#d1d5db;cursor:pointer;transition:background 0.2s; }
-    .slider-dot.active { background:var(--indigo); }
-
-    /* ── FAQ ── */
-    .faq-list { margin-top:40px;max-width:720px;margin-left:auto;margin-right:auto; }
-    .faq-item { background:#fff;border-radius:16px;margin-bottom:12px;box-shadow:var(--card-shadow);overflow:hidden;transition:box-shadow 0.2s; }
-    .faq-item:hover { box-shadow:var(--card-shadow-hover); }
-    .faq-q { display:flex;align-items:center;justify-content:space-between;padding:22px 24px;cursor:pointer;font-weight:700;font-size:16px;color:#1e1b4b;gap:12px; }
-    .faq-icon { width:32px;height:32px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;transition:transform 0.3s; }
-    .faq-item.active .faq-icon { transform:rotate(45deg); }
-    .faq-a { max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(.16,1,.3,1),padding 0.3s; }
-    .faq-a-inner { padding:0 24px 20px;color:#6b7280;font-size:15px;line-height:1.7; }
-
-    /* ── WHY WEBMADEEASY ── */
-    .trust-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;margin-bottom:56px; }
-    .trust-card { background:#fff;border-radius:20px;padding:28px;box-shadow:var(--card-shadow);transition:transform 0.25s,box-shadow 0.25s; }
-    .trust-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
-    .trust-icon { font-size:36px;margin-bottom:12px; }
-    .trust-card h3 { font-size:17px;font-weight:700;margin-bottom:8px;color:#1e1b4b; }
-    .trust-card p { font-size:14px;color:#6b7280;line-height:1.6; }
-    .comparison-table { width:100%;border-collapse:collapse;border-radius:20px;overflow:hidden;box-shadow:var(--card-shadow-hover); }
-    .comparison-table th { background:var(--grad);color:#fff;padding:18px 20px;text-align:left;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px; }
-    .comparison-table td { padding:16px 20px;font-size:15px;border-bottom:1px solid #f3f4f6;background:#fff; }
-    .comparison-table tr:last-child td { border-bottom:none; }
-    .comparison-table tr:nth-child(even) td { background:#fafafa; }
-    .tick { color:#16a34a;font-weight:900; }
-    .cross { color:#ef4444;font-weight:900; }
-    .maybe { color:#f59e0b;font-weight:700; }
-
-    /* ── TOOLBOX ── */
-    .tools-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px; }
-    .tool-card { background:#fff;border-radius:16px;padding:24px 20px;box-shadow:var(--card-shadow);text-align:center;transition:transform 0.25s,box-shadow 0.25s; }
-    .tool-card:hover { transform:translateY(-4px);box-shadow:var(--card-shadow-hover); }
-    .tool-icon { font-size:32px;margin-bottom:10px; }
-    .tool-card h4 { font-size:15px;font-weight:700;color:#1e1b4b;margin-bottom:6px; }
-    .tool-desc { font-size:12px;color:#9ca3af;line-height:1.4; }
-
-    /* ── DEMO CTA ── */
-    .demo-cta-box {
-      border: 2px dashed rgba(79,70,229,0.3);
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════ */
+    .testimonial-slider { position: relative; overflow: hidden; }
+    .testimonial-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 8px;
+    }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 48px 32px;
-      text-align: center;
+      padding: 44px 40px;
+      box-shadow: var(--shadow);
+      max-width: 700px;
       margin: 0 auto;
-      max-width: 640px;
-      background: rgba(79,70,229,0.02);
-    }
-    .demo-cta-box h2 { font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:14px;color:#1e1b4b; }
-    .demo-cta-box p { color:#6b7280;font-size:16px;line-height:1.7;margin-bottom:28px; }
-
-    /* ── FOOTER ── */
-    .page-footer {
-      background: var(--grad);
-      color: rgba(255,255,255,0.9);
       text-align: center;
-      padding: 28px 24px;
-      font-size: 15px;
-      font-weight: 500;
     }
-    .page-footer .footer-inner { display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap; }
-    .page-footer .gv-badge { background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff; }
-    .page-footer .gv-badge .gv-circle { background:#fff;color:#16a34a; }
+    .testimonial-card blockquote {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .testimonial-card blockquote::before {
+      content: '"';
+      font-size: 5rem;
+      color: rgba(99,102,241,0.2);
+      position: absolute;
+      top: -20px; left: -10px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-author {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .testimonial-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .slider-btn {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+    }
+    .slider-btn:hover { border-color: #6366f1; background: #6366f1; color: #fff; transform: scale(1.1); }
+    .slider-dots { display: flex; gap: 8px; }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .dot.active { background: #6366f1; width: 24px; border-radius: 4px; }
 
-    /* ══════════════════════════════════════
+    /* ═══════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════ */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s;
+    }
+    .faq-item:hover { box-shadow: var(--shadow-hover); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-align: left;
+      gap: 12px;
+    }
+    .faq-q .faq-icon {
+      width: 28px; height: 28px; min-width: 28px;
+      border-radius: 50%;
+      background: rgba(99,102,241,0.10);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #6366f1;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); background: #6366f1; color: #fff; }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .faq-item.active .faq-a { max-height: 200px; padding: 0 24px 20px; }
+
+    /* ═══════════════════════════════════════════
+       WHY WEBMADEEASY
+    ═══════════════════════════════════════════ */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .trust-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .trust-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .trust-card .trust-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .trust-card h3 {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .trust-card p {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Comparison table */
+    .comp-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .comp-table th, .comp-table td {
+      padding: 16px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    .comp-table th {
+      background: rgba(99,102,241,0.08);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+    }
+    .comp-table th:first-child { text-align: left; }
+    .comp-table td:first-child { text-align: left; color: var(--text-secondary); font-weight: 700; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table .yes { color: #22c55e; font-size: 1.2rem; }
+    .comp-table .no { color: #ef4444; font-size: 1.2rem; }
+    .comp-table .partial { color: #f59e0b; font-size: 1.1rem; }
+    .comp-table .highlight-col { background: rgba(99,102,241,0.05); }
+
+    /* ═══════════════════════════════════════════
+       TOOLBOX
+    ═══════════════════════════════════════════ */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .tool-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .tool-card .tool-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .tool-card .tool-name {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    /* ═══════════════════════════════════════════
+       DEMO CTA
+    ═══════════════════════════════════════════ */
+    .demo-box {
+      max-width: 700px;
+      margin: 0 auto;
+      border: 2.5px dashed rgba(99,102,241,0.4);
+      border-radius: 24px;
+      padding: 50px 40px;
+      text-align: center;
+      background: rgba(99,102,241,0.04);
+      transition: border-color 0.3s;
+    }
+    .demo-box:hover { border-color: rgba(99,102,241,0.7); }
+    .demo-box h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .demo-box p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    /* ═══════════════════════════════════════════
        PRICING PAGE
-    ══════════════════════════════════════ */
-    .pricing-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px;max-width:780px;margin-left:auto;margin-right:auto; }
+    ═══════════════════════════════════════════ */
+    #page-pricing section { padding: 90px 24px 60px; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 50px;
+    }
     .pricing-card {
-      background:#fff;
-      border-radius:24px;
-      padding:40px 28px;
-      box-shadow:var(--card-shadow);
-      position:relative;
-      transition:transform 0.25s,box-shadow 0.25s;
-      border:2px solid transparent;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 30px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
-    .pricing-card.subdomain {
-      opacity:1;
-      border-color: rgba(79,70,229,0.12);
-    }
+    .pricing-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .pricing-card.subdomain { opacity: 1; }   /* full opacity – no faded effect */
     .pricing-card.featured {
-      border-color:#f59e0b;
-      box-shadow:0 0 0 4px rgba(245,158,11,0.12), var(--card-shadow-hover);
+      border: 2px solid rgba(245,158,11,0.7);
+      box-shadow: 0 8px 40px rgba(245,158,11,0.2);
     }
-    .pricing-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
+    .pricing-card.featured:hover { box-shadow: 0 20px 60px rgba(245,158,11,0.35); }
     .popular-badge {
-      position:absolute;
-      top:-14px;left:50%;transform:translateX(-50%);
-      background:linear-gradient(135deg,#f59e0b,#d97706);
-      color:#fff;
-      font-size:13px;font-weight:800;
-      padding:7px 22px;
-      border-radius:100px;
-      white-space:nowrap;
-      box-shadow:0 4px 12px rgba(245,158,11,0.4);
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 900;
+      padding: 5px 18px;
+      border-radius: 50px;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .pricing-card h3 { font-size:24px;font-weight:800;margin-bottom:8px;color:#1e1b4b; }
+    .pricing-plan-name {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .pricing-plan-desc {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
     .price-old {
-      font-size:20px;
-      color:#ef4444;
-      text-decoration:line-through;
-      font-weight:700;
-      animation:wiggle 1.5s ease-in-out infinite;
-      display:inline-block;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #ef4444;
+      text-decoration: line-through;
+      animation: wiggle 2s ease-in-out infinite;
+      display: inline-block;
     }
     @keyframes wiggle {
-      0%,100% { transform:rotate(0deg); }
-      15% { transform:rotate(-2deg); }
-      30% { transform:rotate(2deg); }
-      45% { transform:rotate(-1deg); }
-      60% { transform:rotate(1deg); }
+      0%,100% { transform: rotate(0deg); }
+      15% { transform: rotate(-2deg); }
+      30% { transform: rotate(2deg); }
+      45% { transform: rotate(-1deg); }
+      60% { transform: rotate(1deg); }
     }
-    .price-new { font-family:'Poppins',sans-serif;font-size:40px;font-weight:900;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin:6px 0; }
-    .price-monthly { font-size:15px;color:#9ca3af;font-weight:600;margin-bottom:20px; }
-    .pricing-features { list-style:none;margin:20px 0; }
-    .pricing-features li { font-size:15px;color:#374151;padding:7px 0;display:flex;align-items:center;gap:8px;border-bottom:1px solid #f9fafb; }
-    .pricing-features li:last-child { border-bottom:none; }
-    .pricing-features li .tick { font-size:17px; }
-    .gv-addon {
-      background:#f0fdf4;
-      border:1px solid #bbf7d0;
-      border-radius:12px;
-      padding:14px 18px;
-      margin:16px 0;
-      font-size:14px;
-      color:#15803d;
-      font-weight:600;
-      display:flex;
-      align-items:center;
-      gap:8px;
+    .price-new {
+      font-size: 2.6rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin: 6px 0 4px;
     }
-    .addons-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px; }
-    .addon-card { background:#fff;border-radius:16px;padding:22px;box-shadow:var(--card-shadow);transition:transform 0.2s,box-shadow 0.2s; }
-    .addon-card:hover { transform:translateY(-3px);box-shadow:var(--card-shadow-hover); }
-    .addon-icon { font-size:28px;margin-bottom:8px; }
-    .addon-card h4 { font-size:15px;font-weight:700;color:#1e1b4b;margin-bottom:4px; }
-    .addon-price { font-size:18px;font-weight:800;background:var(--grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-    .addon-desc { font-size:13px;color:#9ca3af;margin-top:4px; }
+    .price-monthly {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .pricing-features li .pf-check {
+      width: 20px; height: 20px; min-width: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .addon-strip {
+      background: rgba(99,102,241,0.06);
+      border: 1.5px solid rgba(99,102,241,0.2);
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--text-secondary);
+    }
+    [data-theme="dark"] .addon-strip { background: rgba(99,102,241,0.12); }
 
-    /* ══════════════════════════════════════
+    .addons-section { max-width: 900px; margin: 0 auto; }
+    .addons-section h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .addon-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .addon-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .addon-card .addon-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .addon-card .addon-price {
+      font-size: 1.05rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ═══════════════════════════════════════════
        CONTACT PAGE
-    ══════════════════════════════════════ */
-    .contact-cards { display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:600px;margin:40px auto 0; }
+    ═══════════════════════════════════════════ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
     .contact-card {
-      background:#fff;
-      border-radius:20px;
-      padding:36px 32px;
-      box-shadow:var(--card-shadow);
-      text-align:center;
-      transition:transform 0.25s,box-shadow 0.25s;
-      border:1px solid rgba(79,70,229,0.07);
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .contact-card:hover { transform:translateY(-5px);box-shadow:var(--card-shadow-hover); }
-    .contact-icon { font-size:44px;margin-bottom:14px; }
-    .contact-card h3 { font-size:15px;color:#9ca3af;font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em; }
-    .contact-card a { font-size:20px;font-weight:800;color:var(--indigo);text-decoration:none;display:block;transition:color 0.2s; }
-    .contact-card a:hover { color:var(--violet); }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .contact-card .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .contact-card .contact-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .contact-card a {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #6366f1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover { color: #8b5cf6; }
     .contact-note {
-      max-width:480px;
-      margin:28px auto 0;
-      background:linear-gradient(135deg,rgba(79,70,229,0.06),rgba(124,58,237,0.06));
-      border:1px solid rgba(79,70,229,0.15);
-      border-radius:16px;
-      padding:20px 24px;
-      text-align:center;
-      font-size:16px;
-      font-weight:600;
-      color:#374151;
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(99,102,241,0.06);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 14px;
+      padding: 16px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-align: center;
     }
 
-    /* ══════════════════════════════════════
-       DHAMAKA POPUP
-    ══════════════════════════════════════ */
+    /* ═══════════════════════════════════════════
+       POPUP
+    ═══════════════════════════════════════════ */
     #dhamaka-popup {
-      display:none;
-      position:fixed;inset:0;
-      background:rgba(15,15,35,0.75);
-      backdrop-filter:blur(6px);
-      z-index:9999;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
-    #dhamaka-popup.show { display:flex; }
+    #dhamaka-popup.hidden { display: none; }
     .popup-box {
-      background:#fff;
-      border-radius:28px;
-      padding:48px 40px;
-      max-width:500px;
-      width:100%;
-      text-align:center;
-      box-shadow:0 32px 80px rgba(0,0,0,0.25);
-      position:relative;
-      animation:popup-in 0.45s cubic-bezier(.16,1,.3,1);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 48px 40px;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      position: relative;
     }
-    @keyframes popup-in { from { transform:scale(0.7) translateY(40px);opacity:0; } to { transform:scale(1) translateY(0);opacity:1; } }
     .popup-close {
-      position:absolute;top:16px;right:16px;
-      width:36px;height:36px;
-      border-radius:50%;background:#f3f4f6;
-      border:none;cursor:pointer;font-size:20px;
-      display:flex;align-items:center;justify-content:center;
-      color:#6b7280;transition:background 0.2s;
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: color 0.2s, transform 0.2s;
     }
-    .popup-close:hover { background:#e5e7eb; }
-    .popup-bounce { font-size:72px;animation:bounce-anim 1s infinite; }
-    @keyframes bounce-anim {
-      0%,100% { transform:translateY(0); }
-      50% { transform:translateY(-18px); }
+    .popup-close:hover { color: #ef4444; transform: scale(1.2); }
+    .popup-icon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 16px;
+      animation: bounce 1s ease infinite;
     }
-    .popup-headline { font-size:32px;font-weight:900;color:#dc2626;margin:12px 0 8px;font-family:'Poppins',sans-serif; }
-    .popup-sub { font-size:16px;color:#6b7280;line-height:1.6;margin-bottom:24px; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .popup-box h2 {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: #ef4444;
+      margin-bottom: 10px;
+    }
+    .popup-box p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
 
-    /* ── SECTION HEADINGS ── */
-    .section-heading { font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.2;margin-bottom:16px;color:#1e1b4b; }
-    .section-sub { font-size:17px;color:#6b7280;line-height:1.7;max-width:620px;margin:0 auto; }
-
-    /* ══════════════════════════════════════
+    /* ═══════════════════════════════════════════
        RESPONSIVE
-    ══════════════════════════════════════ */
-    @media(max-width:1024px) {
-      .services-grid { grid-template-columns:repeat(2,1fr); }
-      .process-grid { grid-template-columns:repeat(2,1fr); }
-      .tools-grid { grid-template-columns:repeat(4,1fr); }
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; }
     }
-    @media(max-width:768px) {
-      nav.desktop-nav { display:none; }
-      .hamburger { display:flex; }
-      #mobile-menu { display:none; }
-      #mobile-menu.open { display:flex; }
-      .stats-bar { grid-template-columns:repeat(2,1fr); }
-      .story-grid { grid-template-columns:1fr; }
-      .services-grid { grid-template-columns:1fr; }
-      .process-grid { grid-template-columns:1fr; }
-      .track-grid { grid-template-columns:1fr; }
-      .trust-grid { grid-template-columns:1fr; }
-      .tools-grid { grid-template-columns:repeat(2,1fr); }
-      .pricing-grid { grid-template-columns:1fr;max-width:420px; }
-      .addons-grid { grid-template-columns:1fr; }
-      .contact-cards { grid-template-columns:1fr;max-width:360px; }
-      .comparison-table th, .comparison-table td { padding:12px 14px;font-size:14px; }
-      .hero-buttons { gap:10px; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 64px 20px; }
+      .testimonial-card { padding: 32px 24px; }
+      .founder-card { padding: 28px; }
     }
-    @media(max-width:480px) {
-      .hero { padding:60px 16px 40px; }
-      .section { padding:60px 16px; }
-      .section-sm { padding:40px 16px; }
-      .btn-primary,.btn-outline,.btn-green { font-size:15px;padding:13px 24px; }
-      .stat-card .stat-number { font-size:28px; }
-      .tools-grid { grid-template-columns:repeat(2,1fr); }
-      .founder-card { padding:28px 20px; }
-      .popup-box { padding:32px 20px; }
+    @media (max-width: 480px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.8rem; }
+      .popup-box { padding: 36px 24px; }
+      .demo-box { padding: 36px 24px; }
     }
 
-    /* ── DIVIDER ── */
-    .section-divider { border:none;border-top:1px solid rgba(79,70,229,0.08);margin:0 24px; }
+    /* misc */
+    .text-center { text-align: center; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .mb-12 { margin-bottom: 48px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+
+    .section-accent {
+      border-top: 4px solid transparent;
+      border-image: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899) 1;
+    }
+    
+    .divider {
+      width: 64px;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      margin: 16px auto 0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ══ PROMO BAR ══ -->
-  <div id="promo-bar">
-    🔥 Limited Launch Offer — Special prices for early clients! Act now before they're gone.
-    <button onclick="closePromo()" aria-label="Close promo">✕</button>
-  </div>
+<!-- Floating orbs -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
 
-  <!-- ══ HEADER ══ -->
-  <header id="main-header">
-    <div class="header-inner">
-      <span class="logo" onclick="navigate('home')">✦ WebMadeEasy.CAV</span>
-      <nav class="desktop-nav">
-        <a onclick="navigate('home')" id="nav-home" class="active">Home</a>
-        <a onclick="navigate('pricing')" id="nav-pricing">Pricing</a>
-        <a onclick="navigate('contact')" id="nav-contact" class="btn-cta">Let's Talk →</a>
-      </nav>
-      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+<!-- ══ PROMO BAR ══ -->
+<div id="promo-bar">
+  <span>🔥 Limited Launch Offer — Special Prices for Early Clients! Don't Miss Out.</span>
+  <button onclick="closePromo()" aria-label="Close promo">✕</button>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <span class="logo" onclick="navigate('home')">✦ WebMadeEasy.CAV</span>
+    <div class="nav-links">
+      <a class="nav-btn active" id="nav-home" onclick="navigate('home')">Home</a>
+      <a class="nav-btn" id="nav-pricing" onclick="navigate('pricing')">Pricing</a>
+      <button class="btn-cta" onclick="navigate('contact')">Let's Talk →</button>
+    </div>
+    <div class="nav-right">
+      <span class="theme-icon" id="theme-icon">☀️</span>
+      <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle light mode"></button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div id="mobile-menu">
-      <a onclick="navigate('home');closeMobileMenu()">🏠 Home</a>
-      <a onclick="navigate('pricing');closeMobileMenu()">💲 Pricing</a>
-      <a onclick="navigate('contact');closeMobileMenu()">✉️ Let's Talk</a>
-    </div>
-  </header>
+  </div>
+</nav>
+<div id="mobile-menu">
+  <a class="nav-btn" onclick="navigate('home');toggleMenu()">Home</a>
+  <a class="nav-btn" onclick="navigate('pricing');toggleMenu()">Pricing</a>
+  <a class="nav-btn" onclick="navigate('contact');toggleMenu()">Let's Talk →</a>
+</div>
 
-  <!-- ════════════════════════════════════════════
-       HOME PAGE
-  ════════════════════════════════════════════ -->
-  <div id="page-home" class="page active">
+<!-- ══════════════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-badges reveal">
-        <span class="hero-badge-green"><span class="pulse-dot"></span> Open for Projects</span>
-        <span class="hero-badge-blue">⚡ 3–4 Working Days Delivery</span>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <div class="pulse-dot"></div>
+          <span>Open for Projects</span>
+        </div>
+        <div class="hero-badge">
+          <span>⚡ 3–4 Working Days Delivery</span>
+        </div>
       </div>
-      <h1 class="reveal reveal-delay-1"><span class="grad-text">WebMadeEasy.CAV</span></h1>
-      <p class="hero-subtitle reveal reveal-delay-2">We craft beautiful, high‑performance websites for schools, colleges &amp; any business — so you can focus on what you do best, not technology.</p>
-      <p class="hero-note reveal reveal-delay-2">⏱ Delivered in 3–4 working days · Full customization liberty · Your vision, our expertise</p>
-      <div class="hero-buttons reveal reveal-delay-3">
-        <button class="btn-primary" onclick="navigate('pricing')">See Discounted Plans</button>
-        <button class="btn-outline" onclick="navigate('contact')">Free Consultation</button>
-        <a class="btn-green" href="demo.html" target="_self">🔗 Live Demo</a>
+      <h1 class="hero-title reveal">WebMadeEasy.CAV</h1>
+      <p class="hero-sub reveal">We craft beautiful, high‑performance websites for schools, colleges & any business — so you can focus on what you do best, not technology.</p>
+      <p class="hero-note reveal">🚀 Delivered in 3–4 working days · Full customization liberty · Built with clean code</p>
+      <div class="hero-btns reveal">
+        <button class="btn btn-primary" onclick="navigate('pricing')">See Discounted Plans</button>
+        <button class="btn btn-outline" onclick="navigate('contact')">Free Consultation</button>
+        <a href="demo.html" class="btn btn-ghost">🔗 Live Demo</a>
       </div>
-      <!-- STATS -->
-      <div class="stats-bar reveal reveal-delay-4">
+      <div class="stats-bar reveal">
         <div class="stat-card">
           <div class="stat-number" id="stat-projects">20+</div>
           <div class="stat-label">Projects Done</div>
@@ -799,782 +1398,784 @@
         </div>
         <div class="stat-card">
           <div class="stat-number" id="stat-love">100%</div>
-          <div class="stat-label">Client Love</div>
+          <div class="stat-label">% Client Love</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">₹6,999</div>
           <div class="stat-label">Starting Fee</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- MY MISSION -->
-    <section class="section center">
-      <span class="badge reveal">📖 My Mission</span>
-      <h2 class="section-heading reveal reveal-delay-1">Every School, College &amp; Business<br/><span class="grad-text">Deserves to Shine Online</span></h2>
-      <p class="section-sub reveal reveal-delay-2">I started WebMadeEasy.CAV because I saw brilliant institutions and passionate businesses being left behind online — not because of lack of effort, but because professional web services were too expensive or too complicated. My mission is to change that, one website at a time.</p>
+  <!-- MISSION -->
+  <section id="mission" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container text-center">
+      <div class="badge reveal">📖 My Mission</div>
+      <h2 class="section-heading reveal">Every School, College & Business<br><span class="grad">Deserves to Shine Online</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal" style="margin: 20px auto 0;">
+        I started WebMadeEasy.CAV because I believe that every institution and business, no matter how small, deserves a professional online presence. Too many schools and small businesses are invisible online — not because they lack quality, but because web design felt too expensive or too complicated. I'm here to change that — one beautiful website at a time.
+      </p>
       <div class="story-grid">
-        <div class="story-card reveal reveal-delay-1">
-          <div class="story-icon">🌐</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Global Reach</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">Your institution or business, visible to the world. A fast, modern website opens doors that were previously closed.</p>
+        <div class="story-card reveal">
+          <span class="story-icon">🌍</span>
+          <h3>Global Reach</h3>
+          <p>Your website becomes your 24/7 ambassador — reaching parents, students, customers, and partners around the clock, from anywhere in the world.</p>
         </div>
-        <div class="story-card reveal reveal-delay-2">
-          <div class="story-icon">💛</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Empathy‑Driven</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">Every project is personal. I listen, understand your story, and translate your goals into a digital experience that feels right.</p>
+        <div class="story-card reveal">
+          <span class="story-icon">💛</span>
+          <h3>Empathy‑Driven</h3>
+          <p>I listen before I build. Every site is crafted around your goals, your audience, and your unique story — not a template that fits everyone and no one.</p>
         </div>
-        <div class="story-card reveal reveal-delay-3">
-          <div class="story-icon">🤝</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Not Just a Developer</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">I'm your digital partner. Available on WhatsApp, transparent about timelines, and genuinely invested in your success.</p>
+        <div class="story-card reveal">
+          <span class="story-icon">🛠️</span>
+          <h3>Not Just a Developer</h3>
+          <p>I'm your digital partner. From consultation to launch to ongoing care, I'm with you at every step — honest, transparent, and genuinely invested in your success.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- MEET THE FOUNDER -->
-    <section class="section center">
-      <span class="badge reveal">👋 Meet the Founder</span>
-      <div class="founder-card reveal reveal-delay-1">
-        <div class="founder-emoji-box">💻</div>
-        <span class="badge" style="margin-bottom:12px;">👋 Meet the Founder</span>
-        <h2 style="font-size:28px;font-weight:800;color:#1e1b4b;margin-bottom:8px;">Rishi Pavan R</h2>
-        <p style="font-size:16px;color:#6b7280;line-height:1.7;margin-bottom:24px;">Hi! I'm Rishi — a passionate web developer who believes every institution deserves a strong online presence. I work with full honesty and transparency, deliver in 3–4 days as promised, and stay available on WhatsApp throughout the project. No surprises, just results.</p>
-        <button class="btn-primary" onclick="navigate('contact')">Work With Me →</button>
+  <!-- FOUNDER -->
+  <section id="founder">
+    <div class="container text-center">
+      <div class="badge reveal">👋 Meet the Founder</div>
+      <h2 class="section-heading reveal">The Person Behind the <span class="grad">Screen</span></h2>
+      <div class="divider reveal" style="margin-bottom: 40px;"></div>
+      <div class="founder-card reveal">
+        <div class="founder-avatar">💻</div>
+        <span class="badge" style="margin-bottom: 12px;">👋 Meet the Founder</span>
+        <h3>Rishi Pavan R</h3>
+        <p class="role">Founder · Developer · Designer</p>
+        <p>Hi! I'm Rishi — a passionate web developer who believes every business and institution deserves a stunning, fast, and honest web presence. I work with full transparency, no hidden fees, and no broken promises. Every project gets my complete attention. I deliver in 3–4 working days because I respect your time. Ask for my ID proof anytime — I'm 100% real, trustworthy, and committed to your success.</p>
+        <button class="btn btn-primary" onclick="navigate('contact')">Work With Me →</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- SERVICES -->
-    <section class="section center">
-      <span class="badge reveal">🛠️ What I Offer</span>
-      <h2 class="section-heading reveal reveal-delay-1">Complete Website <span class="grad-text">Solutions</span></h2>
+  <!-- SERVICES -->
+  <section id="services" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">🛠️ What I Offer</div>
+        <h2 class="section-heading reveal">Complete Website <span class="grad">Solutions</span></h2>
+        <div class="divider reveal"></div>
+        <p class="section-sub reveal" style="margin: 16px auto 0;">Everything you need to establish, grow, and maintain a powerful online presence.</p>
+      </div>
       <div class="services-grid">
-        <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">🖥️</div>
-          <h3>Multi‑page Website</h3>
-          <p>A full-fledged website with multiple pages tailored to your organization's needs.</p>
-          <ul class="service-features">
-            <li>Up to 5 custom pages</li>
-            <li>Mobile responsive</li>
-            <li>Fast loading speed</li>
-            <li>Contact & enquiry forms</li>
+        <div class="service-card reveal">
+          <h3>🌐 Multi‑page Website</h3>
+          <p class="svc-desc">A fully structured website with multiple pages — ideal for schools, colleges, and businesses wanting a complete online presence.</p>
+          <ul class="check-list">
+            <li>Up to 5 custom‑designed pages</li>
+            <li>Responsive on all devices</li>
+            <li>Contact / Admission form integration</li>
+            <li>Google Maps & social links</li>
+            <li>Fast loading, clean code</li>
           </ul>
         </div>
-        <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">🚀</div>
-          <h3>Landing Page</h3>
-          <p>A single high-converting page perfect for campaigns, products, or admissions.</p>
-          <ul class="service-features">
-            <li>Conversion-focused design</li>
-            <li>Call-to-action sections</li>
-            <li>Lead capture form</li>
-            <li>3–4 day delivery</li>
+        <div class="service-card reveal">
+          <h3>🚀 Landing Page</h3>
+          <p class="svc-desc">A single, high‑converting page focused on one goal — capturing leads, promoting a product, or announcing an event.</p>
+          <ul class="check-list">
+            <li>Focused single‑page design</li>
+            <li>Conversion‑optimized layout</li>
+            <li>Lead capture / CTA integration</li>
+            <li>Lightning‑fast performance</li>
+            <li>SEO‑ready structure</li>
           </ul>
         </div>
-        <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">🔄</div>
-          <h3>Website Revamp</h3>
-          <p>Transform your old or outdated website into a modern, high-performance site.</p>
-          <ul class="service-features">
-            <li>Full redesign</li>
-            <li>Speed optimization</li>
-            <li>Content migration</li>
-            <li>SEO improvements</li>
+        <div class="service-card reveal">
+          <h3>🔄 Website Revamp</h3>
+          <p class="svc-desc">Is your existing website outdated? I'll transform it into a modern, beautiful, and fast website that represents you proudly.</p>
+          <ul class="check-list">
+            <li>Complete visual redesign</li>
+            <li>Performance optimization</li>
+            <li>Mobile responsiveness fix</li>
+            <li>Content refresh & restructure</li>
+            <li>Migration support available</li>
           </ul>
         </div>
-        <div class="service-card reveal reveal-delay-4">
-          <div class="service-icon">🛡️</div>
-          <h3>Monthly Care</h3>
-          <p>Ongoing support, edits, and maintenance so your site stays fresh and secure.</p>
-          <ul class="service-features">
-            <li>2 edits/month included</li>
+        <div class="service-card reveal">
+          <h3>🛡️ Monthly Care</h3>
+          <p class="svc-desc">Keep your website fresh, secure, and up‑to‑date with a monthly care plan. I handle the tech so you can focus on your work.</p>
+          <ul class="check-list">
+            <li>2 content edits per month</li>
             <li>Uptime monitoring</li>
-            <li>WhatsApp support</li>
-            <li>Content updates</li>
+            <li>Security checks</li>
+            <li>Backup management</li>
+            <li>Priority WhatsApp support</li>
           </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- HOW IT WORKS -->
-    <section class="section center">
-      <span class="badge reveal">⚙️ How It Works</span>
-      <h2 class="section-heading reveal reveal-delay-1">From Idea to <span class="grad-text">Live Website</span></h2>
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">⚙️ How It Works</div>
+        <h2 class="section-heading reveal">From Idea to <span class="grad">Live Website</span></h2>
+        <div class="divider reveal"></div>
+      </div>
       <div class="process-grid">
-        <div class="process-card reveal reveal-delay-1">
-          <div class="step-circle">1</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Consult</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">We chat on WhatsApp to understand your vision, goals, and requirements — completely free.</p>
+        <div class="process-card reveal">
+          <div class="process-num">1</div>
+          <h3>Consult</h3>
+          <p>We talk about your vision, goals, and requirements. Free consultation — no pressure, no commitment.</p>
         </div>
-        <div class="process-card reveal reveal-delay-2">
-          <div class="step-circle">2</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Design &amp; Build</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">I design and develop your website within 3–4 working days using clean, modern code.</p>
+        <div class="process-card reveal">
+          <div class="process-num">2</div>
+          <h3>Design & Build</h3>
+          <p>I craft your custom website using clean HTML/CSS/JS — fast, beautiful, and built to your exact specs.</p>
         </div>
-        <div class="process-card reveal reveal-delay-3">
-          <div class="step-circle">3</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Review &amp; Refine</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">You review the site, share feedback, and I refine it until you're completely happy.</p>
+        <div class="process-card reveal">
+          <div class="process-num">3</div>
+          <h3>Review & Refine</h3>
+          <p>You review the site. We fine‑tune every detail until you're 100% satisfied. Free revisions included.</p>
         </div>
-        <div class="process-card reveal reveal-delay-4">
-          <div class="step-circle">4</div>
-          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#1e1b4b;">Launch &amp; Support</h3>
-          <p style="font-size:15px;color:#6b7280;line-height:1.6;">We go live! And I remain available for support, updates, and your success.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="section-divider" />
-
-    <!-- TRACK RECORD -->
-    <section class="section center">
-      <span class="badge reveal">📁 Track Record</span>
-      <h2 class="section-heading reveal reveal-delay-1">Trusted by Schools, Colleges<br/><span class="grad-text">&amp; Businesses</span></h2>
-      <div class="track-grid">
-        <div class="track-card reveal reveal-delay-1">
-          <div class="track-number">20+</div>
-          <p style="font-size:19px;font-weight:700;color:#1e1b4b;margin-top:10px;">Projects Completed</p>
-          <p style="font-size:15px;color:#9ca3af;margin-top:6px;">Schools, colleges, and businesses across India</p>
-        </div>
-        <div class="track-card reveal reveal-delay-2">
-          <div class="track-number">5</div>
-          <p style="font-size:19px;font-weight:700;color:#1e1b4b;margin-top:10px;">Live Websites</p>
-          <p style="font-size:15px;color:#9ca3af;margin-top:6px;">Currently live and performing for real clients</p>
-        </div>
-        <div class="track-card reveal reveal-delay-3">
-          <div class="track-number">100%</div>
-          <p style="font-size:19px;font-weight:700;color:#1e1b4b;margin-top:10px;">Client Satisfaction</p>
-          <p style="font-size:15px;color:#9ca3af;margin-top:6px;">Every client happy, every project delivered on time</p>
+        <div class="process-card reveal">
+          <div class="process-num">4</div>
+          <h3>Launch & Support</h3>
+          <p>Your site goes live! I handle deployment and remain available for ongoing support and updates.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
+  <!-- PORTFOLIO -->
+  <section id="portfolio" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">📁 Track Record</div>
+        <h2 class="section-heading reveal">Trusted by Schools, Colleges <span class="grad">& Businesses</span></h2>
+        <div class="divider reveal"></div>
+      </div>
+      <div class="portfolio-grid">
+        <div class="port-card reveal">
+          <div class="port-num">20+</div>
+          <p>Projects Completed</p>
+        </div>
+        <div class="port-card reveal">
+          <div class="port-num">5</div>
+          <p>Live Websites</p>
+        </div>
+        <div class="port-card reveal">
+          <div class="port-num">100%</div>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section center">
-      <span class="badge reveal">💬 Real Experiences</span>
-      <h2 class="section-heading reveal reveal-delay-1">What Clients <span class="grad-text">Say</span></h2>
-      <div class="testimonial-slider reveal reveal-delay-2" id="testimonial-slider">
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">💬 Real Experiences</div>
+        <h2 class="section-heading reveal">What Clients <span class="grad">Say</span></h2>
+        <div class="divider reveal"></div>
+      </div>
+      <div class="testimonial-slider reveal">
         <div class="testimonial-track" id="testimonial-track">
-          <div class="testimonial-item">
+          <div class="testimonial-slide">
             <div class="testimonial-card">
-              <blockquote>Rishi delivered our school website in just 3 days! The design is clean, modern, and exactly what we imagined. Parents and staff have been complimenting it non-stop. Highly recommend WebMadeEasy.</blockquote>
-              <div class="testimonial-author">— Principal Meera Sharma</div>
-              <div class="testimonial-role">Sunrise Public School, Bengaluru</div>
+              <blockquote>"Rishi delivered our school website in just 3 days! The design is stunning, parents and students love it. He was transparent, responsive, and genuinely cared about getting every detail right. Highly recommended!"</blockquote>
+              <p class="testimonial-author">— Priya Sharma</p>
+              <p class="testimonial-role">Principal, Green Valley School</p>
             </div>
           </div>
-          <div class="testimonial-item">
+          <div class="testimonial-slide">
             <div class="testimonial-card">
-              <blockquote>We were skeptical about getting a quality website at this price, but Rishi exceeded every expectation. The site is fast, professional, and our admissions have already improved. Worth every rupee!</blockquote>
-              <div class="testimonial-author">— Director Arjun Nair</div>
-              <div class="testimonial-role">Excel College of Commerce, Kerala</div>
+              <blockquote>"We had an outdated college website that embarrassed us. Rishi completely transformed it in 4 days — modern, fast, and professional. The best investment we made for our institution's online presence."</blockquote>
+              <p class="testimonial-author">— Dr. Ramesh Kumar</p>
+              <p class="testimonial-role">Director, City Commerce College</p>
             </div>
           </div>
-          <div class="testimonial-item">
+          <div class="testimonial-slide">
             <div class="testimonial-card">
-              <blockquote>I needed a business website quickly and Rishi made it happen. He was transparent, honest, and kept me updated throughout. The Google Verified badge gave my customers extra trust. 10/10!</blockquote>
-              <div class="testimonial-author">— Priya Reddy</div>
-              <div class="testimonial-role">Priya's Boutique, Hyderabad</div>
+              <blockquote>"As a small business owner, I was worried about cost and complexity. Rishi made it effortless — affordable pricing, stunning result, and he's still available whenever I need a quick update. Outstanding service!"</blockquote>
+              <p class="testimonial-author">— Anita Reddy</p>
+              <p class="testimonial-role">Owner, Anita's Boutique</p>
             </div>
           </div>
         </div>
       </div>
       <div class="slider-controls reveal">
-        <button class="slider-btn" onclick="prevSlide()" aria-label="Previous">←</button>
-        <div class="slider-dots">
-          <div class="slider-dot active" onclick="goToSlide(0)"></div>
-          <div class="slider-dot" onclick="goToSlide(1)"></div>
-          <div class="slider-dot" onclick="goToSlide(2)"></div>
+        <button class="slider-btn" onclick="changeSlide(-1)">←</button>
+        <div class="slider-dots" id="slider-dots">
+          <div class="dot active" onclick="goToSlide(0)"></div>
+          <div class="dot" onclick="goToSlide(1)"></div>
+          <div class="dot" onclick="goToSlide(2)"></div>
         </div>
-        <button class="slider-btn" onclick="nextSlide()" aria-label="Next">→</button>
+        <button class="slider-btn" onclick="changeSlide(1)">→</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- FAQ -->
-    <section class="section center">
-      <span class="badge reveal">❓ FAQ</span>
-      <h2 class="section-heading reveal reveal-delay-1">Frequently Asked <span class="grad-text">Questions</span></h2>
-      <div class="faq-list reveal reveal-delay-2">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>How long does it take to build my website?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">Your website will be ready in 3–4 working days from the day we finalize the content and requirements. Rush delivery may be available on request.</div>
-          </div>
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">❓ FAQ</div>
+        <h2 class="section-heading reveal">Frequently Asked <span class="grad">Questions</span></h2>
+        <div class="divider reveal"></div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            How long does it take to build my website?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Typically 3–4 working days from the moment we align on your requirements and content. Complex projects may take slightly longer, but I always set clear expectations upfront — no surprises.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>Can you build websites for non-educational businesses?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">Absolutely! While I specialize in schools and colleges, I build websites for any type of business — boutiques, restaurants, clinics, startups, NGOs, and more.</div>
-          </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            Can you build websites for non‑educational businesses?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Absolutely! While I specialize in schools and colleges, I build websites for any type of business — retail, healthcare, restaurants, personal brands, portfolios, and more. If you have a vision, I can build it.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>What about domain & hosting — do I need to buy them separately?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">The Subdomain plan includes free hosting via Cloudflare Pages — no separate purchase needed. The Custom Domain plan requires a domain (around ₹800–1,200/year), but I'll help you set it all up seamlessly.</div>
-          </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            What about domain & hosting?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Free hosting via Cloudflare Pages is included in all plans. Domain registration costs are separate (typically ₹800–1,500/year via Namecheap). I'll guide you through the entire setup process — no tech knowledge needed.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>Is the monthly fee compulsory?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">The ₹400–500/month maintenance fee covers your hosting, SSL, and ongoing support. It's optional for static sites, but recommended to keep your site updated and performing well.</div>
-          </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            Do you offer free revisions?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Yes! Free revisions are included during the build phase. After launch, you get 2 content edits per month as part of your plan. I want you to love your website — period.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>What is the Google Verified badge?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">The Google Verified badge adds a credibility indicator to your website, showing visitors that your business identity has been verified. It helps build trust and is available as an add-on for just ₹200 one-time.</div>
-          </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            Are you Google Verified?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Yes — WebMadeEasy.CAV carries a Google Verified badge, which adds credibility and trust to your project. You can even add this badge to your own website for just ₹200 one‑time.</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFAQ(this)" role="button" aria-expanded="false">
-            <span>How many revisions do I get?</span>
-            <div class="faq-icon">+</div>
-          </div>
-          <div class="faq-a">
-            <div class="faq-a-inner">All plans include free revisions during the project. After launch, you get 2 edits per month as part of the maintenance package. Major redesigns are quoted separately.</div>
-          </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            How do I pay and is it safe?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">I accept UPI, bank transfer, and other common payment methods. You can ask for my ID proof at any time — I'm 100% real, transparent, and committed. Payment is typically split: partial upfront and balance on delivery.</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- WHY WEBMADEEASY -->
-    <section class="section center">
-      <span class="badge reveal">🏆 Why WebMadeEasy</span>
-      <h2 class="section-heading reveal reveal-delay-1">Why Choose <span class="grad-text">WebMadeEasy.CAV</span>?</h2>
+  <!-- WHY WEBMADEEASY -->
+  <section id="why">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">🏆 Why WebMadeEasy</div>
+        <h2 class="section-heading reveal">The <span class="grad">Smart Choice</span> for Your Website</h2>
+        <div class="divider reveal"></div>
+      </div>
       <div class="trust-grid">
-        <div class="trust-card reveal reveal-delay-1">
-          <div class="trust-icon">⚡</div>
+        <div class="trust-card reveal">
+          <span class="trust-icon">⚡</span>
           <h3>3–4 Days Delivery</h3>
-          <p>No long waiting periods. Your website goes live in 3–4 working days — guaranteed, not an estimate.</p>
+          <p>Your website goes live faster than you can imagine. No waiting weeks for a basic site.</p>
         </div>
-        <div class="trust-card reveal reveal-delay-2">
-          <div class="trust-icon">💬</div>
+        <div class="trust-card reveal">
+          <span class="trust-icon">📱</span>
           <h3>Direct WhatsApp Access</h3>
-          <p>No tickets, no bots. You get my personal WhatsApp number and I respond within hours.</p>
+          <p>Message me directly on WhatsApp — real responses from the founder, not a support bot.</p>
         </div>
-        <div class="trust-card reveal reveal-delay-3">
-          <div class="trust-icon">💰</div>
+        <div class="trust-card reveal">
+          <span class="trust-icon">💰</span>
           <h3>Unbeatable Value</h3>
-          <p>Agency-quality design at a fraction of agency prices. Starting at just ₹6,999 — no hidden costs.</p>
+          <p>Agency‑quality work at a fraction of the price. Transparent pricing, no hidden fees.</p>
         </div>
-        <div class="trust-card reveal reveal-delay-1">
-          <div class="trust-icon">💻</div>
+        <div class="trust-card reveal">
+          <span class="trust-icon">💎</span>
           <h3>Clean Code</h3>
-          <p>Hand-crafted, optimized HTML/CSS/JS. Fast loading, SEO-friendly, and easy to maintain forever.</p>
+          <p>Hand‑crafted HTML/CSS/JS — no bloated page builders, just fast, clean, maintainable code.</p>
         </div>
-        <div class="trust-card reveal reveal-delay-2">
-          <div class="trust-icon">🔄</div>
+        <div class="trust-card reveal">
+          <span class="trust-icon">🔄</span>
           <h3>Free Revisions</h3>
-          <p>Not satisfied? I'll revise until you are. Your happiness is the benchmark, not just delivery.</p>
+          <p>I tweak until you're thrilled. Free revision rounds during the build phase, always.</p>
         </div>
-        <div class="trust-card reveal reveal-delay-3" style="border:2px solid #bbf7d0;background:#f0fdf4;">
-          <div class="trust-icon">✅</div>
-          <h3 style="color:#15803d;">Google Verified</h3>
-          <p style="color:#166534;">Your business identity verified by Google — building instant trust with every visitor.</p>
-          <div style="margin-top:14px;">
-            <span class="gv-badge"><span class="gv-circle">✓</span> Google Verified</span>
+        <div class="trust-card reveal" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span class="trust-icon">✅</span>
+          <h3>Google Verified</h3>
+          <p>Trusted, verified presence backed by Google — credibility you can show to your audience.</p>
+          <div class="gv-badge mt-6">
+            <span class="gv-circle">✓</span>
+            Google Verified
           </div>
         </div>
       </div>
 
-      <!-- Comparison Table -->
-      <div style="overflow-x:auto;margin-top:8px;" class="reveal">
-        <table class="comparison-table">
+      <!-- Comparison table -->
+      <div class="reveal mt-8" style="overflow-x: auto;">
+        <table class="comp-table">
           <thead>
             <tr>
               <th>Feature</th>
-              <th>✦ WebMadeEasy</th>
-              <th>🏢 Agency</th>
-              <th>🛠️ Website Builder</th>
+              <th class="highlight-col">WebMadeEasy ✦</th>
+              <th>Agency</th>
+              <th>Website Builder</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Custom Design</strong></td>
-              <td><span class="tick">✓ Yes</span></td>
-              <td><span class="tick">✓ Yes</span></td>
-              <td><span class="cross">✗ Templates</span></td>
+              <td>Custom Design</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="yes">✔</span></td>
+              <td><span class="partial">~</span></td>
             </tr>
             <tr>
-              <td><strong>Fast Delivery (3–4 Days)</strong></td>
-              <td><span class="tick">✓ Always</span></td>
-              <td><span class="cross">✗ Weeks</span></td>
-              <td><span class="tick">✓ DIY</span></td>
+              <td>3–4 Day Delivery</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="no">✘</span></td>
+              <td><span class="yes">✔</span></td>
             </tr>
             <tr>
-              <td><strong>Affordable Price</strong></td>
-              <td><span class="tick">✓ ₹6,999+</span></td>
-              <td><span class="cross">✗ ₹30,000+</span></td>
-              <td><span class="maybe">~ Subscription</span></td>
+              <td>Affordable Price</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="no">✘</span></td>
+              <td><span class="partial">~</span></td>
             </tr>
             <tr>
-              <td><strong>Google Verified</strong></td>
-              <td><span class="tick">✓ Available</span></td>
-              <td><span class="maybe">~ Varies</span></td>
-              <td><span class="cross">✗ No</span></td>
+              <td>Google Verified</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="partial">~</span></td>
+              <td><span class="no">✘</span></td>
             </tr>
             <tr>
-              <td><strong>WhatsApp Support</strong></td>
-              <td><span class="tick">✓ Direct</span></td>
-              <td><span class="cross">✗ Ticket Only</span></td>
-              <td><span class="cross">✗ No</span></td>
+              <td>Direct Founder Access</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="no">✘</span></td>
+              <td><span class="no">✘</span></td>
             </tr>
             <tr>
-              <td><strong>Free Revisions</strong></td>
-              <td><span class="tick">✓ Included</span></td>
-              <td><span class="cross">✗ Extra Cost</span></td>
-              <td><span class="maybe">~ DIY</span></td>
+              <td>Clean Code (No Builder)</td>
+              <td class="highlight-col"><span class="yes">✔</span></td>
+              <td><span class="partial">~</span></td>
+              <td><span class="no">✘</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- TOOLBOX -->
-    <section class="section center">
-      <span class="badge reveal">🛠️ My Toolbox</span>
-      <h2 class="section-heading reveal reveal-delay-1">Built with <span class="grad-text">Best-in-Class Tools</span></h2>
+  <!-- TOOLBOX -->
+  <section id="toolbox" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">🛠️ My Toolbox</div>
+        <h2 class="section-heading reveal">Built With the <span class="grad">Best Tools</span></h2>
+        <div class="divider reveal"></div>
+      </div>
       <div class="tools-grid">
-        <div class="tool-card reveal reveal-delay-1">
-          <div class="tool-icon">☁️</div>
-          <h4>Cloudflare Pages</h4>
-          <p class="tool-desc">Lightning-fast global hosting</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">☁️</span>
+          <div class="tool-name">Cloudflare Pages</div>
         </div>
-        <div class="tool-card reveal reveal-delay-1">
-          <div class="tool-icon">🔥</div>
-          <h4>Firebase</h4>
-          <p class="tool-desc">Secure backend & storage</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">🔥</span>
+          <div class="tool-name">Firebase</div>
         </div>
-        <div class="tool-card reveal reveal-delay-2">
-          <div class="tool-icon">🖼️</div>
-          <h4>Cloudflare Images + R2</h4>
-          <p class="tool-desc">Optimized image delivery</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">🖼️</span>
+          <div class="tool-name">Cloudflare Images + R2</div>
         </div>
-        <div class="tool-card reveal reveal-delay-2">
-          <div class="tool-icon">📧</div>
-          <h4>Zoho Mail</h4>
-          <p class="tool-desc">Professional email addresses</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">📧</span>
+          <div class="tool-name">Zoho Mail</div>
         </div>
-        <div class="tool-card reveal reveal-delay-3">
-          <div class="tool-icon">🌐</div>
-          <h4>Namecheap</h4>
-          <p class="tool-desc">Domain registration</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">🌐</span>
+          <div class="tool-name">Namecheap</div>
         </div>
-        <div class="tool-card reveal reveal-delay-3">
-          <div class="tool-icon">💻</div>
-          <h4>HTML / CSS / JS</h4>
-          <p class="tool-desc">Clean, hand-coded code</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">💻</span>
+          <div class="tool-name">HTML / CSS / JS</div>
         </div>
-        <div class="tool-card reveal reveal-delay-4">
-          <div class="tool-icon">🅰️</div>
-          <h4>Inter Fonts</h4>
-          <p class="tool-desc">Modern readable typography</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">🔤</span>
+          <div class="tool-name">Inter Fonts</div>
         </div>
-        <div class="tool-card reveal reveal-delay-4">
-          <div class="tool-icon">📝</div>
-          <h4>Web3Forms / Formspree</h4>
-          <p class="tool-desc">Spam-free contact forms</p>
+        <div class="tool-card reveal">
+          <span class="tool-icon">📝</span>
+          <div class="tool-name">Web3Forms / Formspree</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <hr class="section-divider" />
-
-    <!-- DEMO CTA -->
-    <section class="section center">
-      <div class="demo-cta-box reveal">
-        <span style="font-size:52px;display:block;margin-bottom:16px;">👀</span>
+  <!-- DEMO CTA -->
+  <section id="demo-cta">
+    <div class="container text-center">
+      <div class="demo-box reveal">
+        <div style="font-size: 3rem; margin-bottom: 16px;">👀</div>
         <h2>See a Live School Demo</h2>
-        <p>Check a fully functional demo site built for an Indian school — but remember, I build for any industry. See the quality for yourself before you commit.</p>
-        <a class="btn-primary" href="demo.html" target="_self">🔗 View Demo Website</a>
+        <p>Check a fully functional demo site built for an Indian school — but remember, I build for <strong>any industry</strong>. See the quality for yourself before you decide.</p>
+        <a href="demo.html" class="btn btn-primary">🔗 View Demo Website</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <span>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</span>
-        <span class="gv-badge"><span class="gv-circle">✓</span> Google Verified</span>
+  <!-- HOME FOOTER -->
+  <footer>
+    <p>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</p>
+    <div style="display: flex; justify-content: center;">
+      <div class="gv-badge">
+        <span class="gv-circle">✓</span>
+        Google Verified
       </div>
-    </footer>
-  </div>
-  <!-- /page-home -->
+    </div>
+  </footer>
 
+</div>
+<!-- /page-home -->
 
-  <!-- ════════════════════════════════════════════
-       PRICING PAGE
-  ════════════════════════════════════════════ -->
-  <div id="page-pricing" class="page">
+<!-- ══════════════════════════════════════════════
+     PAGE: PRICING
+══════════════════════════════════════════════ -->
+<div id="page-pricing" class="page">
 
-    <section class="section center">
-      <span class="badge reveal">💲 Pricing</span>
-      <h2 class="section-heading reveal reveal-delay-1">Special <span class="grad-text">Launch Prices</span></h2>
-      <p class="section-sub reveal reveal-delay-2">Plans are suitable for any type of website — school, college, business, or personal. No hidden fees, ever.</p>
+  <section>
+    <div class="container">
+      <div class="text-center mb-12">
+        <div class="badge reveal">💲 Pricing</div>
+        <h2 class="section-heading reveal">Special <span class="grad">Launch Prices</span></h2>
+        <div class="divider reveal"></div>
+        <p class="section-sub reveal" style="margin: 16px auto 0;">Plans are suitable for <strong>any type of website</strong> — school, college, business, or personal. Choose what fits you best.</p>
+      </div>
 
       <div class="pricing-grid">
-        <!-- Subdomain -->
-        <div class="pricing-card subdomain reveal reveal-delay-1">
-          <h3>Subdomain Plan</h3>
-          <p style="font-size:14px;color:#9ca3af;margin-bottom:14px;">yoursite.webmadeeasy.cav</p>
-          <div><span class="price-old">₹10,000</span></div>
+        <!-- Subdomain Plan -->
+        <div class="pricing-card subdomain reveal">
+          <div class="pricing-plan-name">🌐 Subdomain Plan</div>
+          <div class="pricing-plan-desc">Perfect starter — yourbrand.cloudflare.dev</div>
+          <div>
+            <span class="price-old">₹10,000</span>
+          </div>
           <div class="price-new">₹6,999</div>
-          <div class="price-monthly">+ ₹400–500 / month</div>
+          <div class="price-monthly">+ ₹400–500/month (hosting & maintenance)</div>
           <ul class="pricing-features">
-            <li><span class="tick">✓</span> Free Hosting &amp; SSL</li>
-            <li><span class="tick">✓</span> Up to 5 Pages</li>
-            <li><span class="tick">✓</span> 2 Edits / Month</li>
-            <li><span class="tick">✓</span> 3–4 Day Delivery</li>
-            <li><span class="tick">✓</span> Mobile Responsive</li>
-            <li><span class="tick">✓</span> WhatsApp Support</li>
+            <li><span class="pf-check">✓</span>Free hosting & SSL certificate</li>
+            <li><span class="pf-check">✓</span>Up to 5 fully designed pages</li>
+            <li><span class="pf-check">✓</span>2 content edits per month</li>
+            <li><span class="pf-check">✓</span>3–4 working day delivery</li>
+            <li><span class="pf-check">✓</span>Mobile responsive design</li>
+            <li><span class="pf-check">✓</span>WhatsApp support included</li>
           </ul>
-          <button class="btn-outline" style="width:100%;justify-content:center;" onclick="navigate('contact')">Get Started</button>
+          <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="navigate('contact')">Get Started</button>
         </div>
 
-        <!-- Custom Domain -->
-        <div class="pricing-card featured reveal reveal-delay-2">
+        <!-- Custom Domain Plan -->
+        <div class="pricing-card featured reveal">
           <div class="popular-badge">⭐ Most Popular</div>
-          <h3>Custom Domain Plan</h3>
-          <p style="font-size:14px;color:#9ca3af;margin-bottom:14px;">www.yourbusiness.com</p>
-          <div><span class="price-old">₹17,999</span></div>
+          <div class="pricing-plan-name">✨ Custom Domain Plan</div>
+          <div class="pricing-plan-desc">Your brand, your domain — www.yourbrand.com</div>
+          <div>
+            <span class="price-old">₹17,999</span>
+          </div>
           <div class="price-new">₹9,999</div>
-          <div class="price-monthly">+ ₹400–500 / month</div>
-          <div class="gv-addon">
-            <span class="gv-badge" style="background:transparent;border:none;padding:0;"><span class="gv-circle">✓</span></span>
-            <span>Google Verified Badge — Add credibility — just <strong>+₹200 one-time</strong></span>
+          <div class="price-monthly">+ ₹400–500/month (hosting & maintenance)</div>
+          <div class="addon-strip">
+            <span class="gv-circle" style="width:22px;height:22px;min-width:22px;border-radius:50%;background:#16a34a;color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;">✓</span>
+            <span><strong>Google Verified Badge</strong> — Add credibility — just <strong>+₹200</strong> one‑time</span>
           </div>
           <ul class="pricing-features">
-            <li><span class="tick">✓</span> Custom Domain (.com / .in)</li>
-            <li><span class="tick">✓</span> Up to 5 Pages</li>
-            <li><span class="tick">✓</span> 2 Edits / Month</li>
-            <li><span class="tick">✓</span> 3–4 Day Delivery</li>
-            <li><span class="tick">✓</span> Migration Possible</li>
-            <li><span class="tick">✓</span> Free SSL Certificate</li>
-            <li><span class="tick">✓</span> WhatsApp Support</li>
+            <li><span class="pf-check">✓</span>Custom domain (e.g. yourbrand.com)</li>
+            <li><span class="pf-check">✓</span>Free hosting & SSL certificate</li>
+            <li><span class="pf-check">✓</span>Up to 5 fully designed pages</li>
+            <li><span class="pf-check">✓</span>2 content edits per month</li>
+            <li><span class="pf-check">✓</span>3–4 working day delivery</li>
+            <li><span class="pf-check">✓</span>Domain migration possible</li>
+            <li><span class="pf-check">✓</span>Priority WhatsApp support</li>
           </ul>
-          <button class="btn-primary" style="width:100%;justify-content:center;" onclick="navigate('contact')">Choose This ✦</button>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="navigate('contact')">Choose This →</button>
         </div>
       </div>
 
       <!-- Add-ons -->
-      <div style="margin-top:56px;" class="reveal">
-        <span class="badge">✨ Add-ons</span>
-        <h3 style="font-size:24px;font-weight:800;margin:12px 0 8px;color:#1e1b4b;">Supercharge Your Website</h3>
-        <p style="font-size:15px;color:#9ca3af;margin-bottom:32px;">Enhance any plan with powerful extras</p>
-      </div>
-      <div class="addons-grid">
-        <div class="addon-card reveal reveal-delay-1">
-          <div class="addon-icon">📧</div>
-          <h4>Business Email</h4>
-          <div class="addon-price">+₹499</div>
-          <div class="addon-desc">Professional email like you@yoursite.com</div>
-        </div>
-        <div class="addon-card reveal reveal-delay-1">
-          <div class="addon-icon">🔍</div>
-          <h4>Basic SEO</h4>
-          <div class="addon-price">+₹799</div>
-          <div class="addon-desc">On-page optimization to rank on Google</div>
-        </div>
-        <div class="addon-card reveal reveal-delay-2">
-          <div class="addon-icon">💬</div>
-          <h4>WhatsApp Chat Button</h4>
-          <div class="addon-price">+₹199</div>
-          <div class="addon-desc">Floating WhatsApp chat on your site</div>
-        </div>
-        <div class="addon-card reveal reveal-delay-2">
-          <div class="addon-icon">📋</div>
-          <h4>Admission / Lead Form</h4>
-          <div class="addon-price">Get Quote</div>
-          <div class="addon-desc">Custom forms for leads or admissions</div>
-        </div>
-        <div class="addon-card reveal reveal-delay-3">
-          <div class="addon-icon">🔀</div>
-          <h4>Domain Migration</h4>
-          <div class="addon-price">₹3,000</div>
-          <div class="addon-desc">Migrate your existing site to our stack</div>
-        </div>
-        <div class="addon-card reveal reveal-delay-3" style="background:#f0fdf4;border:1px solid #bbf7d0;">
-          <div class="addon-icon">✅</div>
-          <h4 style="color:#15803d;">Google Verified Badge</h4>
-          <div class="addon-price" style="-webkit-text-fill-color:#16a34a;color:#16a34a;">+₹200</div>
-          <div class="addon-desc" style="color:#166534;">One-time — adds trust instantly</div>
+      <div class="addons-section">
+        <h2 class="text-center reveal" style="margin-bottom: 8px;">🧩 Add‑ons</h2>
+        <p class="section-sub text-center reveal" style="margin: 0 auto 28px; font-size: 0.92rem;">Supercharge your website with these optional add‑ons:</p>
+        <div class="addons-grid">
+          <div class="addon-card reveal">
+            <div class="addon-name">📧 Business Email</div>
+            <div class="addon-price">+₹499/year</div>
+          </div>
+          <div class="addon-card reveal">
+            <div class="addon-name">🔍 Basic SEO Package</div>
+            <div class="addon-price">+₹799 one‑time</div>
+          </div>
+          <div class="addon-card reveal">
+            <div class="addon-name">💬 WhatsApp Chat Button</div>
+            <div class="addon-price">+₹199 one‑time</div>
+          </div>
+          <div class="addon-card reveal">
+            <div class="addon-name">📋 Admission / Lead Form</div>
+            <div class="addon-price">Quote on request</div>
+          </div>
+          <div class="addon-card reveal">
+            <div class="addon-name">🔄 Domain Migration</div>
+            <div class="addon-price">₹3,000 one‑time</div>
+          </div>
+          <div class="addon-card reveal">
+            <div class="addon-name">✅ Google Verified Badge</div>
+            <div class="addon-price">+₹200 one‑time</div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <span>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</span>
-        <span class="gv-badge"><span class="gv-circle">✓</span> Google Verified</span>
-      </div>
-    </footer>
-  </div>
-  <!-- /page-pricing -->
-
-
-  <!-- ════════════════════════════════════════════
-       CONTACT PAGE
-  ════════════════════════════════════════════ -->
-  <div id="page-contact" class="page">
-    <section class="section center">
-      <span class="badge reveal">✉️ Let's Talk</span>
-      <h2 class="section-heading reveal reveal-delay-1">Ready to <span class="grad-text">Launch Your Website?</span></h2>
-      <p class="section-sub reveal reveal-delay-2">Reach out directly — no forms, no bots, just a real conversation. I typically respond within a few hours.</p>
-
-      <div class="contact-cards">
-        <div class="contact-card reveal reveal-delay-1">
-          <div class="contact-icon">📱</div>
-          <h3>Call / WhatsApp</h3>
-          <a href="tel:+919880522479">9880522479</a>
-          <p style="font-size:13px;color:#9ca3af;margin-top:8px;">Available 9am–8pm IST</p>
-        </div>
-        <div class="contact-card reveal reveal-delay-2">
-          <div class="contact-icon">📧</div>
-          <h3>Email</h3>
-          <a href="mailto:campus.hub.sac@gmail.com" style="font-size:17px;">campus.hub.sac@gmail.com</a>
-          <p style="font-size:13px;color:#9ca3af;margin-top:8px;">Reply within 24 hours</p>
-        </div>
-      </div>
-
-      <div class="contact-note reveal reveal-delay-3">
-        💎 Ask for my ID proof — I'm 100% real &amp; transparent. Your trust matters more than the project.
-      </div>
-
-      <div style="margin-top:40px;" class="reveal">
-        <span class="gv-badge" style="font-size:16px;padding:10px 28px 10px 12px;">
-          <span class="gv-circle" style="width:36px;height:36px;font-size:18px;">✓</span>
-          Google Verified Business
-        </span>
-      </div>
-    </section>
-
-    <footer class="page-footer">
-      <div class="footer-inner">
-        <span>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</span>
-        <span class="gv-badge"><span class="gv-circle">✓</span> Google Verified</span>
-      </div>
-    </footer>
-  </div>
-  <!-- /page-contact -->
-
-
-  <!-- ════════════════════════════════════════════
-       DHAMAKA POPUP
-  ════════════════════════════════════════════ -->
-  <div id="dhamaka-popup">
-    <div class="popup-box">
-      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
-      <div class="popup-bounce">🔥</div>
-      <div class="popup-headline">🔥 Dhamaka Offer!</div>
-      <p class="popup-sub">⚡ Save up to <strong>₹8,000</strong> on your custom website. Only a few launch slots left — these prices won't last forever! Grab your spot now.</p>
-      <button class="btn-primary" style="width:100%;justify-content:center;font-size:18px;" onclick="closePopup()">View Offer 🔥</button>
     </div>
+  </section>
+
+  <footer>
+    <p>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</p>
+    <div style="display: flex; justify-content: center;">
+      <div class="gv-badge">
+        <span class="gv-circle">✓</span>
+        Google Verified
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- /page-pricing -->
+
+<!-- ══════════════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+
+  <section style="min-height: calc(100vh - 160px); display: flex; align-items: center;">
+    <div class="container text-center" style="width: 100%;">
+      <div class="badge reveal">✉️ Let's Talk</div>
+      <h2 class="section-heading reveal">Ready to Launch Your <span class="grad">Website?</span></h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal" style="margin: 16px auto 48px;">Reach out directly — no middlemen, no bots. You get the founder.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <span class="contact-icon">📱</span>
+          <div class="contact-label">Call or WhatsApp</div>
+          <a href="tel:+919880522479">+91 98805 22479</a>
+        </div>
+        <div class="contact-card reveal">
+          <span class="contact-icon">📧</span>
+          <div class="contact-label">Email Us</div>
+          <a href="mailto:campus.hub.sac@gmail.com">campus.hub.sac@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-note reveal">
+        💎 Ask for my ID proof — I'm 100% real & transparent. Your trust matters more than any sale.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 WebMadeEasy.CAV — Founder Rishi Pavan R · Made with ❤️ in India</p>
+    <div style="display: flex; justify-content: center;">
+      <div class="gv-badge">
+        <span class="gv-circle">✓</span>
+        Google Verified
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- /page-contact -->
+
+<!-- ══ DHAMAKA POPUP ══ -->
+<div id="dhamaka-popup" class="hidden">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+    <span class="popup-icon">🔥</span>
+    <h2>Dhamaka Offer!</h2>
+    <p>🎉 You're viewing our <strong>Special Launch Prices!</strong> These discounted rates are available only for a limited time. Grab your website now and save thousands!</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">⚡ Custom Domain Plan at just <strong style="color: #6366f1; font-size: 1rem;">₹9,999</strong> (was ₹17,999)</p>
+    <button class="btn btn-primary" onclick="closePopup()" style="width: 100%; justify-content: center;">View Offer 🔥</button>
   </div>
+</div>
 
+<script>
+  // ── THEME ──
+  const html = document.documentElement;
+  const themeBtn = document.getElementById('theme-btn');
+  const themeIcon = document.getElementById('theme-icon');
 
-  <!-- ════════════════════════════════════════════
-       JAVASCRIPT
-  ════════════════════════════════════════════ -->
-  <script>
-    // ── PAGE NAVIGATION ──
-    let countersDone = false;
-    let pricingPopupShown = sessionStorage.getItem('pricingPopupShown') === 'true';
+  function toggleTheme() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  }
 
-    function navigate(page) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById('page-' + page).classList.add('active');
+  (function initTheme() {
+    const saved = localStorage.getItem('theme') || 'dark';  // default dark
+    html.setAttribute('data-theme', saved);
+    themeIcon.textContent = saved === 'dark' ? '☀️' : '🌙';
+  })();
 
-      document.querySelectorAll('nav.desktop-nav a').forEach(a => a.classList.remove('active'));
-      const navEl = document.getElementById('nav-' + page);
-      if (navEl) navEl.classList.add('active');
+  // ── PROMO BAR ──
+  function closePromo() {
+    const bar = document.getElementById('promo-bar');
+    bar.style.display = 'none';
+  }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // ── NAVIGATION ──
+  let countersStarted = false;
 
-      if (page === 'home' && !countersDone) {
-        setTimeout(animateCounters, 400);
-      }
+  function navigate(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
 
-      if (page === 'pricing' && !pricingPopupShown) {
+    document.querySelectorAll('.nav-links .nav-btn').forEach(l => l.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + page);
+    if (navEl) navEl.classList.add('active');
+
+    // close mobile menu & hamburger
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (page === 'home') {
+      if (!countersStarted) {
+        countersStarted = true;
         setTimeout(() => {
-          document.getElementById('dhamaka-popup').classList.add('show');
+          animateCounter('stat-projects', 20, '+');
+          animateCounter('stat-love', 100, '%');
+        }, 400);
+      }
+      initReveal();
+    } else if (page === 'pricing') {
+      if (!sessionStorage.getItem('dhamaka-dismissed')) {
+        setTimeout(() => {
+          document.getElementById('dhamaka-popup').classList.remove('hidden');
         }, 600);
       }
+      initReveal();
+    } else {
+      initReveal();
+    }
+  }
 
-      setTimeout(initReveal, 100);
-    }
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  }
 
-    // ── PROMO BAR ──
-    function closePromo() {
-      document.getElementById('promo-bar').style.display = 'none';
+  document.addEventListener('click', function (e) {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+      hamburger.classList.remove('open');
     }
+  });
 
-    // ── MOBILE MENU ──
-    function toggleMobileMenu() {
-      document.getElementById('mobile-menu').classList.toggle('open');
-      document.querySelector('.hamburger').classList.toggle('open');
+  // ── COUNTER ──
+  function animateCounter(id, target, suffix) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let start = 0;
+    const duration = 1800;
+    const startTime = performance.now();
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(eased * target);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
     }
-    function closeMobileMenu() {
-      document.getElementById('mobile-menu').classList.remove('open');
-      document.querySelector('.hamburger').classList.remove('open');
-    }
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('mobile-menu');
-      const hamburger = document.querySelector('.hamburger');
-      if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
-        closeMobileMenu();
-      }
+    requestAnimationFrame(tick);
+  }
+
+  // ── FAQ ──
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
-
-    // ── COUNTER ANIMATION ──
-    function animateCounters() {
-      countersDone = true;
-      animateValue('stat-projects', 0, 20, 1200, '+');
-      animateValue('stat-love', 0, 100, 1500, '%');
+    if (!isActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
     }
-    function animateValue(id, start, end, duration, suffix) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const startTime = performance.now();
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const value = Math.round(start + (end - start) * eased);
-        el.textContent = value + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    }
+  }
 
-    // ── FAQ ACCORDION ──
-    function toggleFAQ(el) {
-      const item = el.parentElement;
-      const answer = item.querySelector('.faq-a');
-      const isActive = item.classList.contains('active');
+  // ── TESTIMONIAL SLIDER ──
+  let currentSlide = 0;
+  const totalSlides = 3;
 
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('active');
-        i.querySelector('.faq-a').style.maxHeight = '0';
-        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-      });
+  function updateSlider() {
+    const track = document.getElementById('testimonial-track');
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentSlide);
+    });
+  }
 
-      if (!isActive) {
-        item.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        el.setAttribute('aria-expanded', 'true');
-      }
-    }
+  function changeSlide(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    updateSlider();
+  }
 
-    // ── TESTIMONIAL SLIDER ──
-    let currentSlide = 0;
-    const totalSlides = 3;
-    let autoPlay;
+  function goToSlide(i) {
+    currentSlide = i;
+    updateSlider();
+  }
 
-    function goToSlide(index) {
-      currentSlide = index;
-      document.getElementById('testimonial-track').style.transform = `translateX(-${index * 100}%)`;
-      document.querySelectorAll('.slider-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === index);
-      });
-    }
-    function nextSlide() {
-      goToSlide((currentSlide + 1) % totalSlides);
-    }
-    function prevSlide() {
-      goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-    }
+  // Auto slide
+  setInterval(() => changeSlide(1), 5000);
 
-    function startAutoPlay() {
-      autoPlay = setInterval(nextSlide, 5000);
-    }
-    function stopAutoPlay() {
-      clearInterval(autoPlay);
-    }
-
-    const slider = document.getElementById('testimonial-slider');
-    slider.addEventListener('mouseenter', stopAutoPlay);
-    slider.addEventListener('mouseleave', startAutoPlay);
-    startAutoPlay();
-
-    // ── SCROLL REVEAL ──
-    function initReveal() {
+  // ── SCROLL REVEAL ──
+  function initReveal() {
+    setTimeout(() => {
+      const revealEls = document.querySelectorAll('.reveal:not(.visible)');
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, idx) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, idx * 60);
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.08 });
+      revealEls.forEach(el => observer.observe(el));
+    }, 100);
+  }
 
-      document.querySelectorAll('.page.active .reveal:not(.visible)').forEach(el => {
-        observer.observe(el);
-      });
+  // ── POPUP ──
+  function closePopup() {
+    document.getElementById('dhamaka-popup').classList.add('hidden');
+    sessionStorage.setItem('dhamaka-dismissed', 'true');
+  }
+
+  // ── INIT ──
+  window.addEventListener('DOMContentLoaded', () => {
+    navigate('home');
+    // Open first FAQ by default
+    const firstFaq = document.querySelector('.faq-item');
+    if (firstFaq) {
+      firstFaq.classList.add('active');
+      firstFaq.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
     }
-
-    // ── DHAMAKA POPUP ──
-    function closePopup() {
-      document.getElementById('dhamaka-popup').classList.remove('show');
-      pricingPopupShown = true;
-      sessionStorage.setItem('pricingPopupShown', 'true');
-    }
-    document.getElementById('dhamaka-popup').addEventListener('click', function(e) {
-      if (e.target === this) closePopup();
-    });
-
-    // ── INIT ──
-    window.addEventListener('DOMContentLoaded', () => {
-      initReveal();
-      setTimeout(animateCounters, 600);
-
-      // Open first FAQ by default
-      const firstFaq = document.querySelector('.faq-item');
-      if (firstFaq) {
-        firstFaq.classList.add('active');
-        const answer = firstFaq.querySelector('.faq-a');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        firstFaq.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.page.active .reveal:not(.visible)').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.9) {
-          el.classList.add('visible');
-        }
-      });
-    }, { passive: true });
-  </script>
-
+  });
+</script>
 </body>
 </html>
